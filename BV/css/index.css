@@ -43,7 +43,10 @@ img {
     clear: both;
     visibility: hidden;
 }
-
+.profession-name{
+    text-align: center;
+    font-size: 20px;
+}
 .g-fr {
     float: right;
 }
@@ -1163,7 +1166,7 @@ span.red-cion-bg:after{
 }
 
 .show-photo li img {
-    width: 120px;
+    width: 100px;
     height: 100px;
     display: inline-block;
 }
@@ -1297,7 +1300,7 @@ span.red-cion-bg:after{
 }
 
 .leaderskip .show-photo li img {
-    width: 120px;
+    width: 100px;
     height: 100px;
     display: inline-block;
 }
