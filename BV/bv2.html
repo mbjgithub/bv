@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博闻伟达</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">-->
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js/view/animate.css">
+    <link rel="stylesheet" href="js/picCarousel/picCarousel.css">
+    <style>
+        .content_detail li {
+            cursor: pointer;
+        }
+        
+        .part-eight .content-box .txt {
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+        }
+        
+        .part-eight .content-box:nth-child(1) {
+            background-image: url('./images/bv-arts.png');
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .part-eight .content-box:nth-child(1) .txt1 {
+            width: 230px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 50px 10px;
+            position: relative;
+            top: -60px;
+            left: -30px;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        
+        .part-eight .content-box:nth-child(1) .txt2 {
+            width: 150px;
+            background: rgba(255, 255, 255, 0.3);
+            /* padding: 50px 10px; */
+            right: 100px;
+            height: 73px;
+            bottom: 103px;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            background-image: url('./images/arts3.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .part-eight .content-box:nth-child(2) {
+            background-image: url('./images/bv-arts2.png');
+            font-weight: bold;
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt1 {
+            width: 230px;
+            /* background: rgba(255, 255, 255, 0.6); */
+            padding: 50px 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            text-align: center;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt2 {
+            width: 150px;
+            /* background: rgba(255, 255, 255, 0.3); */
+            height: 73px;
+            /* padding: 50px 10px; */
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 142px;
+            -webkit-animation-delay: 2s;
+            ;
+            animation-delay: 2s;
+            background-image: url('./images/arts2.png');
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt2-con {
+            margin-bottom: 5px;
+        }
+        
+        .visual-design {
+            position: absolute;
+            width: 100%;
+            padding-left: 200px;
+            height: 100%;
+            left: 0;
+            z-index: 3;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .visual-design ul {
+            position: relative;
+            top: 50%;
+            left: -700px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            overflow: hidden;
+            width: 88888px;
+            height: 500px;
+            /* display:  flex; */
+            /* z-index: 3; */
+        }
+        
+        .visual-design .item {
+            width: 800px;
+            height: inherit;
+            position: relative;
+            display: inline-block;
+            /* float:  left; */
+            margin-left: 90px;
+        }
+        
+        .visual-design .item>img {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .visual-design .item.active>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .visual-design .item.active .txt-box {
+            -webkit-animation: redfadein 2s 1;
+            animation: redfadein 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        
+        @-webkit-keyframes redfadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes redfadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .visual-design .item .txt-box {
+            background-color: rgba(150, 29, 53, 0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 450px;
+            opacity: 0;
+        }
+        
+        .visual-design .item .txt-box .txt {
+            opacity: 0;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+        
+        .visual-design .item.active .txt-box .txt {
+            -webkit-animation: redfadein 2s 1;
+            animation: redfadein 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        
+        .visual-design .item .txt-box .txt-title {
+            color: #fff;
+            font-size: 36px;
+            margin: 50px 0 15px;
+            text-align: center;
+        }
+        
+        .visual-design .item .txt-box .txt-con {
+            text-align: center;
+            color: #000;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        .visual-design .pre {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 20px;
+            background: url('./img/right-fill.png') no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .visual-design .next {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+            left: 220px;
+            background: url('./img/right-fill.png') no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 200px;
+            right: 0;
+            z-index: 5;
+            /* width: 1000px; */
+            height: 90px;
+            line-height: 90px;
+            margin: auto;
+            padding: 0 100px;
+            color: #ececec;
+            font-size: 14px;
+            min-width: 1000px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="js-header" class="header clearfix">
+        <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+            <img src="./images/icon-2.png">
+        </a>
+        <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
+            <img src="./images/icon-3-gray.png">
+        </a>
+        <div class="lang g-fr" style="color:#000;">
+            <span>Cn </span>/<span> En</span>
+        </div>
+    </header>
+    <!--伟达文化-->
+    <div class="part-eight weida-international active part-nine part-eleven">
+        <div class="con">
+            <div class="red-bg mutiwidth"></div>
+            <div class="left-nav fadeinInter">
+                <div class="txt-box fadeinInter">
+                    <div class="txt fadeinInter" id="content">
+                        <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达文化</div>
+                        <!-- <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                        </div>
+                        <div class="item" data-type='visual-design' data-range="1" style="height:18px;overflow:hidden;">视觉设计
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!--博闻伟达文化-->
+            <div class="inter-two-pic-box itemtype fadeinInter">
+                <div class="content-box fadeinInter" style="left:0;">
+                    <!--<div class="white-block fadeinInter">
+                        <img src="./images/icon-title.png">
+                    </div>-->
+                    <div class="txt fadeinInter">
+                        <div class="txt1">
+                            <div class="txt1-title">
+                                BALDWIN &amp; VIKTOR ARTS
+                            </div>
+                            <div class="txt1-con">
+                                我们专注于创新品牌营销、企业传播、利益相关者传播、科技传播、新媒体互动营销、政府大型展览、文化艺术活动及推广、以及可持续发展和企业社会责任传播。三大品牌可以协同或单独工作，以协助客户提升品牌信任、改变消费行 为、引导受众互动，最终获得商业上的成功。我们凭借创新理念和专业服务，以及对市场、品牌、受众和互动模式的深刻理解，致力于为我们的客户提供系统解决方案，为客户创造价值。 </div>
+                        </div>
+                        <div class="txt2">
+                            <div class="txt2-con">
+                                <!--We Create Total Solutions!-->
+                            </div>
+                            <div class="txt2-tips">
+                                <!--我们致力于提供整合性公关方案！-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagenation fadeinInter">
+                        <span class="active" data-type="0"></span>
+                        <span data-type="1"></span>
+                    </div>
+                </div>
+                <div class="content-box" style="left:100%;opacity:1;">
+                    <!--<div class="white-block animation-flag">
+                        <img src="./images/icon-title.png">
+                    </div>-->
+                    <div class="txt1">
+                        <!--<div class="txt1-title">
+                                活动管理
+                            </div>-->
+                        <div class="txt1-con" style="text-align:center;">
+                            高水准一站式活动策划、<br>管理、制作、执行服务<br>我们为客户提供创意独特的活动策划<br>及高水准的现场活动管理</div>
+                    </div>
+                    <div class="txt2">
+                        <div class="txt2-con">
+                            <!--We Create Total Solutions!-->
+                        </div>
+                        <div class="txt2-tips">
+                            <!--我们致力于提供整合性公关方案！-->
+                        </div>
+                    </div>
+                    <div class="pagenation animation-flag">
+                        <span data-type="0"></span>
+                        <span class="active" data-type="1"></span>
+                    </div>
+                </div>
+            </div>
+            <!--视觉设计-->
+            <div class="visual-design js-ds-none itemtype">
+                <ul class="" id="content_detail">
+
+                </ul>
+                <div class="pre change" data-type="pre"></div>
+                <div class="next change" data-type="next"></div>
+            </div>
+            <!--企业合作 政府合作-->
+            <div class="right-content-box business-hezuo itemtype js-ds-none">
+                <ul class="">
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span><br>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date" style="padding-left:10px;">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span><br>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date" style="padding-left:10px;">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span><br>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date" style="padding-left:10px;">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span><br>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date" style="padding-left:10px;">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date">
+                            September, 2017
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="">
+                        <div class="title">
+                            天安数码城集团德国招商大会
+                        </div>
+                        <div class="address">
+                            <span class="en">Gemany</span><br>
+                            <span class="ch">德国</span>
+                        </div>
+                        <div class="date" style="padding-left:10px;">
+                            September, 2017
+                        </div>
+                    </li>
+                    <div class="change">
+                        <img src="./images/icon-pre.png" class="pre" data-type="pre">
+                        <img src="./images/icon-pre.png" class="next" data-type="next">
+                    </div>
+                </ul>
+                <div class="picCarsoule-box">
+                    <div class="poster-main" id="TagName">
+                        <div class="poster-btn poster-prev-btn"></div>
+                        <ul class="poster-list">
+                            <li class="poster-item active">
+                                <img src="img/1.jpg">
+                                <div class="txt">
+                                    hahahhahahahha
+                                </div>
+                            </li>
+                            <li class="poster-item"><img src="img/2.jpg">
+                                <div class="txt">
+                                    hahahhahahahha
+                                </div>
+                            </li>
+                            <li class="poster-item"><img src="img/3.jpg">
+                                <div class="txt">
+                                    hahahhahahahha
+                                </div>
+                            </li>
+                            <li class="poster-item"><img src="img/4.jpg">
+                            </li>
+                            <li class="poster-item"><img src="img/5.jpg">
+                                <div class="txt">
+                                    hahahhahahahha
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="poster-btn poster-next-btn"></div>
+                    </div>
+                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
+                </div>
+            </div>
+            <!--企业资源-->
+            <div class="resource-map js-ds-none itemtype">
+                <div class="red-cion asia">
+                    <span class="red-cion-bg asia"></span>
+                    <div class="txt-title">
+                        <span>Asia</span>
+                        <span>亚洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">韩国
+                                <ul class="business">
+                                    <li class="">大韩贸易投资振兴公社</li>
+                                    <li class="">We Work公司</li>
+                                </ul>
+                            </li>
+                            <li class="">日本
+                                <ul class="business">
+                                    <li class="">野村证券综合研究所NRI</li>
+                                    <li class="">日本瑞穗银行股份有限公司</li>
+                                    <li class="">伊藤忠商事株式会社大阪总社</li>
+                                    <li class="">三菱银行株式会社</li>
+                                    <li class="">京瓷株式会社</li>
+                                    <li class="">知识之都</li>
+                                    <li class="">京都大学</li>
+                                    <li class="">东京大学</li>
+                                    <li class="">三井住友银行</li>
+                                    <li class="">欧姆龙株式会社</li>
+                                </ul>
+                            </li>
+                            <li class="">沙特阿拉伯
+                                <ul class="business">
+                                    <li class="">费萨尔国王专科医院和科研中心</li>
+                                    <li class="">沙特制药协会</li>
+                                    <li class="">沙特临床实验科学协会</li>
+                                </ul>
+                            </li>
+                            <li class="">印度
+                                <ul class="business">
+                                    <li class="">中国驻印度大使馆 参赞</li>
+                                    <li class="">太阳集团</li>
+                                    <li class="">印度塔塔咨询服务公司</li>
+                                    <li class="">FICCI</li>
+                                    <li class="">INFOSYS</li>
+                                </ul>
+                            </li>
+                            <li class="">泰国
+                                <ul class="business">
+                                    <li class="">开泰银行</li>
+                                    <li class="">泰国亚洲大众集团</li>
+                                    <li class="">泰国亚洲大众集团</li>
+                                    <li class="">泰国百丽宫商业集团</li>
+                                </ul>
+                            </li>
+                            <li class="">新加坡
+                                <ul class="business">
+                                    <li class="">新加坡福智霖集团</li>
+                                    <li class="">星桥腾飞集团</li>
+                                    <li class="">新加坡建设局</li>
+                                    <li class="">新加坡微电子总部</li>
+                                    <li class="">新加坡CPG</li>
+                                </ul>
+                            </li>
+                            <li class="">以色列
+                                <ul class="business">
+                                    <li class="">以色列Biopharmax Group</li>
+                                    <li class="">以色利经济部</li>
+                                    <li class="">特拉维夫理工大学</li>
+                                    <li class="">特拉维夫太库孵化器</li>
+                                </ul>
+                            </li>
+                            <li class="">阿联酋
+                                <ul class="business">
+                                    <li class="">迪拜硅绿洲（DSOA）</li>
+                                    <li class="">沙迦酋长国投资发展署</li>
+                                    <li class="">沙迦酋长国保税区</li>
+                                    <li class="">阿联酋华人华侨联合会</li>
+                                    <li class="">迪拜科技城</li>
+                                    <li class="">迪拜媒体城</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="red-cion oceania">
+                    <span class="red-cion-bg oceania"></span>
+                    <div class="txt-title">
+                        <span>Oceania</span>
+                        <span>大洋洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">澳大利亚
+                                <ul class="business">
+                                    <li class="">和声创景</li>
+                                    <li class="">马化集团</li>
+                                    <li class="">澳大利亚悉尼市政府</li>
+                                    <li class="">维多利亚州政府</li>
+                                    <li class="">新南威尔士州政府</li>
+                                </ul>
+                            </li>
+                            <li class="">新西兰
+                                <ul class="business">
+                                    <li class="">新西兰诺世集团</li>
+                                    <li class="">新西兰瑞康集团</li>
+                                    <li class="">新西兰华融集团</li>
+                                    <li class="">新西兰贸易发展局</li>
+                                    <li class="">新西兰卫生部</li>
+                                    <li class="">新西兰贸易协会</li>
+                                    <li class="">新西兰北方雇主协会</li>
+                                    <li class="">奥克兰商会</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="red-cion north-americas">
+                    <span class="red-cion-bg north-americas"></span>
+                    <div class="txt-title">
+                        <span>North-Americas</span>
+                        <span>北美洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">美国
+                                <ul class="business">
+                                    <li class="">美国硅谷商创会</li>
+                                    <li class="">华特迪士尼集团</li>
+                                    <li class="">华纳兄弟娱乐公司</li>
+                                    <li class="">谷歌</li>
+                                    <li class="">皮克斯动画工作室总部</li>
+                                    <li class="">In-Tea House</li>
+                                    <li class="">麻州机器人中心</li>
+                                    <li class="">Facebook脸书</li>
+                                    <li class="">特斯拉</li>
+                                    <li class="">英特尔</li>
+                                    <li class="">二十世纪福克斯电影公司</li>
+                                    <li class="">惠普</li>
+                                    <li class="">IBM</li>
+                                    <li class="">优步</li>
+                                    <li class="">RocketSpace</li>
+                                    <li class="">思科</li>
+                                    <li class="">英伟达</li>
+                                    <li class="">领英</li>
+                                    <li class="">爱彼迎</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="red-cion europe">
+                    <span class="red-cion-bg europe"></span>
+                    <div class="txt-title">
+                        <span>Europe</span>
+                        <span>欧洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">立陶宛
+                                <ul class="business">
+                                    <li class="">立陶宛PBS公司</li>
+                                    <li class="">立陶宛投资局</li>
+                                </ul>
+                            </li>
+                            <li class="">波兰
+                                <ul class="business">
+                                    <li class="">波中联合会</li>
+                                    <li class="">波兰信息与外国投资局</li>
+                                    <li class="">波兰安永会计师事务所</li>
+                                </ul>
+                            </li>
+                            <li class="">奥地利
+                                <ul class="business">
+                                    <li class="">奥地利维也纳技术大学</li>
+                                    <li class="">奥中科技协会</li>
+                                    <li class="">奥中商会</li>
+                                    <li class="">奥地利AICO公司</li>
+                                    <li class="">奥地利国家技术研究院</li>
+                                </ul>
+                            </li>
+                            <li class="">德国
+                                <ul class="business">
+                                    <li class="">汉诺威医科大学</li>
+                                    <li class="">德国北威州投资促进署</li>
+                                    <li class="">欧洲三一重工</li>
+                                    <li class="">汉堡经济促进局</li>
+                                    <li class="">德国莱茵</li>
+                                    <li class="">德国工商大会 IHK</li>
+                                    <li class="">勃兰登堡投资促进局</li>
+                                    <li class="">奔驰</li>
+                                    <li class="">宝马</li>
+                                    <li class="">大众</li>
+                                    <li class="">西门子</li>
+                                    <li class="">洪堡大学</li>
+                                    <li class="">慕尼黑工业大学</li>
+                                </ul>
+                            </li>
+                            <li class="">西班牙
+                                <ul class="business">
+                                    <li class="">双丽集团</li>
+                                    <li class="">巴塞罗那自贸区</li>
+                                    <li class="">西班牙阿拉贡自治区对外局</li>
+                                </ul>
+                            </li>
+                            <li class="">意大利
+                                <ul class="business">
+                                    <li class="">意大利Krizia</li>
+                                    <li class="">意大利时装工会</li>
+                                    <li class="">意中商会</li>
+                                    <li class="">意中基金会</li>
+                                    <li class="">米兰理工大学</li>
+                                    <li class="">意大利兰纳尔多集团</li>
+                                    <li class="">意大利安永会计事务所</li>
+                                    <li class="">意大利交通运输协会</li>
+                                </ul>
+                            </li>
+                            <li class="">葡萄牙
+                                <ul class="business">
+                                    <li class="">葡萄牙葡中工商会</li>
+                                    <li class="">JP Group</li>
+                                    <li class="">葡萄牙商务部</li>
+                                </ul>
+                            </li>
+                            <li class="">捷克
+                                <ul class="business">
+                                    <li class="">捷克国家投资局</li>
+                                    <li class="">捷克国家商会</li>
+                                    <li class="">捷克贸易促进署</li>
+                                    <li class="">捷中商会</li>
+                                </ul>
+                            </li>
+                            <li class="">拉脱维亚
+                                <ul class="business">
+                                    <li class="">Turiba商学院</li>
+                                </ul>
+                            </li>
+                            <li class="">挪威
+                                <ul class="business">
+                                    <li class="">挪威创新署</li>
+                                </ul>
+                            </li>
+                            <li class="">比利时
+                                <ul class="business">
+                                    <li class="">比利时布鲁塞尔投资贸易发展促进局</li>
+                                </ul>
+                            </li>
+                            <li class="">瑞典
+                                <ul class="business">
+                                    <li class="">瑞典创8公司</li>
+                                </ul>
+                            </li>
+                            <li class="">捷克
+                                <ul class="business">
+                                    <li class="">捷克国家投资局</li>
+                                    <li class="">捷克国家商会</li>
+                                    <li class="">捷克贸易促进署</li>
+                                    <li class="">捷中商会</li>
+                                </ul>
+                            </li>
+                            <li class="">芬兰
+                                <ul class="business">
+                                    <li class="">芬兰诺鼎联盟</li>
+                                    <li class="">芬兰圣纳约基应用科技大学</li>
+                                </ul>
+                            </li>
+                            <li class="">法国
+                                <ul class="business">
+                                    <li class="">巴黎工商会</li>
+                                    <li class="">巴黎企业推广署</li>
+                                </ul>
+                            </li>
+                            <li class="">英国
+                                <ul class="business">
+                                    <li class="">科控孵化器股份有限公司</li>
+                                    <li class="">英国百福集团</li>
+                                    <li class="">英国剑桥新医科技有限公司</li>
+                                    <li class="">英中贸易协会</li>
+                                    <li class="">剑桥大学</li>
+                                    <li class="">曼彻斯特大学</li>
+                                    <li class="">Google Campaus</li>
+                                    <li class="">牛津大学</li>
+                                    <li class="">英国帝国理工大学</li>
+                                    <li class="">伦敦金融城</li>
+                                    <li class="">英国财政部政府商务办公室</li>
+                                    <li class="">英国贸易投资署</li>
+                                    <li class="">英中商会金融委员会</li>
+                                    <li class="">伦敦商学院</li>
+                                    <li class="">金丝雀码头</li>
+                                </ul>
+                            </li>
+                            <li class="">爱尔兰
+                                <ul class="business">
+                                    <li class="">巴黎时装工会</li>
+                                    <li class="">LVMH集团</li>
+                                    <li class="">开云集团</li>
+                                    <li class="">历峰集团</li>
+                                    <li class="">STATION F</li>
+                                    <li class="">爱尔兰德勤公司</li>
+                                    <li class="">爱尔兰国库管理局</li>
+                                    <li class="">爱尔兰投资发展署IDA</li>
+                                    <li class="">爱尔兰银行</li>
+                                    <li class="">爱尔兰政府采购办公室OGP</li>
+                                    <li class="">爱尔兰联合银行</li>
+                                    <li class="">爱尔兰企业发展署</li>
+                                </ul>
+                            </li>
+                            <li class="">丹麦
+                                <ul class="business">
+                                    <li class="">丹麦出口协会</li>
+                                    <li class="">丹麦华人科技协会</li>
+                                    <li class="">丹麦诺和诺德制药</li>
+                                    <li class="">丹中商会</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="red-cion africa">
+                    <span class="red-cion-bg africa"></span>
+                    <div class="txt-title">
+                        <span>Africa</span>
+                        <span>非洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">埃及
+                                <ul class="business">
+                                    <li class="">埃及开罗大学附属医院</li>
+                                    <li class="">GlaxoSmithKline公司</li>
+                                    <li class="">Pharmaplast医疗公司</li>
+                                    <li class="">亚历山大大学医学部</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="red-cion south-america">
+                    <span class="red-cion-bg south-america"></span>
+                    <div class="txt-title">
+                        <span>South-Americas</span>
+                        <span>南美洲</span>
+                    </div>
+                    <div class="resource-con">
+                        <ul class="contry">
+                            <li class="">智利
+                                <ul class="business">
+                                    <li class="">智中商会</li>
+                                </ul>
+                            </li>
+                            <li class="">巴西
+                                <ul class="business">
+                                    <li class="">圣保罗商会</li>
+                                </ul>
+                            </li>
+                            <li class="">阿根廷
+                                <ul class="business">
+                                    <li class="">阿根廷华人总商会</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--专家智库-->
+            <div class="think-tank itemtype js-ds-none">
+                <div class="title">
+                    <img src="./images/think-tank.png">
+                </div>
+                <div class="show-photo">
+                    <ul class="">
+                        <li class="" data-index="0">
+                            <div class="photo">
+                                <div class="redbg-block"></div>
+                                <img src="./img/1.jpg" class="">
+                            </div>
+                            <div class="txt">
+                                WangWang
+                            </div>
+                        </li>
+                        <li class="" data-index="1">
+                            <div class="photo">
+                                <div class="redbg-block"></div>
+                                <img src="./img/2.jpg" class="">
+                            </div>
+                            <div class="txt">
+                                WangWang
+                            </div>
+                        </li>
+                        <li class="active" data-index="2">
+                            <div class="photo">
+                                <div class="redbg-block"></div>
+                                <img src="./img/3.jpg" class="">
+                            </div>
+                            <div class="txt">
+                                WangWang
+                            </div>
+                        </li>
+                        <li class="" data-index="3">
+                            <div class="photo">
+                                <div class="redbg-block"></div>
+                                <img src="./img/4.jpg" class="">
+                            </div>
+                            <div class="txt">
+                                WangWang
+                            </div>
+                        </li>
+                        <li class="" data-index="4">
+                            <div class="photo">
+                                <div class="redbg-block"></div>
+                                <img src="./img/5.jpg" class="">
+                            </div>
+                            <div class="txt">
+                                WangWang
+                            </div>
+                        </li>
+                        <div class="change">
+                            <img src="./images/icon-pre.png" class="pre" data-type="pre">
+                            <img src="./images/icon-pre.png" class="next" data-type="next">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--导航栏弹窗-->
+    <div class="pop-window-nav">
+        <header id="js-header" class="header clearfix">
+            <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+                <img src="./images/icon-2.png">
+            </a>
+            <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
+                <img src="./images/close-nav.png">
+            </a>
+            <div class="lang g-fr" style="color:#000;">
+                <span>Cn </span>/<span> En</span>
+            </div>
+        </header>
+        <div class="title">
+            BALDWIN&amp;VIKTOR
+        </div>
+        <ul class="nav-txt">
+            <li class="" onclick="location.href='./index.html#page3'">关于我们</li>
+            <li class="" onclick="location.href='./bv.html'">博闻伟达国际</li>
+            <li class="" onclick="location.href='./bv2.html'">博闻伟达文化</li>
+            <li class="" onclick="location.href='./contact.html'">联系我们</li>
+        </ul>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        function escape(str) {
+            str = str || ''
+            return str.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/'/g, '&#39;')
+                .replace(/"/g, '&quot;')
+        }
+
+        function render(str, data) {
+            return str.replace(/{{([\w_]+)}}/g, function(all, key) {
+                return escape(data[key])
+            })
+        }
+        var CULTURE
+        window.CULTURE = CULTURE
+        $.ajax({
+            type: "GET",
+            dataType: "jsonp",
+            url: 'http://193.112.82.136:1337/cgi/channel_list?type=2',
+            success: function(data) {
+                if (data && data.iErrCode === 0) {
+                    CULTURE = data
+                    var $inter = $('#content')
+                    var html = `<div class="item" 
+                                    data-id="{{_id}}"
+                                   data-type='business-hezuo' 
+                                   data-range="1" 
+                                   style="height:18px;overflow:hidden;">{{strName}}
+                        </div>`
+                    var all = ''
+
+                    data.vecChannel.forEach(function(channel) {
+                        all += render(html, channel)
+                    })
+                    $inter.append($(all))
+                    return
+                }
+                console.log("拉取数据失败", data)
+            },
+            fail: function(xml, errType, err) {
+                console.log("拉取数据失败", errType, err)
+            }
+        })
+        var cached_content_detail = {}
+
+        function renderContentDetail(culture, id) {
+            if (cached_content_detail[id]) {
+                _append()
+                return
+            }
+            var html = `<li class="item {{active}}">
+                        <img src="{{strImg}}">
+                        <div class="txt-box">
+                            <div class="txt">
+                                <div class="txt-title">
+                                    {{strTitle}}
+                                </div>
+                                <div class="txt-con">
+                                    {{strDesc}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>`
+            var all = ""
+            culture.forEach((cul, i) => {
+                cul.active = i == 1 ? 'active' : ''
+                all += render(html, cul)
+            })
+            cached_content_detail[id] = all
+            _append()
+
+            function _append() {
+                $('#content_detail').html(cached_content_detail[id])
+                $('.visual-design').removeClass('js-ds-none').removeClass('fadeout')
+                $('.inter-two-pic-box').addClass('js-ds-none')
+            }
+        }
+        $("#content").on("click", '.item', function(e) {
+            var $this = $(this)
+            var id = $this.data('id')
+            CULTURE.vecChannel.some(channel => {
+                if (channel._id == id) {
+                    renderContentDetail(channel.culture, id)
+                    return true
+                }
+            })
+            $this.addClass('active').siblings().removeClass('active')
+            e.stopPropagation()
+        })
+        $("#content_detail").on("click", "li", function() {
+            var active = $('#content_detail li.active')
+            var $this = $(this)
+            if ($this[0] == active[0]) return
+            var $tarIndex, $activeIndex
+            var li = $('#content_detail li')
+            li.each(function(i) {
+                    var $tar = $(this)
+                    if ($tar[0] == $this[0]) {
+                        $tarIndex = i
+                    } else if ($tar[0] == active[0]) {
+                        $activeIndex = i
+                    }
+                })
+                //在右边
+            var inteval = Math.abs($tarIndex - $activeIndex)
+            var _cb
+            if ($tarIndex > $activeIndex) {
+                _cb = function() {
+                    $(".pre.change").trigger('click')
+                }
+            } else {
+                _cb = function() {
+                    $(".next.change").trigger('click')
+                }
+            }
+            while (inteval--) {
+                _cb()
+            }
+        })
+    </script>
+    <script src="js/picCarousel/PicCarousel.js"></script>
+    <script>
+        $("#TagName").PicCarousel({
+            width: 800,
+            height: 600,
+            speed: 200
+        });
+        $('.left-nav .txt-box .txt .item').on('click', function(e) {
+            var type = e.target.dataset.type
+            var range = e.target.dataset.range
+            if (range == 1 && $(this).find('.son-title').length != 0) {
+                var height = $(this).find('.son-title').height() + 28
+                $(this).animate({
+                    height: height + 'px',
+                    overflow: 'visible'
+                })
+                $(this).siblings().removeClass('active')
+                $(this).find('a').removeClass('active').eq(0).addClass('active')
+            } else if (range == 1 && $(this).find('.son-title').length == 0) {
+                $(this).siblings().animate({
+                    height: '18px',
+                    overflow: 'hidden'
+                })
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+            } else if (range == 2) {
+                $(e.target).addClass('active').siblings().removeClass('active')
+            }
+            $('.con .itemtype').addClass('fadeout').addClass('js-ds-none')
+            $('.' + type).removeClass('js-ds-none').addClass('fadein')
+        })
+        $('.business-hezuo .change img').on('click', function(e) {
+            var type = $(this).attr('data-type')
+            var num = parseInt($('.business-hezuo ul li').length / 8)
+            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 460
+            if (type == 'pre' && topNum != 0) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 460 * (topNum - 1) + 'px'
+                })
+            } else if (type == 'next' && topNum < num) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 460 * (topNum + 1) + 'px'
+                })
+            }
+        })
+        var talentImgArr = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"]
+        $('.show-photo .change img').on('click', function(e) {
+            var activeIndex = $('.show-photo li.active').attr('data-index')
+            var last = talentImgArr.pop()
+            talentImgArr.unshift(last)
+            var $imgs = $('.show-photo li img')
+            $imgs.each(function(i) {
+                    $(this).attr('src', talentImgArr[i])
+                })
+                // var type = $(this).attr('data-type')
+                // var num = $('.show-photo li').length
+                // var activeIndex = $('.show-photo li.active').attr('data-index')
+                // var topNum = Math.abs(parseInt($('.show-photo ul').css('top'))) / 120
+                // if (type == 'pre' && activeIndex != 0) {
+                //     $('.business-hezuo ul').animate({
+                //         top: '-' + 120 * (activeIndex - 1) + 'px'
+                //     })
+                // } else if (type == 'next' && activeIndex != (num - 1)) {
+                //     $('.business-hezuo ul').animate({
+                //         top: '-' + 120 * (activeIndex + 1) + 'px'
+                //     })
+                // }
+        })
+    </script>
+    <script>
+        $('.pagenation span').on('click', function() {
+            var type = $(this).attr('data-type')
+            if (type == 0 && !$(this).hasClass('active')) {
+                $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
+                    left: 0
+                })
+                $($('.inter-two-pic-box .content-box')[Number(type) + 1]).animate({
+                    left: '100%'
+                })
+            } else if (type == 1 && !$(this).hasClass('active')) {
+                $($('.inter-two-pic-box .content-box')[Number(type) - 1]).animate({
+                    left: '-100%'
+                })
+                $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
+                    left: 0
+                })
+            }
+            $($('.inter-two-pic-box .content-box')[type]).find('.animation-flag').addClass('fadeinInter')
+        })
+
+        $('.visual-design').on('click', ".change", function() {
+            var type = $(this).data('type')
+            var li = $("#content_detail li")
+            var originSrc = []
+            li.each(function() {
+                originSrc.push($(this).html())
+            })
+            if (type == 'pre') {
+                originSrc.push(originSrc.shift())
+            } else {
+                originSrc.unshift(originSrc.pop())
+            }
+            li.each(function(i) {
+                $(this).html(originSrc[i])
+            })
+        })
+
+        // var curr = 0
+
+        // $('.visual-design').on('click', ".change", function() {
+        //     var type = $(this).attr('data-type')
+        //     var interval = 890
+        //     var left = parseInt($('.visual-design ul').css('left'))
+        //     var num = $('.visual-design li').length //一共多少张图片
+        //     if (type == 'pre' && (curr + num - 2)) {
+        //         --curr
+        //         $('.visual-design ul').animate({
+        //             left: (left - interval) + 'px'
+        //         })
+        //     } else if (type == 'next' && curr < 1) {
+        //         ++curr
+        //         $('.visual-design ul').animate({
+        //             left: (left + interval) + 'px'
+        //         })
+        //     }
+        //     var index
+        //     if (curr == 1) {
+        //         index = 0
+        //     } else if (curr == 0) {
+        //         index = 1
+        //     } else {
+        //         index = Math.abs(curr - 1)
+        //     }
+        //     $('.visual-design ul li').each(function(i) {
+        //         if (i == index) {
+        //             $(this).addClass('active')
+        //         } else {
+        //             $(this).removeClass('active')
+        //         }
+        //     })
+        // })
+    </script>
+</body>
+
+</html>

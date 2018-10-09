@@ -1,0 +1,145 @@
+.fadeout {
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.picCarsouelFadeOut {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0;
+    display: none;
+}
+
+.active .fadein {
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 1 !important;
+}
+
+.active .fadeinleft {
+    animation: redbg 2s 1;
+    -webkit-animation: redbg 2s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.active .fadeinright {
+    /* animation: contactcon 2s 1; */
+    -webkit-animation: contactcon 2s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.active .mutiwidth {
+    -webkit-animation: mutiwidth 2s 1;
+    animation: mutiwidth 2s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.active .addwidth {
+    -webkit-animation: addwidth 1s 1;
+    animation: addwidth 1s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.active .fadeinInter {
+    -webkit-animation: fadeinInter 2s 1;
+    animation: fadeinInter 2s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes addwidth {
+    0% {
+        width: 37.8%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes addwidth {
+    0% {
+        width: 37.8%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes mutiwidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 200px;
+        opacity: 0;
+    }
+}
+
+@keyframes mutiwidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 200px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeinInter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinInter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes redbg {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes redbg {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@-webkit-keyframes contactcon {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes contactcon {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博闻伟达</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">-->
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="js/view/animate.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/fullPage/jquery-ui-1.10.3.min.js"></script>
+    <script src="js/fullPage/jquery.fullPage.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#fullpage').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                loopHorizontal: false,
+                controlArrows: false,
+                afterLoad: function(anchorLink) {
+                    $('.section.active').removeClass('fadeout')
+                    if (anchorLink !== 'page1' && anchorLink !== 'page2') {
+                        $('.nav-icon img').eq(0).addClass('js-ds-none')
+                        $('.nav-icon img').eq(1).removeClass('js-ds-none')
+                        $('.lang').css('color', '#000')
+                    } else {
+                        $('.nav-icon img').eq(0).removeClass('js-ds-none')
+                        $('.nav-icon img').eq(1).addClass('js-ds-none')
+                        $('.lang').css('color', '#ececec')
+                    }
+                },
+                afterRender: function() {
+                    console.log($('.fadein'))
+                }
+            })
+            $('#core_leader_list').on("click","li",function(){
+                console.log("CLICK")
+                var active = $('#core_leader_list li.active')
+                var $this=$(this)
+                if($this[0]==active[0]) return
+                var $tarIndex,$activeIndex
+                var li=$('#core_leader_list li')
+                li.each(function(i){
+                    var $tar=$(this)
+                    if($tar[0]==$this[0]){
+                        $tarIndex=i
+                    }else if($tar[0]==active[0]){
+                        $activeIndex=i
+                    }
+                })
+                //在右边
+                var inteval=Math.abs($tarIndex-$activeIndex)
+                var _cb
+                if($tarIndex>$activeIndex){
+                    _cb=function(){
+                        $("#core_leader .pre").trigger('click')
+                    }
+                }else{
+                    _cb=function(){
+                        $("#core_leader .next").trigger('click')
+                    }
+                }
+                while(inteval--){
+                    _cb()
+                }
+            })
+            $("#core_leader img").on("click", function(e) {
+                console.log("$44444444444")
+                var $this = $(this)
+                var type = $this.data('type')
+                var li = $('#core_leader_list li')
+                var active = $('#core_leader_list li.active')
+                var srcArr = []
+                li.each(function() {
+                    srcArr.push($(this).html())
+                })
+                if (type == 'pre') {
+                    srcArr.push(srcArr.shift())
+                } else {
+                    srcArr.unshift(srcArr.pop())
+                }
+
+                li.each(function(i) {
+                    $(this).html(srcArr[i])
+                })
+            })
+        });
+    </script>
+    <script>
+        // function showContactUs(e) {
+        //     if ($('.section.active').find('.slides').length === 0) {
+        //         $('.section.active').addClass('fadeout')
+        //     } else {
+        //         $('.slides').parent().addClass('fadeout')
+        //     }
+        //     $('.contact-us').removeClass('js-ds-none')
+        //     $('.contact-us').addClass('active')
+        // }
+
+        function showWeiDaiInter(e) {
+            // $(e).find('div').addClass('js-ds-none')
+            // $(e).addClass('addwidth')
+            // $('.part-seven .bv-ia,.part-seven .bv-logo,.part-seven .contact-us-box').addClass('fadeout')
+            // $('.weida-international').removeClass('js-ds-none').addClass('active')
+            window.location.href = './bv.html'
+        }
+
+        function showArts() {
+            window.location.href = './bv2.html'
+        }
+
+        function goback() {
+            $('.contact-us').addClass('js-ds-none').removeClass('active')
+            $.fn.fullpage.moveTo('page1')
+        }
+    </script>
+</head>
+
+<body>
+    <header id="js-header" class="header clearfix">
+        <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
+            <img src="./images/icon-2.png">
+        </a>
+        <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
+            <img src="./images/icon-3.png">
+            <img class="js-ds-none" src="./images/icon-3-gray.png">
+        </a>
+        <div class="lang g-fr">
+            <span>Cn </span>/<span> En</span>
+        </div>
+    </header>
+    <article id="fullpage">
+        <div class="section part-one">
+            <!--<div>
+                BALDWIN&amp;VIKTOR
+            </div>-->
+            <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
+                <img src="./images/icon-1.png">
+            </div>
+        </div>
+        <div class="section part-two">
+            <!--<div>
+                BALDWIN&amp;VIKTOR
+            </div>-->
+            <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
+                <img src="./images/icon-1.png">
+            </div>
+        </div>
+        <div class="section">
+            <div class="slide part-three">
+                <div class="con">
+                    <nav class="nav-ul">
+                        <a href="javascript:;" class="active">关于我们</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',1)">服务客户</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',2)">核心团队</a>
+                    </nav>
+                    <div class="about-us">
+                        <div class="about-us-title fadeinleft">
+                            <img src="./images/about-us-title.png">
+                        </div>
+                        <div class="about-us-txt fadeinright">
+                            博闻伟达集团由旗下博闻伟达文化、博闻伟达国际、华师汇、德沃尔斯咨询、M E C 传讯、Multi-marketing品牌营销公司六大品牌组成，共设有香港、巴黎、米兰、洛杉矶、柏林、东京、奥克兰、长沙和深圳9个办公室，雇员超过 100人。
+                        </div>
+                    </div>
+                    <img src="./images/BV-big-logo.png" class="bv-big-logo">
+                    <img src="./images/icon-next-right.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <div class="contact-us-box">
+                        <div class="btn" onclick="location.href='./contact.html'">
+                            联系我们
+                        </div>
+                    </div>
+                </div>
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                    <img src="./images/icon-1-black.png">
+                </div>
+            </div>
+            <div class="slide part-three">
+                <div class="con">
+                    <nav class="nav-ul">
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',0)">关于我们</a>
+                        <a href="javascript:;" class="active">服务客户</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',2)">核心团队</a>
+                    </nav>
+                    <img src="./images/hezuo.jpg" class="hezuo">
+                    <img src="./images/icon-next-right.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',2)">
+                    <img src="./images/icon-next-left.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',0)">
+                    <div class="contact-us-box">
+                    </div>
+                </div>
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                    <img src="./images/icon-1-black.png">
+                </div>
+            </div>
+            <div class="slide part-three">
+                <div class="con">
+                    <nav class="nav-ul">
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',0)">关于我们</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page3',1)">服务客户</a>
+                        <a href="javascript:;" class="active">核心团队</a>
+                    </nav>
+                    <div class="leaderskip">
+                        <div class="title">
+                            <img src="./images/leaderskip.png">
+                        </div>
+                        <div class="show-photo">
+                            <ul class="" id="core_leader_list">
+                                <li class="" data-index="0">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l3.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Carrie Feng</div>
+                                        <div class="leader-title">首席营销官CMO</div>
+                                        <div class="leader-desc">丽人EMKT管理岗位、上海友兰科技有限公司副总经理兼企业大学校长，在企业整合营销、管理咨询、企业大学建设、企业全球化及海外经营学习有着丰富的实战经验，曾与Dr. John P.Kotter，Philip Kotler，Dr.Paul Hersey, John Caslisons等国际大师合作，服务过美的、万科、步步高、中国中车、惠氏奶粉、TCL、蛇口招商局等知名企业。</div>
+                                    </div>
+                                </li>
+                                <li class="" data-index="1">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l2.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Nancy Guo</div>
+                                        <div class="leader-title">联合创始人、 集团董事</div>
+                                        <div class="leader-desc">曾于华为、金控集团等大型机构任职，服务过中国银行、中国移动、INTEL、太平洋集团、AMD等多家知名企业及贸促会、商协会、地方政府等。 在企业运营策略、整合营销、国际商务对接交流、海外大型交流会管理等方面有着丰富的实战经验。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="active" data-index="2">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l1.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Aubrey Jiao</div>
+                                        <div class="leader-title">创始人、集团执行董事</div>
+                                        <div class="leader-desc">毕业于新西兰梅西大学（Massey University）传播学系，获得公共关系和国际政治双学位。曾服务于奥克兰、曼谷、香港等地多家国际知名咨询公司和传媒机构，在国际商务对接、企业咨询、国际关系和公共事务等方面有着丰富的实战经验。 Aubrey在创立博闻伟达之前，曾供于全球最大的传播集团WPP旗下的博雅公关和最具影响力的华文媒体香港凤凰卫视。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="" data-index="3">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l4.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Dwayne Alexander</div>
+                                        <div class="leader-title">首席策略官</div>
+                                        <div class="leader-desc">邓雅礼在南非Kwazulu-Natal大学获得市场营销荣誉硕士学位，曾在APN新闻，Fairfax Sunday出版集团担任首席行政官，也曾担任NBS银行董事局成员。邓雅礼在公共关系、市场营销、品牌策略，危机管理方面拥有丰富的经验和资源。</div>
+                                    </div>
+                                </li>
+                                <li class="" data-index="4">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l5.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Gwen Pauls</div>
+                                        <div class="leader-title">欧洲事务总管</div>
+                                        <div class="leader-desc">毕业于ESLSCA巴黎商学院，曾签约全球顶级模特经济公司Marylin和Elite，担任Givenchy，Giuseppe Zenotti，Cartier等众多奢侈品形象代言。加入博闻伟达国际之前，Gwen还曾担任Marie Beltrami 时尚品牌总裁，在时尚管理，奢侈品品牌营销等方面有着丰富的经验和资源网络。目前，Gwen是博闻伟达国际Europe Desk的负责人喝时尚管理业务的高级顾问。</div>
+                                    </div>
+                                </li>
+                                <li class="" data-index="5">
+                                    <div class="photo">
+                                        <div class="redbg-block"></div>
+                                        <img src="./images/l6.jpg" class="">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="leader-name">Lawrence Ma</div>
+                                        <div class="leader-title">项目总监</div>
+                                        <div class="leader-desc">5年品牌公关服务经验，曾先后服务于腾讯、华为、华侨城、华润等知名集团企业，在海内外资源整合、品牌活动策划、品牌营销、公共传播等方面具有丰富的实战经验。</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="change" id="core_leader">
+                            <img src="./images/icon-pre.png" class="pre" data-type="pre">
+                            <img src="./images/icon-pre.png" class="next" data-type="next">
+                        </div>
+                    </div>
+                    <img src="./images/icon-next-left.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <div class="contact-us-box">
+                    </div>
+                </div>
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                    <img src="./images/icon-1-black.png">
+                </div>
+            </div>
+        </div>
+        <div class="section part-seven">
+            <div class="con">
+                <div class="bv-ia fadeinleft international" style="left:-100%;">
+                    <img src="./images/bowen-1.png">
+                </div>
+                <div class="bv-logo">
+                    <img src="./images/BV-logo-big-red.png">
+                </div>
+                <div class="bv-ia fadeinright arts" style="right:-100%;">
+                    <img src="./images/bowen.png">
+                </div>
+                <div class="contact-us-box" style="padding-top:80px;bottom: 36px;">
+                    <div class="btn" onclick="location.href='./contact.html'">
+                        联系我们
+                    </div>
+                </div>
+                <div class="bv-international bv-big-red-block" onclick="showWeiDaiInter(this)">
+                    <div class="fadein">
+                        海外商务对接<br>及精英学习<br>整体方案提供商
+                    </div>
+                </div>
+                <div class="bv-arts bv-big-red-block" onclick="showArts()">
+                    <div class="fadein">
+                        海外商务对接<br>及精英学习<br>整体方案提供商
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--导航栏弹窗-->
+    <div class="pop-window-nav">
+        <header id="js-header" class="header clearfix">
+            <a href="javascript:$.fn.fullpage.moveTo('page1')" class="header-logo g-fl" title="返回首页">
+                <img src="./images/icon-2.png">
+            </a>
+            <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
+                <img src="./images/close-nav.png">
+            </a>
+            <div class="lang g-fr" style="color:#000;">
+                <span>Cn </span>/<span> En</span>
+            </div>
+        </header>
+        <div class="title">
+            BALDWIN&amp;VIKTOR
+        </div>
+        <ul class="nav-txt">
+            <li class="" onclick="showaboutus()">关于我们</li>
+            <li class="" onclick="location.href='./bv.html'">博闻伟达国际</li>
+            <li class="" onclick="location.href='./bv2.html'">博闻伟达文化</li>
+            <li class="" onclick="location.href='./contact.html'">联系我们</li>
+        </ul>
+    </div>
+    <script>
+        function showaboutus() {
+            $('.slides').parent().removeClass('fadeout')
+            $('.contact-us').addClass('js-ds-none').removeClass('active')
+                // location.href = './index.html#page3';
+            $.fn.fullpage.moveTo('page3', 0)
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+
+        // function showcontactus() {
+        //     $('.section.active').removeClass('fadeout')
+        //     $('.contact-us').addClass('js-ds-none').removeClass('active')
+        //     $('.contact-us').removeClass('js-ds-none').addClass('active')
+        //     $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        // }
+        // $('.pagenation span').on('click', function() {
+        //     var type = $(this).attr('data-type')
+        //     if (type == 0 && !$(this).hasClass('active')) {
+        //         $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
+        //             left: 0
+        //         })
+        //         $($('.inter-two-pic-box .content-box')[Number(type) + 1]).animate({
+        //             left: '100%'
+        //         })
+        //     } else if (type == 1 && !$(this).hasClass('active')) {
+        //         $($('.inter-two-pic-box .content-box')[Number(type) - 1]).animate({
+        //             left: '-100%'
+        //         })
+        //         $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
+        //             left: 0
+        //         })
+        //     }
+        //     $($('.inter-two-pic-box .content-box')[type]).find('.animation-flag').addClass('fadeinInter')
+        // })
+    </script>
+    <!-- <script>
+        
+    </script> -->
+
+</body>
+
+</html>
