@@ -1,4 +1,7 @@
 #  BV C端,纯静态
+	本地调试：
+		npm install http-server -g
+		跟命令下执行：http-server
 #  manage 管理台
 ```
 	本地调试：

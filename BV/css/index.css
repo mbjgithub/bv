@@ -28,7 +28,10 @@ img {
     border: 0;
     display: block;
 }
-
+.relative_center{
+    left: calc(50% + 100px) !important;
+    top: 50% !important;
+}
 .js-ds-none {
     display: none !important;
 }
@@ -621,6 +624,7 @@ img {
     cursor: pointer
 }
 .part-eight .inter-two-pic-box {
+    margin-top: 20px;
     position: absolute;
     top: 53%;
     left: 56%;
@@ -628,7 +632,6 @@ img {
     transform: translate(-50%, -50%);
     width: 70.85%;
     height: 71.24%;
-    padding-bottom: 40px;
     overflow: hidden;
     opacity: 0;
     -webkit-animation-delay: 2s!important;
@@ -884,7 +887,12 @@ img {
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
 }
-
+span.red-cion-bg:after{
+    content: "";
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+}
 @-webkit-keyframes red-coin {
     0% {
         /*opacity: 0.5;*/
