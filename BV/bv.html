@@ -721,7 +721,7 @@
                     <span class="ch">{{strLocationZh}}</span>
                 </div>
                 <div class="date" style="padding-left:10px;">
-                    {{strTimeFormate}}
+                    {{strTime}}
                 </div>
             </li>`
             var all = ''
@@ -733,7 +733,7 @@
                     }
 
                     channel.international.forEach(inter => {
-                        inter.strTimeFormate = formate(inter.strTime)
+                        // inter.strTimeFormate = formate(inter.strTime)
                         all += render(html, inter)
                     })
                     return true

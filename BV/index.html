@@ -15,7 +15,62 @@
     <script src="js/fullPage/jquery.fullPage.min.js"></script>
     <script>
         $(document).ready(function() {
-            
+            var double=localStorage.getItem("double")
+            // 红色背景
+            var red=`<div class="part-one">
+                <div class="animate1">
+                    <img src="./images/animate/bg-red.png" />
+                </div>
+                <div class="animate2">
+                    <img src="./images/animate/banner-red.png" />
+                </div>
+                <div class="animatetxt">
+                    <div class="txt1">
+                        <img src="./images/animate/animation-txt1.png" />
+                    </div>
+                    <div class="txt2">
+                        <img src="./images/animate/animation-txt2.png" />
+                    </div>
+
+                </div>
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
+                    <img src="./images/icon/icon-arrow-white.png">
+                </div>
+            </div>`
+            // 黑色背景
+            var black=`
+            <div class="part-two">
+                <div class="animate1">
+                    <img src="./images/animate/bg-black.png" />
+                </div>
+                <div class="animate2">
+                    <img src="./images/animate/banner-black.png" />
+                </div>
+                <div class="animatetxt">
+                    <div class="txt1">
+                        <img src="./images/animate/animation-txt1.png" />
+                    </div>
+                    <div class="txt2">
+                        <img src="./images/animate/animation-txt2.png" />
+                    </div>
+
+                </div>
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
+                    <img src="./images/icon/icon-arrow-white.png">
+                </div>
+            </div>`
+            var converse
+            var inner
+            if(double==2){
+                converse=1
+                inner=black
+            }else{
+                converse=2
+                inner=red
+            }
+            localStorage.setItem("double",converse)
+            document.getElementById("first_page").innerHTML=inner
+            $("#fullpage").css('visibility',"visible")
             $('#fullpage').fullpage({
                 anchors: ['page1', 'page2', 'page3'],
                 loopHorizontal: false,
@@ -206,9 +261,8 @@
             }
         }
         
-        .part-one .next-page,
-        .part-one .next-page {
-            position: fixed;
+        .part-one .next-page{
+            position: absolute;
             z-index: 3;
             opacity: 0;
             animation: showanimate2 2s 1;
@@ -231,12 +285,9 @@
             <span>Cn </span>/<span> En</span>
         </div>
     </header>
-    <article id="fullpage">
-        <div id="first_page" class="section"></div>
-        <script type="text/javascript">
-            var double=localStorage.getItem("double")
-            // 红色背景
-            var red=`<div class="part-one">
+    <article id="fullpage" style="visibility:hidden;">
+        <div id="first_page" class="section" style="background:#8A152F;"></div>
+        <!-- <div class="part-one section">
                 <div class="animate1">
                     <img src="./images/animate/bg-red.png" />
                 </div>
@@ -255,42 +306,7 @@
                 <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
                     <img src="./images/icon/icon-arrow-white.png">
                 </div>
-            </div>`
-            // 黑色背景
-            var black=`
-            <div class="part-two">
-                <div class="animate1">
-                    <img src="./images/animate/bg-black.png" />
-                </div>
-                <div class="animate2">
-                    <img src="./images/animate/banner-black.png" />
-                </div>
-                <div class="animatetxt">
-                    <div class="txt1">
-                        <img src="./images/animate/animation-txt1.png" />
-                    </div>
-                    <div class="txt2">
-                        <img src="./images/animate/animation-txt2.png" />
-                    </div>
-
-                </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
-                    <img src="./images/icon/icon-arrow-white.png">
-                </div>
-            </div>`
-            var converse
-            var inner
-            if(double==2){
-                converse=1
-                inner=black
-            }else{
-                converse=2
-                inner=red
-            }
-            localStorage.setItem("double",converse)
-            document.getElementById("first_page").innerHTML=inner
-        </script>
-        
+            </div> -->
         <div class="section">
             <div class="slide part-three">
                 <div class="con">
@@ -315,7 +331,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page2',1)">
                     <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
@@ -332,7 +348,7 @@
                     <div class="contact-us-box">
                     </div>
                 </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
                     <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
@@ -428,7 +444,7 @@
                     <div class="contact-us-box">
                     </div>
                 </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
                     <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>

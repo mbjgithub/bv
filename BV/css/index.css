@@ -1,6 +1,6 @@
 html,
 body {
-    min-width: 1400px;
+    min-width: 1200px;
 }
 
 * {
@@ -713,9 +713,13 @@ img {
     height: 20px;
     cursor: pointer;
 }
-
-.change img:nth-child(2) {
+.change img:nth-child(2){
     margin-top: 60px;
+}
+
+#core_leader img:nth-child(2) {
+   margin: 0;
+   margin-left: 60px;
 }
 
 .resource-map {
@@ -1312,11 +1316,11 @@ span.red-cion-bg:after {
     display: inline-block;
 }
 
-.change img:nth-child(2) {
+/*.change img:nth-child(2) {
     margin: 0;
     margin-left: 60px;
 }
-
+*/
 
 /*导航栏弹窗*/
 
