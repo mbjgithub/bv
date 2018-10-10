@@ -279,8 +279,8 @@
                 <div class="con">
                     <nav class="nav-ul">
                         <a href="javascript:;" class="active">关于我们</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',1)">服务客户</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',2)">核心团队</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',1)">服务客户</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',2)">核心团队</a>
                     </nav>
                     <div class="about-us">
                         <div class="about-us-title fadeinleft">
@@ -291,27 +291,27 @@
                         </div>
                     </div>
                     <img src="./images/about-logo.png" class="bv-big-logo">
-                    <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page2',1)">
                     <div class="contact-us-box">
                         <div class="btn" onclick="location.href='./contact.html'">
                             联系我们
                         </div>
                     </div>
                 </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
                     <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
             <div class="slide part-three">
                 <div class="con">
                     <nav class="nav-ul">
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',0)">关于我们</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',0)">关于我们</a>
                         <a href="javascript:;" class="active">服务客户</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',2)">核心团队</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',2)">核心团队</a>
                     </nav>
                     <img src="./images/hezuo.png" class="hezuo">
-                    <img src="./images/icon/icon-prev-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',2)">
-                    <img src="./images/icon/icon-next-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',0)">
+                    <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page2',2)">
+                    <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page2',0)">
                     <div class="contact-us-box">
                     </div>
                 </div>
@@ -322,8 +322,8 @@
             <div class="slide part-three">
                 <div class="con">
                     <nav class="nav-ul">
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',0)">关于我们</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page3',1)">服务客户</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',0)">关于我们</a>
+                        <a href="javascript:$.fn.fullpage.moveTo('page2',1)">服务客户</a>
                         <a href="javascript:;" class="active">核心团队</a>
                     </nav>
                     <div class="leaderskip">
@@ -407,7 +407,7 @@
                             <img src="./images/icon/icon-arrow-next.png" class="next" data-type="next">
                         </div>
                     </div>
-                    <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page2',1)">
                     <div class="contact-us-box">
                     </div>
                 </div>
@@ -462,7 +462,7 @@
             BALDWIN&amp;VIKTOR
         </div>
         <ul class="nav-txt">
-            <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
+            <li class="" onclick="showaboutus()">关于我们</li>
             <li class="" onclick="location.href='./bv.html'">博闻伟达国际</li>
             <li class="" onclick="location.href='./bv2.html'">博闻伟达文化</li>
             <li class="" onclick="location.href='./contact.html'">联系我们</li>
@@ -470,10 +470,7 @@
     </div>
     <script>
         function showaboutus() {
-            $('.slides').parent().removeClass('fadeout')
-            $('.contact-us').addClass('js-ds-none').removeClass('active')
-                // location.href = './index.html#page3';
-            $.fn.fullpage.moveTo('page3', 0)
+            $.fn.fullpage.moveTo('page2', 0)
             $('.pop-window-nav').removeClass('active').addClass('closeactive')
         }
 
