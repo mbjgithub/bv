@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const pkg = require('../package')
 const config = require('./webpack.base')
 
-const cdnUrl = '//127.0.0.1:1337/js/'
+const cdnUrl = '/js/'
 
 config.entry.vendor=Object.keys(pkg.dependencies)
 config.output.publicPath = cdnUrl

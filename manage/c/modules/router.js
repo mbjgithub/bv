@@ -33,12 +33,12 @@ var routes = [{
   name:'login'
 }]
 
-// const prefix='/vmall_manage'
+const prefix='/manage'
 
-// routes=[...routes,...routes.map(r=>{
-//   return Object.assign({},r,{path:prefix+r.path,
-//                           name:'vmall_manage'+r.path})
-// })]
+routes=[...routes,...routes.map(r=>{
+  return Object.assign({},r,{path:prefix+r.path,
+                          name:prefix+r.path})
+})]
 
 const router = window._router = new VueRouter({
   routes,
