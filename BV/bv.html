@@ -668,6 +668,7 @@
         </div>
     </div>
     <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/common.js"></script>
     <script type="text/javascript">
         function showaboutus() {
             $('.slides').parent().removeClass('fadeout')
@@ -836,7 +837,7 @@
                 $("#TagName").PicCarousel({
                     width: 800,
                     height: 600,
-                    speed: 200
+                    speed: 600
                 });
                 e.stopPropagation()
             }
@@ -867,21 +868,53 @@
             renderCaseDetail(INTERNATION.vecChannel[0] && INTERNATION.vecChannel[0]._id)
             $('.' + type).removeClass('js-ds-none').addClass('fadein')
         })
+
+        //合作案例点击翻页
         $('.business-hezuo .change img').on('click', function(e) {
-                var type = $(this).attr('data-type')
-                var num = parseInt($('.business-hezuo ul li').length / 8)
-                var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 460
-                if (type == 'pre' && topNum != 0) {
-                    $('.business-hezuo ul').animate({
-                        top: '-' + 460 * (topNum - 1) + 'px'
-                    })
-                } else if (type == 'next' && topNum < num) {
-                    $('.business-hezuo ul').animate({
-                        top: '-' + 460 * (topNum + 1) + 'px'
-                    })
-                }
-            })
-            //专家智库图片点击
+            var type = $(this).attr('data-type')
+            var num = parseInt($('.business-hezuo ul li').length / 8)
+            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 460
+            if (type == 'pre' && topNum != 0) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 460 * (topNum - 1) + 'px'
+                })
+            } else if (type == 'next' && topNum < num) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 460 * (topNum + 1) + 'px'
+                })
+            }
+        })
+
+
+        //专家智库滚动
+        window.common.addWheel($('.show-photo')[0],{
+            next(){
+                $("#profession .pre").trigger('click')
+            },
+            pre(){
+                $("#profession .next").trigger('click')
+            }
+        })
+        //合作案例滚动
+        window.common.addWheel($('.right-content-box')[0],{
+            pre(){
+                $('.business-hezuo .change img.pre').trigger('click')
+            },
+            next(){
+                $('.business-hezuo .change img.next').trigger('click')
+            }
+        })
+        //合作案例蒙层滚动
+        window.common.addWheel($('.picCarsoule-box')[0],{
+            pre(){
+                $(".poster-prev-btn").trigger('click')
+            },
+            next(){
+                $(".poster-next-btn").trigger('click')
+            }
+        })
+
+        //专家智库图片点击
         $('#profession').on("click", 'li', function() {
                 var active = $('#profession li.active')
                 var $this = $(this)

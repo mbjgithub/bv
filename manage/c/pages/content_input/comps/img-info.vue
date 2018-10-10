@@ -12,8 +12,8 @@
                     :type="'textarea'"
                     title="图片配文"
                     :isNeeded="true"
-                    :autosize="{ minRows: 4, maxRows: 8}"
-                    :maxlength='100'></BaseInput>
+                    :autosize="{ minRows: 4, maxRows: 16}"
+                    :maxlength='200'></BaseInput>
         <li class="filter_item filter_item_s">
           <MoveIcon style="margin:60px 0 0 20px"
                     @up="onUp(index)"

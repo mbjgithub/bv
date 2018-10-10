@@ -9,11 +9,13 @@
                    title="内容标题"
                    class="filter_item_line"></BaseInput>
         <BaseInput v-model="cntInfo.strLocationEn"
-                   title="地点(英)"></BaseInput>
+                   title="服务"></BaseInput>
         <BaseInput v-model="cntInfo.strLocationZh"
-                   title="地点(中)"></BaseInput>
-        <BaseDatePicker v-model="cntInfo.strTime"
-                        title="时间日期"></BaseDatePicker>
+                   title="地点"></BaseInput>
+        <BaseInput v-model="cntInfo.strTime"
+                   title="时间日期"></BaseInput>
+        <!-- <BaseDatePicker v-model="cntInfo.strTime"
+                        title="时间日期"></BaseDatePicker> -->
         <BasePicture v-model="cntInfo.strCover"
                      title="封面图"></BasePicture>
       </ul>
