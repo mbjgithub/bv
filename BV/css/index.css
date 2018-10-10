@@ -334,22 +334,21 @@ img {
 .part-six .con .contact-us-title {
     width: 220px;
     height: 63px;
-    margin-bottom: 65px;
+    /*margin-bottom: 65px;*/
 }
 
 .part-six .con .contact-address {
-    width: 950px;
-    height: 64px;
-    margin-bottom: 45px;
+    width: 86.88%;
+    /*margin-bottom: 45px;*/
     position: relative;
 }
 
 .part-six .con .contact-address .map {
-    width: 450px;
-    height: 240px;
-    position: absolute;
-    right: 85px;
-    top: -75px;
+    /*width: 450px;*/
+    /*height: 240px;*/
+    /*position: absolute;*/
+    /*right: 85px;*/
+    /*top: -75px;*/
 }
 
 .part-six .con .txt {
@@ -991,8 +990,8 @@ span.red-cion-bg:after {
 }
 
 .leaderskip .title {
-    width: 200px;
-    height: 59px;
+    width: 261px;
+    height: 78px;
     position: absolute;
     left: 230px;
     top: 120px;
@@ -1297,14 +1296,20 @@ span.red-cion-bg:after {
 .leaderskip .change {
     position: absolute;
     top: 27%;
-    -webkit-transform: translateY(-50%) rotate(90deg);
-    transform: translateY(-50%) rotate(90deg);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     right: 49%;
 }
 
 .leaderskip .change img {
-    width: 10px;
-    height: 23px;
+    width: 20px;
+    height: 7px;
+    display: inline-block;
+}
+
+.change img:nth-child(2) {
+    margin: 0;
+    margin-left: 60px;
 }
 
 
@@ -1372,6 +1377,7 @@ span.red-cion-bg:after {
     width: 100%;
     background-color: #ececec;
     min-width: 1200px;
+    z-index: 10;
     /* display: none; */
 }
 
