@@ -7,6 +7,7 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">-->
     <meta name="viewport" content="width=device-width, user-scalable=1">
     <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/bv.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="js/view/animate.css">
     <link rel="stylesheet" href="js/picCarousel/picCarousel.css">
@@ -14,10 +15,9 @@
         .header {
             position: fixed;
             top: 0;
-            left: 200px;
+            left: 217px;
             right: 0;
             z-index: 5;
-            /* width: 1000px; */
             height: 90px;
             line-height: 90px;
             margin: auto;
@@ -29,16 +29,31 @@
             box-sizing: border-box;
             max-width: 1200px;
         }
+        
+        .pop-window-nav .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 5;
+            width: 1000px;
+            height: 90px;
+            line-height: 90px;
+            margin: auto;
+            padding: 0 100px;
+            color: #ececec;
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
     <header id="js-header" class="header clearfix">
         <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
-            <img src="./images/icon-2.png">
+            <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
-            <img src="./images/icon-3-gray.png">
+            <img src="./images/icon/icon-nav-gray.png">
         </a>
         <div class="lang g-fr" style="color:#000;">
             <span>Cn </span>/<span> En</span>
@@ -46,103 +61,85 @@
     </header>
     <!--伟达国际-->
     <div class="part-eight weida-international active part-nine part-eleven">
-        <div class="con">
-            <div class="red-bg mutiwidth"></div>
-            <div class="left-nav fadeinInter">
-                <div class="txt-box fadeinInter">
-                    <div class="txt fadeinInter">
-                        <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
+        <div class="red-bg mutiwidth"></div>
+        <div class="left-nav fadeinInter">
+            <div class="txt-box fadeinInter">
+                <div class="txt fadeinInter">
+                    <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
+                    </div>
+                    <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                        <div class="son-title" id="case" style="margin-top:10px;">
+                            <!-- <a href="javascript:;" data-range="2">企业合作</a>
+                                    <a href="javascript:;" data-range="2">政府合作</a> -->
                         </div>
-                        <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
-                            <div class="son-title" id="case" style="margin-top:10px;">
-                                <!-- <a href="javascript:;" data-range="2">企业合作</a>
-                                <a href="javascript:;" data-range="2">政府合作</a> -->
-                            </div>
-                        </div>
-                        <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
-                            <div class="son-title">
-                                <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
-                                <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
-                            </div>
+                    </div>
+                    <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
+                        <div class="son-title">
+                            <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
+                            <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="right-con">
             <div class="inter-two-pic-box itemtype fadeinInter relative_center">
-                <div class="content-box fadeinInter" style="left:0;">
-                    <div class="white-block fadeinInter">
-                        <img src="./images/icon-title.png">
-                    </div>
-                    <div class="txt fadeinInter">
-                        <div class="txt1">
-                            <div class="txt1-title">
-                                海外一站式服务
-                            </div>
-                            <div class="txt1-con">
-                                凭借集团创新理念和独家定制服务的经验，致力于为客户提供包含政府、企业海外游学定制、政务／商务考察、海外招商引资／引智，海内外孵化器与加速器对接，海外政府、企业机构 合作，海外园区及知名企业考察等在内的一站式服务。
+                <div class="con-box clearfix">
+                    <div class="content-box fadeinInter" style="left:0;">
+                        <img src="./images/international-banner-1.png" alt="">
+                        <div class="white-block fadeinInter">
+                            <img src="./images/icon/icon-international-title.png">
+                        </div>
+                        <div class="txt fadeinInter">
+                            <div class="txt1">
+                                <div class="txt1-title">
+                                    海外一站式服务
+                                </div>
+                                <div class="txt1-con">
+                                    凭借集团创新理念和独家定制服务的经验，致力于为客户提供包含政府、企业海外游学定制、政务／商务考察、海外招商引资／引智，海内外孵化器与加速器对接，海外政府、企业机构 合作，海外园区及知名企业考察等在内的一站式服务。
+                                </div>
                             </div>
                         </div>
-                        <div class="txt2">
-                            <div class="txt2-con">
-                                <!--We Create Total Solutions To Connect You Width Global Business And Business Influents Worldwide!-->
-                            </div>
-                            <div class="txt2-tips">
-                                <!--海外商务对接及精英学习整体方案提供商-->
-                            </div>
+                        <div class="txt2 fadeinInter">
+                            <img src="./images/international-english-txt-1.png">
                         </div>
                     </div>
-                    <div class="pagenation fadeinInter">
-                        <span class="active" data-type="0"></span>
-                        <span data-type="1"></span>
+                    <div class="content-box fadeinInter" style="opacity:1;">
+                        <img src="./images/international-banner-2.png" alt="">
+                        <div class="white-block animation-flag">
+                            <img src="./images/icon/icon-international-title.png">
+                        </div>
+                        <div class="txt animation-flag">
+                            <div class="txt1">
+                                <div class="txt1-title">
+                                    活动管理
+                                </div>
+                                <div class="txt1-con">
+                                    通过博闻伟达遍及全球的网络与资源，轻松实现政府、非政府组织，企业，产业园区在本土及海外的高品质科技与经贸活动/论坛/展会和企业推广活动的策划、执行及资源整合。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="txt2 animation-flag">
+                            <img src="./images/international-english-txt-1.png">
+                        </div>
                     </div>
                 </div>
-                <div class="content-box" style="left:100%;opacity:1;">
-                    <div class="white-block animation-flag">
-                        <img src="./images/icon-title.png">
-                    </div>
-                    <div class="txt animation-flag">
-                        <div class="txt1">
-                            <div class="txt1-title">
-                                活动管理
-                            </div>
-                            <div class="txt1-con">
-                                通过博闻伟达遍及全球的网络与资源，轻松实现政府、非政府组织，企业，产业园区在本土及海外的高品质科技与经贸活动/论坛/展会和企业推广活动的策划、执行及资源整合。
-                            </div>
-                        </div>
-                        <div class="txt2">
-                            <div class="txt2-con">
-                                <!--We Create Total Solutions To Connect You Width Global Business And Business Influents Worldwide!-->
-                            </div>
-                            <div class="txt2-tips">
-                                <!--海外商务对接及精英学习整体方案提供商-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pagenation animation-flag">
-                        <span data-type="0"></span>
-                        <span class="active" data-type="1"></span>
-                    </div>
+                <div class="pagenation fadeinInter">
+                    <span class="active" data-type="0"></span>
+                    <span data-type="1"></span>
                 </div>
             </div>
             <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
                 <ul class="" id="case_detail">
-                    <div class="change">
-                        <img src="./images/icon-pre.png" class="pre" data-type="pre">
-                        <img src="./images/icon-pre.png" class="next" data-type="next">
-                    </div>
-                </ul>
-                <div class="picCarsoule-box js-ds-none">
-                    <div class="poster-main" id="TagName">
-                        <div class="poster-btn poster-prev-btn"></div>
-                        <ul class="poster-list" id="case_content">
 
-                        </ul>
-                        <div class="poster-btn poster-next-btn"></div>
-                    </div>
-                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
+                </ul>
+                <div class="change">
+                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
+                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
                 </div>
             </div>
             <div class="resource-map js-ds-none itemtype relative_center">
+                <img src="./images/international-map.png">
                 <div class="red-cion asia">
                     <span class="red-cion-bg asia"></span>
                     <div class="txt-title">
@@ -504,9 +501,9 @@
                     </div>
                 </div>
             </div>
-            <div class="think-tank itemtype js-ds-none">
+            <div class="think-tank itemtype js-ds-none relative_center">
                 <div class="title">
-                    <img src="./images/think-tank.png">
+                    <img src="./images/thinktank-title.png">
                 </div>
                 <div class="show-photo">
                     <ul class="" id="profession">
@@ -518,7 +515,7 @@
                             <div class="txt">
                                 <p class="profession-name">Philippe Starck</p>
                                 <p>
-                                当今最具个性的设计师，也是才华横溢的成功的多面手，他以其具有超前的时尚意识的设计而在20世纪80年代的设计界中占据这超级明星的位置。
+                                    当今最具个性的设计师，也是才华横溢的成功的多面手，他以其具有超前的时尚意识的设计而在20世纪80年代的设计界中占据这超级明星的位置。
                                 </p>
                             </div>
                         </li>
@@ -530,7 +527,7 @@
                             <div class="txt">
                                 <p class="profession-name">Franck Sorbier</p>
                                 <p>
-                                著名巴黎高级定制服装设计师，于1987年推出其个人的第一个服装系列品牌并以其本名命名品牌名称。
+                                    著名巴黎高级定制服装设计师，于1987年推出其个人的第一个服装系列品牌并以其本名命名品牌名称。
                                 </p>
                             </div>
                         </li>
@@ -542,7 +539,7 @@
                             <div class="txt">
                                 <p class="profession-name">Marie Beltrami</p>
                                 <p>
-                                著名法国设计师。
+                                    著名法国设计师。
                                 </p>
                             </div>
                         </li>
@@ -554,7 +551,7 @@
                             <div class="txt">
                                 <p class="profession-name">Marie Beltrami</p>
                                 <p>
-                                法国前任总理
+                                    法国前任总理
                                 </p>
                             </div>
                         </li>
@@ -566,7 +563,7 @@
                             <div class="txt">
                                 <p class="profession-name">Darrell Duffie</p>
                                 <p>
-                                加拿大著名经济学家
+                                    加拿大著名经济学家
                                 </p>
                             </div>
                         </li>
@@ -578,9 +575,9 @@
                             <div class="txt">
                                 <p class="profession-name">木元哲</p>
                                 <p>
-                                    松下电器（中国）前任总裁 
+                                    松下电器（中国）前任总裁
                                 </p>
-                                </div>
+                            </div>
                         </li>
                         <li class="" data-index="3">
                             <div class="photo">
@@ -590,9 +587,9 @@
                             <div class="txt">
                                 <p class="profession-name">Menny Barzilay</p>
                                 <p>
-                                是一位世界知名的网络安全专家。他是FortyTwo（42）、网络安全专业服务（设于以色列）和FortyTwo研发实验室（设于印度）的创始人之一 。他还是特拉维夫大学跨学科网络研究中心的首席技术官。 
+                                    是一位世界知名的网络安全专家。他是FortyTwo（42）、网络安全专业服务（设于以色列）和FortyTwo研发实验室（设于印度）的创始人之一 。他还是特拉维夫大学跨学科网络研究中心的首席技术官。
                                 </p>
-                                </div>
+                            </div>
                         </li>
                         <li class="" data-index="4">
                             <div class="photo">
@@ -602,14 +599,27 @@
                             <div class="txt">
                                 <p class="profession-name">Barry Katz</p>
                                 <p>
-                                斯坦福大学工程设计学院教授 加州艺术学院教授 供职于独立设计咨询公司IDEO</p>
+                                    斯坦福大学工程设计学院教授 加州艺术学院教授 供职于独立设计咨询公司IDEO</p>
                             </div>
                         </li>
-                        <div class="change">
-                            <img src="./images/icon-pre.png" class="pre" data-type="next">
-                            <img src="./images/icon-pre.png" class="next" data-type="pre">
-                        </div>
                     </ul>
+                </div>
+                <div class="change">
+                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="next">
+                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="pre">
+                </div>
+            </div>
+            <!-- 合作案例图片轮播 -->
+            <div class="picCarsoule-box js-ds-none">
+                <div class="picCarsoule-con">
+                    <div class="poster-main" id="TagName">
+                        <div class="poster-btn poster-prev-btn"></div>
+                        <ul class="poster-list" id="case_content">
+
+                        </ul>
+                        <div class="poster-btn poster-next-btn"></div>
+                    </div>
+                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
                 </div>
             </div>
         </div>
@@ -618,7 +628,7 @@
     <div class="pop-window-nav">
         <header id="js-header" class="header clearfix">
             <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
-                <img src="./images/icon-2.png">
+                <img src="./images/icon/icon-logo.png">
             </a>
             <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
                 <img src="./images/close-nav.png">
@@ -637,54 +647,9 @@
             <li class="" onclick="location.href='./contact.html'">联系我们</li>
         </ul>
     </div>
-    <!--联系我们-->
-    <div class="part-six js-ds-none contact-us">
-        <div class="red-bg fadeinleft"></div>
-        <div class="con fadeinright">
-            <div class="con-txt">
-                <!--<div class="back-last-page" onclick="$('.contact-us').addClass('js-ds-none')">
-                    <img src="./images/goback.png">
-                </div>-->
-                <div class="contact-us-title">
-                    <img src="./images/contact-us-title.png">
-                </div>
-                <div class="contact-address">
-                    <img src="./images/contact-address.png">
-                    <img src="./images/map.png" class="map">
-                </div>
-                <div class="txt">
-                    <p class="profession-name"></p>
-                    <p>
-                    <div>博闻伟达集团</div>
-                    <div style="margin-bottom:30px;">Baldwin&amp;Viktor Group</div>
-                    <div>深圳市福田保税区T8创意园和合大厦3层320室</div>
-                    <div>Room 320，Level3, Value Plus Building, T8 Creative Park, Futian FTZ, Shenzhen</div>
-                    <div>电话（TEL）: 0755-2565 8199 0755-2565 8299</div>
-                    <div>传真（FAX）：0755-2565 8399</div>
-                </div>
-            </div>
-        </div>
-        <div class="contact-us-box">
-        </div>
-    </div>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/common.js"></script>
     <script type="text/javascript">
-        function showaboutus() {
-            $('.slides').parent().removeClass('fadeout')
-            $('.contact-us').addClass('js-ds-none').removeClass('active')
-            location.href = './index.html#page3';
-            $('.pop-window-nav').removeClass('active').addClass('closeactive')
-        }
-
-        function showcontactus() {
-            $('.left-nav').addClass('fadeout')
-            $('.weida-international .red-bg').addClass('fadeout')
-            $('.section.active').removeClass('fadeout')
-            $('.contact-us').addClass('js-ds-none').removeClass('active')
-            $('.contact-us').removeClass('js-ds-none').addClass('active')
-            $('.pop-window-nav').removeClass('active').addClass('closeactive')
-        }
         var INTERNATION
         window.INTERNATION = INTERNATION
 
@@ -748,11 +713,11 @@
             }
             var html = `<li class="item" data-contentId="{{_id}}">
                 <img src="{{strCover}}">
-                <div class="title">
+                <div class="title" title="{{ strTitle }}">
                     {{strTitle}}
                 </div>
                 <div class="address">
-                    <span class="en">{{strLocationEn}}</span><br>
+                    <span class="en" title="{{ strLocationEn }}">{{strLocationEn}}</span><br>
                     <span class="ch">{{strLocationZh}}</span>
                 </div>
                 <div class="date" style="padding-left:10px;">
@@ -833,7 +798,7 @@
                 $('.picCarsoule-box').removeClass('js-ds-none').removeClass('picCarsouelFadeOut')
                 var outer = $("#TagName").prop("outerHTML")
                 $("#TagName").remove()
-                $('.picCarsoule-box').prepend($(outer))
+                $('.picCarsoule-con').prepend($(outer))
                 $("#TagName").PicCarousel({
                     width: 800,
                     height: 600,
@@ -842,6 +807,8 @@
                 e.stopPropagation()
             }
         })
+
+        //左边导航切换
         $('.left-nav .txt-box .txt .item').on('click', function(e) {
             var type = e.target.dataset.type
             var range = e.target.dataset.range
@@ -864,23 +831,23 @@
             } else if (range == 2) {
                 $(e.target).addClass('active').siblings().removeClass('active')
             }
-            $('.con .itemtype').addClass('fadeout').addClass('js-ds-none')
-            renderCaseDetail(INTERNATION.vecChannel[0] && INTERNATION.vecChannel[0]._id)
-            $('.' + type).removeClass('js-ds-none').addClass('fadein')
+            $('.right-con .itemtype').removeClass('fadeinInter').addClass('fadeout').addClass('js-ds-none')
+                // renderCaseDetail(INTERNATION.vecChannel[0] && INTERNATION.vecChannel[0]._id)
+            $('.' + type).removeClass('js-ds-none').removeClass('fadeout').addClass('fadeinInter')
         })
 
-        //合作案例点击翻页
+        //合作案例切换图片
         $('.business-hezuo .change img').on('click', function(e) {
             var type = $(this).attr('data-type')
             var num = parseInt($('.business-hezuo ul li').length / 8)
-            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 460
+            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 494
             if (type == 'pre' && topNum != 0) {
                 $('.business-hezuo ul').animate({
-                    top: '-' + 460 * (topNum - 1) + 'px'
+                    top: '-' + 494 * (topNum - 1) + 'px'
                 })
             } else if (type == 'next' && topNum < num) {
                 $('.business-hezuo ul').animate({
-                    top: '-' + 460 * (topNum + 1) + 'px'
+                    top: '-' + 494 * (topNum + 1) + 'px'
                 })
             }
         })
@@ -916,39 +883,39 @@
 
         //专家智库图片点击
         $('#profession').on("click", 'li', function() {
-                var active = $('#profession li.active')
-                var $this = $(this)
-                if ($this[0] == active[0]) return
-                var $tarIndex, $activeIndex
-                var li = $('#profession li')
-                li.each(function(i) {
-                        var $tar = $(this)
-                        if ($tar[0] == $this[0]) {
-                            $tarIndex = i
-                        } else if ($tar[0] == active[0]) {
-                            $activeIndex = i
-                        }
-                    })
-                    //在右边
-                var inteval = Math.abs($tarIndex - $activeIndex)
-                var _cb
-                if ($tarIndex > $activeIndex) {
-                    _cb = function() {
-                        $("#profession .next").trigger('click')
+            var active = $('#profession li.active')
+            var $this = $(this)
+            if ($this[0] == active[0]) return
+            var $tarIndex, $activeIndex
+            var li = $('#profession li')
+            li.each(function(i) {
+                    var $tar = $(this)
+                    if ($tar[0] == $this[0]) {
+                        $tarIndex = i
+                    } else if ($tar[0] == active[0]) {
+                        $activeIndex = i
                     }
-                } else {
-                    _cb = function() {
-                        $("#profession .pre").trigger('click')
-                    }
+                })
+                //在右边
+            var inteval = Math.abs($tarIndex - $activeIndex)
+            var _cb
+            if ($tarIndex > $activeIndex) {
+                _cb = function() {
+                    $("#profession .next").trigger('click')
                 }
-                while (inteval--) {
-                    _cb()
+            } else {
+                _cb = function() {
+                    $("#profession .pre").trigger('click')
                 }
-            })
+            }
+            while (inteval--) {
+                _cb()
+            }
+        })
 
-            /**
-             * 专家智库轮播
-             */
+        /**
+         * 专家智库轮播
+         */
         $('.show-photo .change img').on('click', function(e) {
             var type = $(this).data('type')
             var li = $('.show-photo li')
@@ -965,26 +932,21 @@
                 $(this).html(originArr[i])
             })
         })
-    </script>
-    <script>
+
+        // 博闻伟达国际 banner轮播
         $('.pagenation span').on('click', function() {
             var type = $(this).attr('data-type')
             if (type == 0 && !$(this).hasClass('active')) {
-                $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
+                $('.inter-two-pic-box .con-box').animate({
                     left: 0
-                })
-                $($('.inter-two-pic-box .content-box')[Number(type) + 1]).animate({
-                    left: '100%'
                 })
             } else if (type == 1 && !$(this).hasClass('active')) {
-                $($('.inter-two-pic-box .content-box')[Number(type) - 1]).animate({
+                $('.inter-two-pic-box .con-box').animate({
                     left: '-100%'
                 })
-                $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
-                    left: 0
-                })
             }
-            $($('.inter-two-pic-box .content-box')[type]).find('.animation-flag').addClass('fadeinInter')
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.inter-two-pic-box .con-box').find('.animation-flag').addClass('fadeinInter')
         })
     </script>
 </body>
