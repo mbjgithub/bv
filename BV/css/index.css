@@ -705,6 +705,10 @@ img {
     right: 0;
 }
 
+.think-tank .change{
+    right: 20%;
+}
+
 .change img {
     width: 7px;
     height: 20px;
@@ -1094,6 +1098,7 @@ span.red-cion-bg:after {
     animation-delay: 2s !important;
     text-align: justify;
     line-height: 1.5;
+    margin-left: 45px;
 }
 
 .show-photo li.active .txt {

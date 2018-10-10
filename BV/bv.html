@@ -802,7 +802,7 @@
                 $("#TagName").PicCarousel({
                     width: 800,
                     height: 600,
-                    speed: 600
+                    speed: 200
                 });
                 e.stopPropagation()
             }
@@ -832,34 +832,18 @@
                 $(e.target).addClass('active').siblings().removeClass('active')
             }
             $('.right-con .itemtype').removeClass('fadeinInter').addClass('fadeout').addClass('js-ds-none')
-                // renderCaseDetail(INTERNATION.vecChannel[0] && INTERNATION.vecChannel[0]._id)
+            renderCaseDetail(INTERNATION.vecChannel[0] && INTERNATION.vecChannel[0]._id)
             $('.' + type).removeClass('js-ds-none').removeClass('fadeout').addClass('fadeinInter')
-        })
-
-        //合作案例切换图片
-        $('.business-hezuo .change img').on('click', function(e) {
-            var type = $(this).attr('data-type')
-            var num = parseInt($('.business-hezuo ul li').length / 8)
-            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 494
-            if (type == 'pre' && topNum != 0) {
-                $('.business-hezuo ul').animate({
-                    top: '-' + 494 * (topNum - 1) + 'px'
-                })
-            } else if (type == 'next' && topNum < num) {
-                $('.business-hezuo ul').animate({
-                    top: '-' + 494 * (topNum + 1) + 'px'
-                })
-            }
         })
 
 
         //专家智库滚动
         window.common.addWheel($('.show-photo')[0],{
             next(){
-                $("#profession .pre").trigger('click')
+                $(".think-tank .pre").trigger('click')
             },
             pre(){
-                $("#profession .next").trigger('click')
+                $(".think-tank .next").trigger('click')
             }
         })
         //合作案例滚动
@@ -878,6 +862,22 @@
             },
             next(){
                 $(".poster-next-btn").trigger('click')
+            }
+        })
+
+        //合作案例切换图片
+        $('.business-hezuo .change img').on('click', function(e) {
+            var type = $(this).attr('data-type')
+            var num = parseInt($('.business-hezuo ul li').length / 8)
+            var topNum = Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 494
+            if (type == 'pre' && topNum != 0) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 494 * (topNum - 1) + 'px'
+                })
+            } else if (type == 'next' && topNum < num) {
+                $('.business-hezuo ul').animate({
+                    top: '-' + 494 * (topNum + 1) + 'px'
+                })
             }
         })
 
@@ -901,11 +901,11 @@
             var _cb
             if ($tarIndex > $activeIndex) {
                 _cb = function() {
-                    $("#profession .next").trigger('click')
+                    $(".think-tank .next").trigger('click')
                 }
             } else {
                 _cb = function() {
-                    $("#profession .pre").trigger('click')
+                    $(".think-tank .pre").trigger('click')
                 }
             }
             while (inteval--) {
@@ -916,7 +916,7 @@
         /**
          * 专家智库轮播
          */
-        $('.show-photo .change img').on('click', function(e) {
+        $('.think-tank .change img').on('click', function(e) {
             var type = $(this).data('type')
             var li = $('.show-photo li')
             var originArr = []
