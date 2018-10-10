@@ -17,12 +17,12 @@
         $(document).ready(function() {
             
             $('#fullpage').fullpage({
-                anchors: ['page1', 'page2', 'page3', 'page4'],
+                anchors: ['page1', 'page2', 'page3'],
                 loopHorizontal: false,
                 controlArrows: false,
                 afterLoad: function(anchorLink) {
                     $('.section.active').removeClass('fadeout')
-                    if (anchorLink !== 'page1' && anchorLink !== 'page2') {
+                    if (anchorLink !== 'page1') {
                         $('.nav-icon img').eq(0).addClass('js-ds-none')
                         $('.nav-icon img').eq(1).removeClass('js-ds-none')
                         $('.lang').css('color', '#000')
@@ -117,6 +117,105 @@
             $.fn.fullpage.moveTo('page1')
         }
     </script>
+    <style>
+        #js-header {
+            opacity: 0;
+            animation: showanimate2 2s 1;
+            animation-fill-mode: forwards;
+            animation-delay: 3s;
+        }
+        
+        .animate1,
+        .animate2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .animate1 {
+            z-index: 1;
+        }
+        
+        .animate2 {
+            z-index: 2;
+            opacity: 0;
+            animation: showanimate2 2s 1;
+            animation-fill-mode: forwards;
+            animation-delay: 3s;
+        }
+        
+        @keyframes showanimate2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .animatetxt {
+            position: fixed;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 45%;
+        }
+        
+        .animatetxt .txt1 {
+            position: relative;
+            top: 0;
+            opacity: 0;
+            animation: showtxt1 3s 1;
+            animation-fill-mode: forwards;
+            animation-delay: 5s;
+        }
+        
+        @keyframes showtxt1 {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            100% {
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 1;
+            }
+        }
+        
+        .animatetxt .txt2 {
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            animation: showtxt2 3s 1;
+            animation-fill-mode: forwards;
+            animation-delay: 5s;
+        }
+        
+        @keyframes showtxt2 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            100% {
+                bottom: 50%;
+                transform: translateY(50%);
+                opacity: 1;
+            }
+        }
+        
+        .part-one .next-page,
+        .part-one .next-page {
+            position: fixed;
+            z-index: 3;
+            opacity: 0;
+            animation: showanimate2 2s 1;
+            animation-fill-mode: forwards;
+            animation-delay: 3s;
+        }
+    </style>
 </head>
 
 <body>
@@ -133,22 +232,48 @@
         </div>
     </header>
     <article id="fullpage">
+        <!--红色背景-->
         <div class="section part-one">
-            <!--<div>
-                BALDWIN&amp;VIKTOR
-            </div>-->
+            <div class="animate1">
+                <img src="./images/animate/bg-red.png" />
+            </div>
+            <div class="animate2">
+                <img src="./images/animate/banner-red.png" />
+            </div>
+            <div class="animatetxt">
+                <div class="txt1">
+                    <img src="./images/animate/animation-txt1.png" />
+                </div>
+                <div class="txt2">
+                    <img src="./images/animate/animation-txt2.png" />
+                </div>
+
+            </div>
             <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
                 <img src="./images/icon/icon-arrow-white.png">
             </div>
         </div>
-        <div class="section part-two">
-            <!--<div>
-                BALDWIN&amp;VIKTOR
-            </div>-->
-            <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
+        <!--黑色背景-->
+        <!--<div class="section part-two">
+            <div class="animate1">
+                <img src="./images/animate/bg-black.png" />
+            </div>
+            <div class="animate2">
+                <img src="./images/animate/banner-black.png" />
+            </div>
+            <div class="animatetxt">
+                <div class="txt1">
+                    <img src="./images/animate/animation-txt1.png" />
+                </div>
+                <div class="txt2">
+                    <img src="./images/animate/animation-txt2.png" />
+                </div>
+
+            </div>
+            <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
                 <img src="./images/icon/icon-arrow-white.png">
             </div>
-        </div>
+        </div>-->
         <div class="section">
             <div class="slide part-three">
                 <div class="con">
@@ -165,8 +290,8 @@
                             博闻伟达集团由旗下博闻伟达文化、博闻伟达国际、华师汇、德沃尔斯咨询、M E C 传讯、Multi-marketing品牌营销公司六大品牌组成，共设有香港、巴黎、米兰、洛杉矶、柏林、东京、奥克兰、长沙和深圳9个办公室，雇员超过 100人。
                         </div>
                     </div>
-                    <img src="./images/BV-big-logo.png" class="bv-big-logo">
-                    <img src="./images/icon-next-right.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <img src="./images/about-logo.png" class="bv-big-logo">
+                    <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',1)">
                     <div class="contact-us-box">
                         <div class="btn" onclick="location.href='./contact.html'">
                             联系我们
@@ -174,7 +299,7 @@
                     </div>
                 </div>
                 <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
-                    <img src="./images/icon-1-black.png">
+                    <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
             <div class="slide part-three">
@@ -184,14 +309,14 @@
                         <a href="javascript:;" class="active">服务客户</a>
                         <a href="javascript:$.fn.fullpage.moveTo('page3',2)">核心团队</a>
                     </nav>
-                    <img src="./images/hezuo.jpg" class="hezuo">
-                    <img src="./images/icon-next-right.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',2)">
-                    <img src="./images/icon-next-left.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',0)">
+                    <img src="./images/hezuo.png" class="hezuo">
+                    <img src="./images/icon/icon-prev-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page3',2)">
+                    <img src="./images/icon/icon-next-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',0)">
                     <div class="contact-us-box">
                     </div>
                 </div>
                 <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
-                    <img src="./images/icon-1-black.png">
+                    <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
             <div class="slide part-three">
@@ -203,7 +328,7 @@
                     </nav>
                     <div class="leaderskip">
                         <div class="title">
-                            <img src="./images/leaderskip.png">
+                            <img src="./images/leaderskip-title.png">
                         </div>
                         <div class="show-photo">
                             <ul class="" id="core_leader_list">
@@ -278,29 +403,29 @@
                             </ul>
                         </div>
                         <div class="change" id="core_leader">
-                            <img src="./images/icon-pre.png" class="pre" data-type="pre">
-                            <img src="./images/icon-pre.png" class="next" data-type="next">
+                            <img src="./images/icon/icon-arrow-prev.png" class="pre" data-type="pre">
+                            <img src="./images/icon/icon-arrow-next.png" class="next" data-type="next">
                         </div>
                     </div>
-                    <img src="./images/icon-next-left.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',1)">
+                    <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page3',1)">
                     <div class="contact-us-box">
                     </div>
                 </div>
                 <div class="next-page" onclick="$.fn.fullpage.moveTo('page4')">
-                    <img src="./images/icon-1-black.png">
+                    <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
         </div>
         <div class="section part-seven">
             <div class="con">
                 <div class="bv-ia fadeinleft international" style="left:-100%;">
-                    <img src="./images/bowen-1.png">
+                    <img src="./images/bg-arts-title.png">
                 </div>
                 <div class="bv-logo">
-                    <img src="./images/BV-logo-big-red.png">
+                    <img src="./images/big-logo.png">
                 </div>
                 <div class="bv-ia fadeinright arts" style="right:-100%;">
-                    <img src="./images/bowen.png">
+                    <img src="./images/bg-international-title.png">
                 </div>
                 <div class="contact-us-box" style="padding-top:80px;bottom: 36px;">
                     <div class="btn" onclick="location.href='./contact.html'">
@@ -323,8 +448,8 @@
     <!--导航栏弹窗-->
     <div class="pop-window-nav">
         <header id="js-header" class="header clearfix">
-            <a href="javascript:$.fn.fullpage.moveTo('page1')" class="header-logo g-fl" title="返回首页">
-                <img src="./images/icon-2.png">
+            <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+                <img src="./images/icon/icon-logo.png">
             </a>
             <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
                 <img src="./images/close-nav.png">
@@ -337,7 +462,7 @@
             BALDWIN&amp;VIKTOR
         </div>
         <ul class="nav-txt">
-            <li class="" onclick="showaboutus()">关于我们</li>
+            <li class="" onclick="location.href='./index.html#page3'">关于我们</li>
             <li class="" onclick="location.href='./bv.html'">博闻伟达国际</li>
             <li class="" onclick="location.href='./bv2.html'">博闻伟达文化</li>
             <li class="" onclick="location.href='./contact.html'">联系我们</li>
