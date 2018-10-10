@@ -36,34 +36,34 @@
                     console.log($('.fadein'))
                 }
             })
-            $('#core_leader_list').on("click","li",function(){
+            $('#core_leader_list').on("click", "li", function() {
                 console.log("CLICK")
                 var active = $('#core_leader_list li.active')
-                var $this=$(this)
-                if($this[0]==active[0]) return
-                var $tarIndex,$activeIndex
-                var li=$('#core_leader_list li')
-                li.each(function(i){
-                    var $tar=$(this)
-                    if($tar[0]==$this[0]){
-                        $tarIndex=i
-                    }else if($tar[0]==active[0]){
-                        $activeIndex=i
-                    }
-                })
-                //在右边
-                var inteval=Math.abs($tarIndex-$activeIndex)
+                var $this = $(this)
+                if ($this[0] == active[0]) return
+                var $tarIndex, $activeIndex
+                var li = $('#core_leader_list li')
+                li.each(function(i) {
+                        var $tar = $(this)
+                        if ($tar[0] == $this[0]) {
+                            $tarIndex = i
+                        } else if ($tar[0] == active[0]) {
+                            $activeIndex = i
+                        }
+                    })
+                    //在右边
+                var inteval = Math.abs($tarIndex - $activeIndex)
                 var _cb
-                if($tarIndex>$activeIndex){
-                    _cb=function(){
+                if ($tarIndex > $activeIndex) {
+                    _cb = function() {
                         $("#core_leader .pre").trigger('click')
                     }
-                }else{
-                    _cb=function(){
+                } else {
+                    _cb = function() {
                         $("#core_leader .next").trigger('click')
                     }
                 }
-                while(inteval--){
+                while (inteval--) {
                     _cb()
                 }
             })
@@ -122,7 +122,7 @@
 <body>
     <header id="js-header" class="header clearfix">
         <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
-            <img src="./images/icon-2.png">
+            <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
             <img src="./images/icon-3.png">
@@ -138,7 +138,7 @@
                 BALDWIN&amp;VIKTOR
             </div>-->
             <div class="next-page" onclick="$.fn.fullpage.moveTo('page2')">
-                <img src="./images/icon-1.png">
+                <img src="./images/icon/icon-arrow-white.png">
             </div>
         </div>
         <div class="section part-two">
@@ -146,7 +146,7 @@
                 BALDWIN&amp;VIKTOR
             </div>-->
             <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
-                <img src="./images/icon-1.png">
+                <img src="./images/icon/icon-arrow-white.png">
             </div>
         </div>
         <div class="section">
