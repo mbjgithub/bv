@@ -4,6 +4,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -72,6 +74,8 @@
 }
 
 .part-eight .right-con {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     position: relative;
     /* min-width: 1058px; */

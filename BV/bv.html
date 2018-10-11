@@ -501,7 +501,7 @@
                     </div>
                 </div>
             </div>
-            <div class="think-tank itemtype js-ds-none relative_center">
+            <div class="think-tank itemtype js-ds-none clearfix">
                 <div class="title">
                     <img src="./images/thinktank-title.png">
                 </div>
@@ -603,11 +603,12 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="change">
+                        <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="next">
+                        <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="pre">
+                    </div>
                 </div>
-                <div class="change">
-                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="next">
-                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="pre">
-                </div>
+
             </div>
             <!-- 合作案例图片轮播 -->
             <div class="picCarsoule-box js-ds-none">
@@ -753,11 +754,12 @@
         $('#case').on('click', 'a', function(e) {
             var id = e.target.dataset.id
             renderCaseDetail(id)
+            $('.picCarsoule-box').addClass('picCarsouelFadeOut').addClass('js-ds-none')
             $('.left-nav .txt-box .txt .item a').removeClass('active')
             $(this).parent().siblings().removeClass('active')
             $(this).addClass('active').siblings().removeClass('active')
-            $('.con .itemtype').addClass('fadeout').addClass('js-ds-none')
-            $('.con .right-content-box').removeClass('js-ds-none').addClass('fadein')
+            $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
+            $('.right-con .right-content-box').removeClass('js-ds-none').addClass('fadein')
             e.stopPropagation()
         })
         var case_content_cached = {}
@@ -812,6 +814,7 @@
         $('.left-nav .txt-box .txt .item').on('click', function(e) {
             var type = e.target.dataset.type
             var range = e.target.dataset.range
+            $('.picCarsoule-box').addClass('picCarsouelFadeOut').addClass('js-ds-none')
             $('.left-nav .txt-box .txt .item').removeClass('active')
             $('.left-nav .txt-box .txt .item a').removeClass('active')
             $(e.target).parent().removeClass('active')
@@ -838,29 +841,29 @@
 
 
         //专家智库滚动
-        window.common.addWheel($('.show-photo')[0],{
-            next(){
-                $(".think-tank .pre").trigger('click')
-            },
-            pre(){
-                $(".think-tank .next").trigger('click')
-            }
-        })
-        //合作案例滚动
-        window.common.addWheel($('.right-content-box')[0],{
-            pre(){
-                $('.business-hezuo .change img.pre').trigger('click')
-            },
-            next(){
-                $('.business-hezuo .change img.next').trigger('click')
-            }
-        })
-        //合作案例蒙层滚动
-        window.common.addWheel($('.picCarsoule-box')[0],{
-            pre(){
+        window.common.addWheel($('.show-photo')[0], {
+                next() {
+                    $(".think-tank .pre").trigger('click')
+                },
+                pre() {
+                    $(".think-tank .next").trigger('click')
+                }
+            })
+            //合作案例滚动
+        window.common.addWheel($('.right-content-box')[0], {
+                pre() {
+                    $('.business-hezuo .change img.pre').trigger('click')
+                },
+                next() {
+                    $('.business-hezuo .change img.next').trigger('click')
+                }
+            })
+            //合作案例蒙层滚动
+        window.common.addWheel($('.picCarsoule-box')[0], {
+            pre() {
                 $(".poster-prev-btn").trigger('click')
             },
-            next(){
+            next() {
                 $(".poster-next-btn").trigger('click')
             }
         })

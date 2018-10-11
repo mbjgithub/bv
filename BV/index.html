@@ -15,9 +15,9 @@
     <script src="js/fullPage/jquery.fullPage.min.js"></script>
     <script>
         $(document).ready(function() {
-            var double=localStorage.getItem("double")
-            // 红色背景
-            var red=`<div class="part-one">
+            var double = localStorage.getItem("double")
+                // 红色背景
+            var red = `<div class="part-one">
                 <div class="animate1">
                     <img src="./images/animate/bg-red.png" />
                 </div>
@@ -37,8 +37,8 @@
                     <img src="./images/icon/icon-arrow-white.png">
                 </div>
             </div>`
-            // 黑色背景
-            var black=`
+                // 黑色背景
+            var black = `
             <div class="part-one">
                 <div class="animate1">
                     <img src="./images/animate/bg-black.png" />
@@ -61,16 +61,16 @@
             </div>`
             var converse
             var inner
-            if(double==2){
-                converse=1
-                inner=black
-            }else{
-                converse=2
-                inner=red
+            if (double == 2) {
+                converse = 1
+                inner = black
+            } else {
+                converse = 2
+                inner = red
             }
-            localStorage.setItem("double",converse)
-            document.getElementById("first_page").innerHTML=inner
-            $("#fullpage").css('visibility',"visible")
+            localStorage.setItem("double", converse)
+            document.getElementById("first_page").innerHTML = inner
+            $("#fullpage").css('visibility', "visible")
             $('#fullpage').fullpage({
                 anchors: ['page1', 'page2', 'page3'],
                 loopHorizontal: false,
@@ -78,17 +78,16 @@
                 afterLoad: function(anchorLink) {
                     $('.section.active').removeClass('fadeout')
                     if (anchorLink !== 'page1') {
+                        $('#js-header').removeClass('header-animate')
                         $('.nav-icon img').eq(0).addClass('js-ds-none')
                         $('.nav-icon img').eq(1).removeClass('js-ds-none')
                         $('.lang').css('color', '#000')
                     } else {
+                        $('#js-header').addClass('header-animate')
                         $('.nav-icon img').eq(0).removeClass('js-ds-none')
                         $('.nav-icon img').eq(1).addClass('js-ds-none')
                         $('.lang').css('color', '#ececec')
                     }
-                },
-                afterRender: function() {
-                    console.log($('.fadein'))
                 }
             })
             $('#core_leader_list').on("click", "li", function() {
@@ -144,39 +143,14 @@
             })
         });
     </script>
-    <script>
-        // function showContactUs(e) {
-        //     if ($('.section.active').find('.slides').length === 0) {
-        //         $('.section.active').addClass('fadeout')
-        //     } else {
-        //         $('.slides').parent().addClass('fadeout')
-        //     }
-        //     $('.contact-us').removeClass('js-ds-none')
-        //     $('.contact-us').addClass('active')
-        // }
-
-        function showWeiDaiInter(e) {
-            // $(e).find('div').addClass('js-ds-none')
-            // $(e).addClass('addwidth')
-            // $('.part-seven .bv-ia,.part-seven .bv-logo,.part-seven .contact-us-box').addClass('fadeout')
-            // $('.weida-international').removeClass('js-ds-none').addClass('active')
-            window.location.href = './bv.html'
-        }
-
-        function showArts() {
-            window.location.href = './bv2.html'
-        }
-
-        function goback() {
-            $('.contact-us').addClass('js-ds-none').removeClass('active')
-            $.fn.fullpage.moveTo('page1')
-        }
-    </script>
     <style>
-        #js-header {
+        .header-animate {
             opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
             animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
             animation-delay: 3s;
         }
         
@@ -196,9 +170,21 @@
         .animate2 {
             z-index: 2;
             opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
             animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
             animation-delay: 3s;
+        }
+        
+        @-webkit-keyframes showanimate2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         
         @keyframes showanimate2 {
@@ -215,17 +201,34 @@
             z-index: 3;
             top: 50%;
             left: 50%;
+            -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            height: 45%;
+            height: 35%;
         }
         
         .animatetxt .txt1 {
             position: relative;
             top: 0;
             opacity: 0;
+            -webkit-animation: showtxt1 3s 1;
             animation: showtxt1 3s 1;
+            -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            -webkit-animation-delay: 5s;
             animation-delay: 5s;
+        }
+        
+        @-webkit-keyframes showtxt1 {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            100% {
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                opacity: 1;
+            }
         }
         
         @keyframes showtxt1 {
@@ -235,6 +238,7 @@
             }
             100% {
                 top: 50%;
+                -webkit-transform: translateY(-50%);
                 transform: translateY(-50%);
                 opacity: 1;
             }
@@ -244,9 +248,25 @@
             position: absolute;
             bottom: 0;
             opacity: 0;
+            -webkit-animation: showtxt2 3s 1;
             animation: showtxt2 3s 1;
+            -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            -webkit-animation-delay: 5s;
             animation-delay: 5s;
+        }
+        
+        @-webkit-keyframes showtxt2 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            100% {
+                bottom: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+                opacity: 1;
+            }
         }
         
         @keyframes showtxt2 {
@@ -256,25 +276,29 @@
             }
             100% {
                 bottom: 50%;
+                -webkit-transform: translateY(50%);
                 transform: translateY(50%);
                 opacity: 1;
             }
         }
         
-        .part-one .next-page{
+        .part-one .next-page {
             position: absolute;
             z-index: 3;
             opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
             animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
             animation-delay: 3s;
         }
     </style>
 </head>
 
 <body>
-    <header id="js-header" class="header clearfix">
-        <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
+    <header id="js-header" class="header clearfix header-animate">
+        <a href="javascript:$.fn.fullpage.moveTo('page1')" class="header-logo g-fl" title="返回首页">
             <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
@@ -308,13 +332,13 @@
                 </div>
             </div> -->
         <div class="section">
+            <nav class="nav-ul">
+                <a href="javascript:;" class="active" data-type="0">关于我们</a><br>
+                <a href="javascript:;" data-type="1">服务客户</a><br>
+                <a href="javascript:;" data-type="2">核心团队</a>
+            </nav>
             <div class="slide part-three">
                 <div class="con">
-                    <nav class="nav-ul">
-                        <a href="javascript:;" class="active">关于我们</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',1)">服务客户</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',2)">核心团队</a>
-                    </nav>
                     <div class="about-us">
                         <div class="about-us-title fadeinleft">
                             <img src="./images/about-us-title.png">
@@ -331,17 +355,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="next-page" onclick="$.fn.fullpage.moveTo('page2',1)">
+                <div class="next-page" onclick="$.fn.fullpage.moveTo('page3')">
                     <img src="./images/icon/icon-arrow.png">
                 </div>
             </div>
             <div class="slide part-three">
                 <div class="con">
-                    <nav class="nav-ul">
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',0)">关于我们</a>
-                        <a href="javascript:;" class="active">服务客户</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',2)">核心团队</a>
-                    </nav>
                     <img src="./images/hezuo.png" class="hezuo">
                     <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page2',2)">
                     <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page2',0)">
@@ -354,11 +373,6 @@
             </div>
             <div class="slide part-three">
                 <div class="con">
-                    <nav class="nav-ul">
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',0)">关于我们</a>
-                        <a href="javascript:$.fn.fullpage.moveTo('page2',1)">服务客户</a>
-                        <a href="javascript:;" class="active">核心团队</a>
-                    </nav>
                     <div class="leaderskip">
                         <div class="title">
                             <img src="./images/leaderskip-title.png">
@@ -465,12 +479,12 @@
                         联系我们
                     </div>
                 </div>
-                <div class="bv-international bv-big-red-block" onclick="showWeiDaiInter(this)">
+                <div class="bv-international bv-big-red-block" onclick="window.location.href = './bv.html'">
                     <div class="fadein">
                         海外商务对接<br>及精英学习<br>整体方案提供商
                     </div>
                 </div>
-                <div class="bv-arts bv-big-red-block" onclick="showArts()">
+                <div class="bv-arts bv-big-red-block" onclick="window.location.href = './bv2.html'">
                     <div class="fadein">
                         致力提供整合性公关方案
                     </div>
@@ -481,7 +495,7 @@
     <!--导航栏弹窗-->
     <div class="pop-window-nav">
         <header id="js-header" class="header clearfix">
-            <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+            <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
                 <img src="./images/icon/icon-logo.png">
             </a>
             <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
@@ -507,35 +521,16 @@
             $('.pop-window-nav').removeClass('active').addClass('closeactive')
         }
 
-        // function showcontactus() {
-        //     $('.section.active').removeClass('fadeout')
-        //     $('.contact-us').addClass('js-ds-none').removeClass('active')
-        //     $('.contact-us').removeClass('js-ds-none').addClass('active')
-        //     $('.pop-window-nav').removeClass('active').addClass('closeactive')
-        // }
-        // $('.pagenation span').on('click', function() {
-        //     var type = $(this).attr('data-type')
-        //     if (type == 0 && !$(this).hasClass('active')) {
-        //         $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
-        //             left: 0
-        //         })
-        //         $($('.inter-two-pic-box .content-box')[Number(type) + 1]).animate({
-        //             left: '100%'
-        //         })
-        //     } else if (type == 1 && !$(this).hasClass('active')) {
-        //         $($('.inter-two-pic-box .content-box')[Number(type) - 1]).animate({
-        //             left: '-100%'
-        //         })
-        //         $($('.inter-two-pic-box .content-box')[Number(type)]).animate({
-        //             left: 0
-        //         })
-        //     }
-        //     $($('.inter-two-pic-box .content-box')[type]).find('.animation-flag').addClass('fadeinInter')
-        // })
+        function goback() {
+            $.fn.fullpage.moveTo('page1')
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+        $('.nav-ul').on('click', 'a', function() {
+            var type = $(this).attr('data-type')
+            $.fn.fullpage.moveTo('page2', Number(type))
+            $(this).addClass('active').siblings().removeClass('active')
+        })
     </script>
-    <!-- <script>
-        
-    </script> -->
 
 </body>
 
