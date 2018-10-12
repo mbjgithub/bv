@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="js/picCarousel/picCarousel.css">
     <style>
         .header {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 217px;
             right: 0;
-            z-index: 5;
+            z-index: auto;
             height: 90px;
             line-height: 90px;
             margin: auto;
@@ -28,6 +28,8 @@
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             max-width: 1200px;
+            opacity: 0;
+            transition-delay: 4s;
         }
         
         .pop-window-nav .header {
@@ -48,7 +50,7 @@
 </head>
 
 <body>
-    <header id="js-header" class="header clearfix">
+    <header id="js-header" class="header clearfix headerfadein">
         <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
             <img src="./images/icon/icon-logo.png">
         </a>
@@ -801,9 +803,13 @@
                 var outer = $("#TagName").prop("outerHTML")
                 $("#TagName").remove()
                 $('.picCarsoule-con').prepend($(outer))
+                let totalWidth = (window.innerWidth - 217) * 0.8
+                let totalHeight = window.innerHeight * 0.6
                 $("#TagName").PicCarousel({
-                    width: 800,
-                    height: 600,
+                    width: totalWidth,
+                    height: totalHeight,
+                    posterWidth: totalWidth * 0.7,
+                    posterHeight: totalHeight * 0.7,
                     speed: 200
                 });
                 e.stopPropagation()

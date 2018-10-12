@@ -4,6 +4,12 @@
     opacity: 0;
 }
 
+.headerfadein {
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 1 !important;
+}
+
 .picCarsouelFadeOut {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;

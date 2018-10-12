@@ -529,7 +529,7 @@ img {
     left: 0;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
     .part-nine .right-content-box,
     .part-eight .inter-two-pic-box,
     .resource-map,
@@ -756,8 +756,8 @@ img {
 
 .resource-map .red-cion {
     position: absolute;
-    width: 6.3%;
-    /* height: 50px; */
+    width: 50px;
+    height: 50px;
 }
 
 .resource-map .red-cion-bg {
@@ -852,7 +852,7 @@ span.red-cion-bg:after {
     display: block;
 }
 
-.resource-map .resource-con .contry li:hover .business {
+.resource-map .resource-con .contry>li:hover .business {
     opacity: 1;
     /*width: 150px;*/
     -webkit-transition: width 1s;
@@ -865,8 +865,8 @@ span.red-cion-bg:after {
 }
 
 .resource-map .red-cion.oceania {
-    top: 66%;
-    left: 81%;
+    top: 72%;
+    left: 82%;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
     /* Safari 和 Chrome */
@@ -902,14 +902,14 @@ span.red-cion-bg:after {
     color: #fff;
     position: absolute;
     top: 50%;
-    left: 40%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .resource-map .red-cion .txt-title span:nth-child(1) {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .resource-map .red-cion .txt-title span:nth-child(2) {
