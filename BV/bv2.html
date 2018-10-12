@@ -117,19 +117,19 @@
         .visual-design {
             position: absolute;
             width: 100%;
-            padding-left: 200px;
+            /* padding-left: 200px; */
             height: 100%;
-            left: 0;
-            z-index: 3;
+            /* left: 0; */
+            /* z-index: 3; */
             overflow: hidden;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+            /* -webkit-box-sizing: border-box; */
+            /* box-sizing: border-box; */
         }
         
         .visual-design ul {
             position: relative;
             top: 50%;
-            left: -700px;
+            /* left: -700px; */
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             overflow: hidden;
@@ -143,6 +143,10 @@
             position: relative;
             display: inline-block;
             margin-left: 90px;
+        }
+        
+        .visual-design .item:nth-child(1) {
+            margin: 0;
         }
         
         .visual-design .item>img {
@@ -244,7 +248,7 @@
             top: 50%;
             -webkit-transform: translateY(-50%) rotate(180deg);
             transform: translateY(-50%) rotate(180deg);
-            left: 220px;
+            left: 20px;
             background: url('./img/right-fill.png') no-repeat;
             background-size: 100% 100%;
             cursor: pointer;
@@ -1129,7 +1133,7 @@
             } else if (range == 2) {
                 $(e.target).addClass('active').siblings().removeClass('active')
             }
-            $('.con .itemtype').addClass('fadeout').addClass('js-ds-none')
+            $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
             $('.' + type).removeClass('js-ds-none').addClass('fadein')
         })
         $('.business-hezuo .change img').on('click', function(e) {
