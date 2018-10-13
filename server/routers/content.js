@@ -22,34 +22,34 @@ router.post("/modify_content", function(req, res) {
     var order=+new Date()
     payload.order=order
     console.log("PAYLOAD",payload,isCulture)
-    if(isCulture){
-        var {strTitle,strImg,strDesc}=payload
-        console.log("333333",strTitle,strImg,strDesc)
-        if(!strTitle || !strImg || !strDesc){
-            res.json(Object.assign({},status.INPUT_ERROR))
-            return
-        }
-    }else{
-        var {
-            strTitle,
-            strLocationEn,
-            strLocationZh,
-            strTime,
-            strCover,
-            vecMixed
-        }= payload
-        console.log("44444444",strTitle,strLocationEn,strLocationZh,strTime,strCover,vecMixed)
-        if(!strTitle || !strLocationEn || !strLocationZh || !strTime
-             || !strCover || !vecMixed){
-            res.json(Object.assign({},status.INPUT_ERROR))
-            return
-        }
-        if(vecMixed && vecMixed.length){
-            vecMixed.forEach(mixed=>{
-                mixed.order=+new Date()
-            })
-        }
+    // if(isCulture){
+    //     var {strTitle,strImg,strDesc}=payload
+    //     console.log("333333",strTitle,strImg,strDesc)
+    //     if(!strTitle || !strImg || !strDesc){
+    //         res.json(Object.assign({},status.INPUT_ERROR))
+    //         return
+    //     }
+    // }else{
+    var {
+        strTitle,
+        strLocationEn,
+        strLocationZh,
+        strTime,
+        strCover,
+        vecMixed
+    }= payload
+    console.log("44444444",strTitle,strLocationEn,strLocationZh,strTime,strCover,vecMixed)
+    if(!strTitle || !strLocationEn || !strLocationZh || !strTime
+         || !strCover || !vecMixed){
+        res.json(Object.assign({},status.INPUT_ERROR))
+        return
     }
+    if(vecMixed && vecMixed.length){
+        vecMixed.forEach(mixed=>{
+            mixed.order=+new Date()
+        })
+    }
+    // }
     // var $update
     // var data={}
     // data[key]=payload
@@ -215,7 +215,6 @@ router.get('/get_content_by_id',(req,res)=>{
         }else{
             res.end(`${callback}(${JSON.stringify(result)})`)
         }
-        res.json(result)
     })
 })
 
@@ -232,11 +231,22 @@ router.get("/change_content_order",(req,res)=>{
             res.json(status.QUERY_ERROR)
             return
         }
-        console.log("DOCS",docs)
+        console.log("DOCS",docs[0][key])
         var firstDoc=docs[0]
+        var item1
+        var item2
         vecCnt=firstDoc[key]
-        var item1=vecCnt[0]
-        var item2=vecCnt[1]
+        vecCnt.some(cnt=>{
+            if(cnt._id==contentId1){
+                item1=cnt
+            }else if(cnt._id==contentId2){
+                item2=cnt
+            }
+            if(item1 && item2){
+                return true
+            }
+        })
+        
         var order=item2.order
         item2.order=item1.order
         item1.order=order

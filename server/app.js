@@ -7,10 +7,13 @@ var http = require("http");
 
 var channel = require("./routers/channel");
 var content = require("./routers/content");
+var visual = require("./routers/visual");
 var login = require("./routers/login");
 var upload = require("./routers/upload");
 
 var isReadableCgi=require('./modules/cgi-type')
+
+var config=require('./config')
 
 var mongodb = require("./mongoose");
 
@@ -18,12 +21,12 @@ var status=require('./modules/status')
 
 var app = express();
 var server = http.createServer(app); //use app application to create server
-server.listen(1337, "172.16.0.6", function(err) {
+server.listen(config.port, config.ip, function(err) {
 	if (err) {
 		console.log("server listening error");
 		return;
 	}
-	console.log("server is listenning on 127.0.0.1:1337");
+	console.log(`server is listenning on ${config.ip}:${config.port}`);
 });
 
 mongodb.connectToMongoDB();
@@ -92,4 +95,5 @@ app.use(function(req,res,next){
 
 app.use("/cgi", channel);
 app.use("/cgi", content);
+app.use("/cgi", visual);
 app.use("/cgi", upload);

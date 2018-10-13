@@ -7,6 +7,7 @@ import VueRouter from 'vue-router'
 import Login from 'pages/login'
 import Index from 'pages/index'
 import Content from 'pages/content'
+import Visual from 'pages/visual'
 import ContentInput from 'pages/content_input'
 
 var routes = [{
@@ -25,6 +26,10 @@ var routes = [{
   path: '/content_input.html', 
   component: ContentInput,
   name:'content_input'
+},{
+  path: '/visual.html', 
+  component: Visual,
+  name:'visual'
 },{
   path:'/login.html',
   components:{

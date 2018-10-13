@@ -22,7 +22,7 @@
         var update=!!query.id?1:0
         var channelId=query.channelId
         var content=copy(this.cntInfo)
-        content.strTime=content.strTime ? +new Date(content.strTime) : ''
+        // content.strTime=content.strTime ? +new Date(content.strTime) : ''
         var [err,data]=await to(modifyReq({
           content:JSON.stringify(content),
           channelId,

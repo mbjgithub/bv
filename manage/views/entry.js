@@ -28,6 +28,7 @@ require('directives/imgerr')
  */
 import indexStore from 'pages/index/store'
 import contentStore from 'pages/content/store'
+import visualStore from 'pages/visual/store'
 import contentInputStore from 'pages/content_input/store'
 /**
  *注册路由
@@ -40,6 +41,7 @@ var allStore = {
   modules: {
     index: indexStore,
     content:contentStore,
+    visual:visualStore,
     content_input:contentInputStore
   }
 }

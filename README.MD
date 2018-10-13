@@ -18,5 +18,5 @@
 	环境准备：Node，数据库mongodb
 	本地调试：
 			npm i
-			node app.js
+			NODE_ENV=env node app.js
 ````

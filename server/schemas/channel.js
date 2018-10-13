@@ -34,7 +34,7 @@ var ChannelSchema=new Schema({
 	order:Number,
 	type:String,       //类型1为国际，2为文化
 	international:[InternationalSchema],   //国际
-	culture:[CultureSchema]   //文化
+	culture:[InternationalSchema]   //文化
 });
 
 ChannelSchema.pre("save",function(next){

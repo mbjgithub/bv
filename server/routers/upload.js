@@ -5,13 +5,14 @@ var fs=require("fs");
 var path=require("path")
 
 var status=require("../modules/status")
+var config=require('../config')
 
 var router=new express.Router();
 
 var upload_img_dir="upload_img"
 var PICNAME="vb"
 // var domain="//127.0.0.1:1337"
-var domain='//193.112.82.136:1337'
+var domain=`//${config.ip}:${config.port}`
 router.post('/upload_img',(req,res)=>{
 	var form=new formidable.IncomingForm();
     //console.log(__dirname); E:\jsnode\Blog\routers  
@@ -31,9 +32,9 @@ router.post('/upload_img',(req,res)=>{
        	// var suffix=splited.pop()
        	// var prefix=splited.join(".")
         // var newName=prefix+dateTime+"."+suffix;
-
-        var name=oldPath.match(/\/([^.\/]+?\.[\s\S]+)/)[1]
-        console.log('---------',oldPath,oldName,name)
+        // C:\Users\Administrator\Desktop\bv\server\public\upload_img\1.jpg
+        console.log('---------',oldPath,oldName)
+        var name=oldPath.match(/(?:\/||\\)([^.\/\\]+?\.[\s\S]+)/)[1]
         res.json(Object.assign({
         	url:domain+'/'+upload_img_dir+"/"+name
         },status.QUERY_SUCCESS))

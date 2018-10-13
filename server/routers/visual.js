@@ -1,78 +1,67 @@
 var express = require("express");
-var ChannelModel = require("../models/channel");
+var VisualModel = require("../models/visual");
 
 var router = express.Router();
 var status =require("../modules/status")
 var commErrHandler=require('../modules/comm-error-handler')
 
 /**
- * [添加频道]
+ * [添加视觉]
  * @param  {[type]} req  [description]
  * @param  {[type]} res) {               var {strName,type} [description]
  * @return {[type]}      [description]
  */
-router.post("/modify_channel", function(req, res) {
-    var {strName,type,update,_id}=req.body
-    type=type || status.INTERNATIONAL
-    if(!strName){
-       res.json(Object.assign({},status.INPUT_ERROR,{errMsg:'strName is needed'}))
+router.post("/modify_visual", function(req, res) {
+    var {strName,strImg,_id,update}=req.body
+    if(!strName||!strImg){
+       res.json(Object.assign({},status.INPUT_ERROR,{errMsg:'lack of needed field'}))
        return 
     }
     //新增
     if(!+update){
         var order=+new Date() 
-        var channel=new ChannelModel({strName,order,type})
-        channel.save(commErrHandler(req,res))
+        var visual=new VisualModel({strName,strImg,order})
+        visual.save(commErrHandler(req,res))
     }else{   //修改
-        //findOneAndUpdate 会返回修改后的数据，update不会
-        var $update={strName}
-        ChannelModel.update({
+        var $update={strName,strImg}
+        VisualModel.update({
             _id
         },$update,commErrHandler(req,res))
     }
 });
 
 /**
- * 删除频道
- * @param  {[type]} "/del_channel" [description]
+ * 删除视觉
+ * @param  {[type]} "/del_visual" [description]
  * @param  {[type]} (req,res)      [description]
  * @return {[type]}                [description]
  */
-router.post("/del_channel",(req,res)=>{
+router.post("/del_visual",(req,res)=>{
     var {id}=req.body
     var $update={isDel:true}
-    ChannelModel.update({
+    VisualModel.update({
         _id:id
     },$update,commErrHandler(req,res))
 })
 
 /**
- * 频道列表
- * @param  {[type]} "/channel_list"           [description]
+ * 视觉列表
+ * @param  {[type]} "/visual_list"           [description]
  * @param  {[type]} (req,res)                 [description]
  * @param  {[type]} null                      [description]
  * @param  {[type]} options.sort:{order:-1} [description]
  * @param  {[type]} (err,docs                 [description]
  * @return {[type]}                           [description]
  */
-router.get("/channel_list",(req,res)=>{
-    var {type,callback}=req.query
-    ChannelModel.find({type,isDel:{$ne:true}},null,{sort:{order:-1}},(err,docs)=>{
+router.get("/visual_list",(req,res)=>{
+    var {callback}=req.query
+    VisualModel.find({isDel:{$ne:true}},null,{sort:{order:-1}},(err,docs)=>{
         if(err){
             res.json(status.QUERY_ERROR)
             return
         }
-        docs.forEach(doc=>{
-            var vecData=doc.international&& doc.international.length ? doc.international :doc.culture
-            for(var i=0;i<vecData.length;i++){
-                if(vecData[i].isDel){
-                    vecData.splice(i,1)
-                    i--
-                }
-            }
-        })
         var result=Object.assign({},status.QUERY_SUCCESS,{
-            vecChannel:docs || []
+            vecVisual:docs || []
         })
         if(!callback){
             res.json(result)
@@ -82,14 +71,14 @@ router.get("/channel_list",(req,res)=>{
     })
 })
 
-router.get("/change_channel_order",(req,res)=>{
-    var {type,channelId1,channelId2}=req.query
+router.get("/change_visual_order",(req,res)=>{
+    var {visualId1,visualId2}=req.query
 
-    ChannelModel.find({
-        type,
+    VisualModel.find({
         isDel:{$ne:true},
-        _id:{$in:[channelId1,channelId2]}
+        _id:{$in:[visualId1,visualId2]}
     },(err,docs)=>{
+        console.log(err,docs)
         if(err || docs.length<2){
             res.json(status.QUERY_ERROR)
             return
@@ -103,6 +92,27 @@ router.get("/change_channel_order",(req,res)=>{
         item2.save((err2)=>{
             item1.save(commErrHandler(req,res))
         })
+    })
+})
+
+router.get('/get_visual_by_id',(req,res)=>{
+    var {id,type,callback}=req.query
+    VisualModel.findOne({
+        id
+    },(err,doc)=>{
+        if(err){
+            res.json(status.QUERY_ERROR)
+            return
+        }
+        console.log("doc",doc)
+        doc=doc._doc
+        var result=Object.assign({},status.QUERY_SUCCESS,doc)
+        if(!callback){
+            res.json(result)
+        }else{
+            res.end(`${callback}(${JSON.stringify(result)})`)
+        }
+        res.json(result)
     })
 })
 

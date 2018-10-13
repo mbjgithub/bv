@@ -1,4 +1,5 @@
-const domain="193.112.82.136:1337"
+const domain="127.0.0.1:1337"
+// const domain="193.112.82.136:1337"
 
 //频道操作
 const modify_channel=`//${domain}/cgi/modify_channel`
@@ -12,6 +13,14 @@ const del_content=`//${domain}/cgi/del_content`
 const conten_list=`//${domain}/cgi/conten_list`
 const get_content_by_id=`//${domain}/cgi/get_content_by_id`
 const change_content_order=`//${domain}/cgi/change_content_order`
+
+
+//视觉内容操作
+const modify_visual=`//${domain}/cgi/modify_visual`
+const del_visual=`//${domain}/cgi/del_visual`
+const visual_list=`//${domain}/cgi/visual_list`
+const change_visual_order=`//${domain}/cgi/change_visual_order`
+const get_visual_by_id=`//${domain}/cgi/get_visual_by_id`
 
 //登陆校验
 const login_judge=`//${domain}/login_judge`
@@ -30,5 +39,10 @@ export default {
 	login_judge,
 	upload_img,
 	change_channel_order,
-	change_content_order
+	change_content_order,
+	modify_visual,
+	del_visual,
+	visual_list,
+	change_visual_order,
+	get_visual_by_id
 }

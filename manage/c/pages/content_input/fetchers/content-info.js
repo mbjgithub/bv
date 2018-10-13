@@ -10,7 +10,7 @@ export default (options={})=>{
   return api.get(cgi.get_content_by_id,Object.assign({
   	id:query.id
   },options)).then(data=>{
-  	data.strTime=data.strTime ? new Date(+data.strTime) : ''
+  	// data.strTime=data.strTime ? new Date(+data.strTime) : ''
   	return data
   })
 }
