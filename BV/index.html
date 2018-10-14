@@ -159,6 +159,17 @@
             animation-delay: 3s;
         }
     </style>
+    <script type="text/javascript">
+        function showaboutus() {
+            $.fn.fullpage.moveTo('page2', 0)
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+
+        function goback() {
+            $.fn.fullpage.moveTo('page1')
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+    </script>
 </head>
 
 <body>
@@ -371,6 +382,6 @@
     </ul>
 </div>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/index.a9d9b2.js"></script></body>
+<script type="text/javascript" src="js/index.ec9f10.js"></script></body>
 
 </html>

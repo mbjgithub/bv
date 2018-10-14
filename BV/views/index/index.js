@@ -134,16 +134,6 @@ $(document).ready(function() {
     })
 });
 
-function showaboutus() {
-    $.fn.fullpage.moveTo('page2', 0)
-    $('.pop-window-nav').removeClass('active').addClass('closeactive')
-}
-
-function goback() {
-    $.fn.fullpage.moveTo('page1')
-    $('.pop-window-nav').removeClass('active').addClass('closeactive')
-}
-
 $('.nav-ul').on('click', 'a', function() {
     var type = $(this).attr('data-type')
     $.fn.fullpage.moveTo('page2', Number(type))
