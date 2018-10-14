@@ -7,15 +7,6 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="img/BV-logo-big-red.png">
     <link rel="stylesheet" href="css/index.css">
-    <style>
-        .contact-us>img {
-            z-index: 2;
-            position: absolute;
-            width: 65%;
-            height: auto;
-            top: 6%;
-        }
-    </style>
 </head>
 
 <body>
@@ -32,11 +23,83 @@
         <span>Cn </span>/<span> En</span>
     </div>
 </header>
-    <div class="part-six active contact-us">
-        <div class="red-bg fadeinleft"></div>
-        <img src="./images/contact-con.png" class="contactfadeinright">
-    </div>
-    <!--导航栏弹窗-->
+        <div class="part-six active contact-us">
+            <div class="red-bg fadeinleft"></div>
+            <div class="con fadeinright">
+                <div class="back-last-page" onclick="window.history.go(-1)">
+                    <img src="./images/icon/contact-us-back.png">
+                </div>
+                <div class="contact-us-title">
+                    <img src="./images/contact-us-title.png">
+                </div>
+                <div class="contact-address">
+                    <div class="item">
+                        <span id="SHENZHEN" class="active">SHENZHEN</span>&nbsp;&nbsp;
+                        <span id="HONGKONG">HONGKONG</span>&nbsp;&nbsp;
+                        <span id="PARIS">PARIS</span>&nbsp;&nbsp;
+                        <span id="MILAN">MILAN</span>&nbsp;&nbsp;
+                        <span id="LOS-ANGELES">LOS ANGELES</span>&nbsp;&nbsp;
+                        <span id="BERLIN">BERLIN</span>&nbsp;&nbsp;
+                        <span id="TOKYO">TOKYO</span>&nbsp;&nbsp;
+                        <span id="AUCKLAND">AUCKLAND</span>&nbsp;&nbsp;
+                        <span id="CHANGSHA">CHANGSHA</span>
+                    </div>
+                    <img src="./images/contact-us-map-2.png" class="map">
+                </div>
+                <div class="txt">
+                    <div>博闻伟达集团</div>
+                    <div style="margin-bottom:30px;">Baldwin&amp;Viktor Group</div>
+                    <div class="SHENZHEN item-address">
+                        <div>Address：深圳福田区福田保税区T8创意园市花路8号和合大厦3层320室</div>
+                        <div>Phone：+86 755 25658299</div>
+                        <div>Contact：Aubrey</div>
+                    </div>
+                    <div class="HONGKONG js-ds-none  item-address">
+                        <div>Address：香港中環德輔道中130-132號大生銀行大廈1205室</div>
+                        <div>Phone：+852 65218156</div>
+                        <div>Contact：Echo</div>
+                    </div>
+                    <div class="PARIS js-ds-none item-address">
+                        <div>Address：9 Boul. de la Madeleine Paris France 75001 </div>
+                        <div>Phone：+33 153451301</div>
+                        <div>Contact：Gwen Pauls</div>
+                    </div>
+                    <div class="MILAN js-ds-none item-address">
+                        <div>Address：Via Paolo Sarpi 53, 20154 Milano Italia</div>
+                        <div>Phone ：+39 329 2017791</div>
+                        <div>Contact：Alice</div>
+                    </div>
+                    <div class="LOS-ANGELES js-ds-none item-address">
+                        <div>Address：800 Olympic Blvd, Los Angeles, CA 90015</div>
+                        <div>Phone ：+1 866-548-3452</div>
+                        <div>Contact：Grace</div>
+                    </div>
+                    <div class="BERLIN js-ds-none item-address">
+                        <div>Address：Reinhardtstr. 7 10117 Berlin</div>
+                        <div>Phone ：+49 030 440332920</div>
+                        <div>Contact：Jini</div>
+                    </div>
+                    <div class="TOKYO js-ds-none item-address">
+                        <div>Address：〒103-0023 東京都中央区日本橋本町一丁目6番5号（ツカモトビル）</div>
+                        <div>Phone ：+03 52053920</div>
+                        <div>Contact：米津俊秀</div>
+                    </div>
+                    <div class="AUCKLAND js-ds-none item-address">
+                        <div>Address：308 Parnell Road Parnell Auckland NZ</div>
+                        <div>Phone ：+64 9 6006115</div>
+                        <div>Contact：Pauline</div>
+                    </div>
+                    <div class="CHANGSHA js-ds-none item-address">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="contact-us-box fadeinright">
+            </div>-->
+        </div>
+        <!--导航栏弹窗-->
 <div class="pop-window-nav">
     <header id="js-header" class="header clearfix">
         <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
@@ -61,7 +124,19 @@
         <li class="" onclick="location.href='./concat.html'">联系我们</li>
     </ul>
 </div>
-    <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script>
+                $('.contact-address .item').on('mouseover', 'span', function() {
+                    $(this).addClass('active').siblings().removeClass('active')
+                    $('.' + $(this).attr('id')).removeClass('js-ds-none').siblings('.item-address').addClass('js-ds-none')
+                })
+                $('.contact-address .item').on('mouseout', 'span', function() {
+                    $(this).removeClass('active')
+                    $('.' + $(this).attr('id')).addClass('js-ds-none').siblings('.item-address').addClass('js-ds-none')
+                    $($('.contact-address .item span')[0]).addClass('active')
+                    $('.SHENZHEN').removeClass('js-ds-none')
+                })
+            </script>
 <script type="text/javascript" src="js/concat.787d3f.js"></script></body>
 
 </html>
