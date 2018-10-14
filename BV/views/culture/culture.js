@@ -1,13 +1,13 @@
-var render=require('modules/render')
-var config=require('modules/config')
+var render = require('modules/render')
+var config = require('modules/config')
 
-var renderChannelContent=require('modules/render-channel-content')
+var renderChannelContent = require('modules/render-channel-content')
 
 //获取文化数据
 $.ajax({
     type: "GET",
     dataType: "jsonp",
-    url: config.cgi+'/cgi/channel_list?type=2',
+    url: config.cgi + '/cgi/channel_list?type=2',
     success: function(data) {
         if (data && data.iErrCode === 0) {
             window.CULTURE = data
@@ -31,7 +31,7 @@ $.ajax({
 //频道左边channel名称点击事件
 $('#case').on('click', 'a', function(e) {
     var id = e.target.dataset.id
-    renderChannelContent(id,CULTURE,2)
+    renderChannelContent(id, CULTURE, 2)
     $('.picCarsoule-box').addClass('picCarsouelFadeOut').addClass('js-ds-none')
     $('.left-nav .txt-box .txt .item a').removeClass('active')
     $(this).parent().siblings().removeClass('active')
@@ -43,7 +43,7 @@ $('#case').on('click', 'a', function(e) {
 
 
 require('lib/picCarousel.js')
-//频道内容的某一项点击事件
+    //频道内容的某一项点击事件
 var case_content_cached = {}
 $("#case_detail").on('click', '.item', function(e) {
     var $this = $(this)
@@ -122,7 +122,7 @@ $('.left-nav .txt-box .txt .item').on('click', function(e) {
         $(e.target).addClass('active').siblings().removeClass('active')
     }
     $('.right-con .itemtype').removeClass('fadeinInter').addClass('fadeout').addClass('js-ds-none')
-    renderChannelContent(CULTURE.vecChannel[0] && CULTURE.vecChannel[0]._id,CULTURE,2)
+    renderChannelContent(CULTURE.vecChannel[0] && CULTURE.vecChannel[0]._id, CULTURE, 2)
     $('.' + type).removeClass('js-ds-none').removeClass('fadeout').addClass('fadeinInter')
 })
 
@@ -155,6 +155,4 @@ $('.left-nav .txt-box .txt .item').on('click', function(e) {
     $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
     $('.' + type).removeClass('js-ds-none').addClass('fadein')
 })
-
-
 require('modules/cooperation')

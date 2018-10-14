@@ -1,17 +1,17 @@
-var config=require('./config')
-var render=require('./render')
-var addWheel=require('./wheel')
+var config = require('./config')
+var render = require('./render')
+var addWheel = require('./wheel')
 
-var mainPic={
-    strImg:'images/visual-design.jpg',
-    strName:"我是主要图片"
+var mainPic = {
+    strImg: 'images/visual-design.jpg',
+    strName: "我是主要图片"
 }
 
 // 视觉设计
 $.ajax({
     type: "GET",
     dataType: "jsonp",
-    url: config.cgi+'/cgi/visual_list',
+    url: config.cgi + '/cgi/visual_list',
     success: function(data) {
         if (data && data.iErrCode === 0) {
             var html = `<li class="item {{active}}">
@@ -27,13 +27,17 @@ $.ajax({
                         </div>
                     </li>`
             var all = ""
-            var vecVisual=data.vecVisual||[]
-            vecVisual.splice(1,0,mainPic)
+            var vecVisual = data.vecVisual || []
+            vecVisual.splice(1, 0, mainPic)
             vecVisual.forEach((visual, i) => {
                 visual.active = i == 1 ? 'active' : ''
                 all += render(html, visual)
             })
             $('#visual-design-container').html(all)
+                //计算视觉设计内图片的宽度
+            var visualImgWidth = (window.innerWidth - 217) * 0.587
+            console.log(visualImgWidth)
+            $('.visual-design ul li.item').css('width', visualImgWidth + 'px')
             return
         }
         console.log("拉取数据失败", data)
@@ -89,7 +93,7 @@ $('.visual-design').on('click', ".change", function() {
     })
 })
 
-addWheel($('.visual-design')[0],{
+addWheel($('.visual-design')[0], {
     pre() {
         $(".visual-design .next").trigger('click')
     },
