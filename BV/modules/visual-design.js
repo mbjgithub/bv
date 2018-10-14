@@ -4,7 +4,7 @@ var addWheel=require('./wheel')
 
 var mainPic={
     strImg:'images/visual-design.jpg',
-    strName:"我是主要图片"
+    strName:""
 }
 
 // 视觉设计

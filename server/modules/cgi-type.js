@@ -1,7 +1,8 @@
 var prefix='cgi'
 var READ_CGI={
 	[`/${prefix}/channel_list`]:true,
-	[`/${prefix}/content_list`]:true
+	[`/${prefix}/content_list`]:true,
+	[`/${prefix}/visual_list`]:true
 }
 
 module.exports=(url)=>{
