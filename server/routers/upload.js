@@ -12,7 +12,7 @@ var router=new express.Router();
 var upload_img_dir="upload_img"
 var PICNAME="vb"
 // var domain="//127.0.0.1:1337"
-var domain=`//${config.ip}:${config.port}`
+var domain=`//${config.outerIp}:${config.outerPort}`
 router.post('/upload_img',(req,res)=>{
 	var form=new formidable.IncomingForm();
     //console.log(__dirname); E:\jsnode\Blog\routers  
