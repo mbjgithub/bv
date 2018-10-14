@@ -1,0 +1,27 @@
+<!--导航栏弹窗-->
+<div class="pop-window-nav">
+    <header id="js-header" class="header clearfix">
+        <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+            <img src="./images/icon/icon-logo.png">
+        </a>
+        <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
+            <img src="./images/close-nav.png">
+        </a>
+        <div class="lang g-fr">
+            <span>Cn </span>/<span> En</span>
+        </div>
+    </header>
+    <div class="title">
+        BALDWIN&amp;VIKTOR
+    </div>
+    <ul class="nav-txt">
+    <% if (isIndex == '1') { %>
+        <li class="" onclick="showaboutus()">关于我们</li>
+    <% }else{ %>
+        <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
+    <% } %>
+        <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
+        <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
+        <li class="" onclick="location.href='./concat.html'">联系我们</li>
+    </ul>
+</div>

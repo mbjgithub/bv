@@ -1,7 +1,7 @@
 {
   "name": "manage-cli",
   "version": "1.0.0",
-  "description": "后台管理系统通用解决方案",
+  "description": "管理系统",
   "main": "index.js",
   "scripts": {
     "d": "cross-env PORT=8999 webpack-dev-server --config build/webpack.dev.js --compress",

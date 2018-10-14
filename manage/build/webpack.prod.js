@@ -19,7 +19,7 @@ config.plugins.push(
   }),
   new ProgressBarPlugin(),
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('production')
+    'isNodeDev': false
   }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {

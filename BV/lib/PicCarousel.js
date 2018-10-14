@@ -31,7 +31,7 @@
                 me.prevBtn = me.poster.find("div.poster-prev-btn");
                 me.posterItems = me.poster.find("li.poster-item");
 
-                if (me.posterItems.size() % 2 == 0) {
+                if (me.posterItems.length % 2 == 0) {
                     me.posterItemMain.append(me.posterItems.eq(0).clone());
                     me.posterItems = me.posterItemMain.children;
                 }
@@ -154,9 +154,9 @@
             setPosterPost: function() {
                 var me = this;
                 var sliceItems = me.posterItems.slice(1),
-                    sliceSize = sliceItems.size() / 2,
+                    sliceSize = sliceItems.length / 2,
                     rightSlice = sliceItems.slice(0, sliceSize),
-                    level = Math.floor(me.posterItems.size() / 2),
+                    level = Math.floor(me.posterItems.length / 2),
                     leftSlice = sliceItems.slice(sliceSize);
 
                 //设置右边帧的位置关系和宽度、高度、top...
@@ -188,7 +188,7 @@
                 //设置左边的位置关系
                 var lw = rightSlice.last().width(),
                     lh = rightSlice.last().height(),
-                    oloop = Math.floor(me.posterItems.size() / 2);
+                    oloop = Math.floor(me.posterItems.length / 2);
 
                 leftSlice.each(function(i) {
                     $(this).css({
@@ -244,19 +244,19 @@
                 me.nextBtn.css({
                     width: w,
                     height: me.settings.height,
-                    zIndex: Math.ceil(me.posterItems.size() / 2)
+                    zIndex: Math.ceil(me.posterItems.length / 2)
                 });
                 me.prevBtn.css({
                     width: w,
                     height: me.settings.height,
-                    zIndex: Math.ceil(me.posterItems.size() / 2)
+                    zIndex: Math.ceil(me.posterItems.length / 2)
                 });
                 me.posterFirstItem.css({
                     width: me.settings.posterWidth,
                     height: me.settings.posterHeight,
                     top: me.setVertucalAlign(me.settings.posterHeight),
                     left: w,
-                    zIndex: Math.floor(me.posterItems.size() / 2)
+                    zIndex: Math.floor(me.posterItems.length / 2)
                 });
             }
         };

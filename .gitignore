@@ -1,3 +1,4 @@
 /node_modules
-/server//node_modules
-/manage//node_modules
+/server/node_modules
+/manage/node_modules
+/BV/node_modules

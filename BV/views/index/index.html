@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博闻伟达</title>
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <style>
+        .header-animate {
+            opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
+            animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+        }
+        
+        .animate1,
+        .animate2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .animate1 {
+            z-index: 1;
+        }
+        
+        .animate2 {
+            z-index: 2;
+            opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
+            animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+        }
+        
+        @-webkit-keyframes showanimate2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes showanimate2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .animatetxt {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            height: 20%;
+        }
+        
+        .animatetxt .txt1 {
+            position: relative;
+            top: 0;
+            opacity: 0;
+            -webkit-animation: showtxt1 3s 1;
+            animation: showtxt1 3s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+        }
+        
+        @-webkit-keyframes showtxt1 {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            100% {
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes showtxt1 {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            100% {
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                opacity: 1;
+            }
+        }
+        
+        .animatetxt .txt2 {
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            -webkit-animation: showtxt2 3s 1;
+            animation: showtxt2 3s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+        }
+        
+        @-webkit-keyframes showtxt2 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            100% {
+                bottom: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes showtxt2 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            100% {
+                bottom: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+                opacity: 1;
+            }
+        }
+        
+        .part-one .next-page {
+            position: absolute;
+            z-index: 3;
+            opacity: 0;
+            -webkit-animation: showanimate2 2s 1;
+            animation: showanimate2 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <%=require('html-loader?attrs=false!ejs-html-loader?headerIcon=no!comps/header-nav.html')%>
+    <article id="fullpage" style="visibility:hidden;">
+        <div id="first_page" class="section" style="background:#8A152F;"></div>
+
+        <%=require('html-loader?attrs=false!comps/about-us.html')%>
+        <%=require('html-loader?attrs=false!comps/international-culture.html')%>
+
+    </article>
+
+    <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=1!comps/nav-pop.html')%>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>

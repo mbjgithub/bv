@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博闻伟达-联系我们</title>
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .contact-us>img {
+            z-index: 2;
+            position: absolute;
+            width: 65%;
+            height: auto;
+            top: 6%;
+        }
+    </style>
+</head>
+
+<body>
+    <%=require('html-loader?attrs=false!ejs-html-loader?headerIcon=gray!comps/header-nav.html')%>
+    <div class="part-six active contact-us">
+        <div class="red-bg fadeinleft"></div>
+        <img src="./images/contact-con.png" class="contactfadeinright">
+    </div>
+    <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=0!comps/nav-pop.html')%>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>

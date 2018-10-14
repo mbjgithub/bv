@@ -5,7 +5,7 @@ const port = process.env.PORT || 8999
 
 config.plugins.push(
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('development')
+    'isNodeDev': true
   }),
   new HtmlWebpackPlugin({
     template:"./views/index.html",

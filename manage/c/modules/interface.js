@@ -1,5 +1,9 @@
-const domain="127.0.0.1:1337"
-// const domain="193.112.82.136:1337"
+var env=require('modules/env')
+
+var domain="193.112.82.136:1337"
+if(env.isTest){
+	domain="127.0.0.1:1337"
+}
 
 //频道操作
 const modify_channel=`//${domain}/cgi/modify_channel`

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博闻伟达文化</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <link rel="shortcut icon" href="img/BV-logo-big-red.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/picCarousel.css">
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 217px;
+            right: 0;
+            z-index: 5;
+            height: 90px;
+            line-height: 90px;
+            margin: auto;
+            padding: 0 100px;
+            color: #ececec;
+            font-size: 14px;
+            min-width: 1000px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            max-width: 1200px;
+        }
+        
+        .pop-window-nav .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 5;
+            width: 1000px;
+            height: 90px;
+            line-height: 90px;
+            margin: auto;
+            padding: 0 100px;
+            color: #ececec;
+            font-size: 14px;
+        }
+        
+        .content_detail li {
+            cursor: pointer;
+        }
+        
+        .part-eight .content-box .txt {
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+            width: 37%;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 90px 30px 45px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute;
+            top: 2.8%;
+            left: 5.3%;
+        }
+        
+        .part-eight .content-box:nth-child(1) .txt1 {
+            width: 100%;
+            color: #000;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .part-eight .content-box:nth-child(1) .txt2 {
+            width: 18%;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        
+        .part-eight .content-box:nth-child(2) {
+            /*background-image: url('./images/bv-arts2.png');*/
+            font-weight: bold;
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt {
+            width: 20.45%;
+            height: 16%;
+            position: absolute;
+            top: 12%;
+            left: 50%;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            text-align: center;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            padding: 0;
+            line-height: 1.5;
+            background-color: transparent;
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt1 {
+            width: 100%;
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt2 {
+            width: 18%;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 28%;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        
+        .part-eight .content-box:nth-child(2) .txt2-con {
+            margin-bottom: 5px;
+        }
+        
+        .visual-design {
+            position: absolute;
+            width: 100%;
+            /* padding-left: 200px; */
+            height: 100%;
+            /* left: 0; */
+            /* z-index: 3; */
+            overflow: hidden;
+            /* -webkit-box-sizing: border-box; */
+            /* box-sizing: border-box; */
+        }
+        
+        .visual-design ul {
+            position: relative;
+            top: 50%;
+            /* left: -700px; */
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            overflow: hidden;
+            width: 88888px;
+            height: 500px;
+        }
+        
+        .visual-design .item {
+            width: 800px;
+            height: inherit;
+            position: relative;
+            display: inline-block;
+            margin-left: 90px;
+        }
+        
+        .visual-design .item:nth-child(1) {
+            margin: 0;
+        }
+        
+        .visual-design .item>img {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .visual-design .item.active>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .visual-design .item.active .txt-box {
+            -webkit-animation: redfadein 2s 1;
+            animation: redfadein 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        
+        @-webkit-keyframes redfadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes redfadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .visual-design .item .txt-box {
+            background-color: rgba(150, 29, 53, 0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 450px;
+            opacity: 0;
+        }
+        
+        .visual-design .item .txt-box .txt {
+            opacity: 0;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+        
+        .visual-design .item.active .txt-box .txt {
+            -webkit-animation: redfadein 2s 1;
+            animation: redfadein 2s 1;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        
+        .visual-design .item .txt-box .txt-title {
+            color: #fff;
+            font-size: 36px;
+            margin: 50px 0 15px;
+            text-align: center;
+        }
+        
+        .visual-design .item .txt-box .txt-con {
+            text-align: center;
+            color: #000;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        .visual-design .pre {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 20px;
+            background: url('./img/right-fill.png') no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .visual-design .next {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+            left: 20px;
+            background: url('./img/right-fill.png') no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 200px;
+            right: 0;
+            z-index: 5;
+            height: 90px;
+            line-height: 90px;
+            margin: auto;
+            padding: 0 100px;
+            color: #ececec;
+            font-size: 14px;
+            min-width: 1000px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <%=require('html-loader?attrs=false!ejs-html-loader?headerIcon=gray!comps/header-nav.html')%>
+    <!--伟达文化-->
+    <div class="part-eight weida-international active part-nine part-eleven">
+        <div class="red-bg mutiwidth"></div>
+        <div class="left-nav fadeinInter">
+            <div class="txt-box fadeinInter">
+                <div class="txt fadeinInter" id="content">
+                    <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达文化</div>
+                    <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                        <div class="son-title" id="case" style="margin-top:10px;">
+
+                        </div>
+                    </div>
+                    <div class="item" id="visual-desin-tab" data-type='visual-design' data-range="1" style="height:18px;overflow:hidden;">视觉设计
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-con">
+            <%=require('html-loader?attrs=false!comps/culture-index.html')%>
+    
+            <!-- 合作案例 -->
+            <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
+                <ul class="" id="case_detail">
+
+                </ul>
+                <div class="change">
+                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
+                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
+                </div>
+            </div>
+            
+            <!-- 合作案例图片轮播 -->
+            <div class="picCarsoule-box js-ds-none">
+                <div class="picCarsoule-con">
+                    <div class="poster-main" id="TagName">
+                        <div class="poster-btn poster-prev-btn"></div>
+                        <ul class="poster-list" id="case_content">
+
+                        </ul>
+                        <div class="poster-btn poster-next-btn"></div>
+                    </div>
+                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
+                </div>
+            </div>
+
+            <!--视觉设计-->
+            <div class="visual-design js-ds-none itemtype">
+                <ul class="" id="visual-design-container">
+                        
+                </ul>
+                <div class="pre change" data-type="pre"></div>
+                <div class="next change" data-type="next"></div>
+            </div>
+        </div>  
+    </div>
+
+    <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=0!comps/nav-pop.html')%>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+</body>
+
+</html>
