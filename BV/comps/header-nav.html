@@ -10,7 +10,14 @@
         <img class="js-ds-none" src="./images/icon/icon-nav-gray.png">
     <% } %>
     </a>
+
+    <% if (headerIcon === 'gray') { %>
+    <div class="lang g-fr" style="color:#fff;">
+        <span>Cn </span>/<span> En</span>
+    </div>
+    <% }else{ %>
     <div class="lang g-fr" style="color:#000;">
         <span>Cn </span>/<span> En</span>
     </div>
+    <% } %>
 </header>
