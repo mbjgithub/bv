@@ -1025,6 +1025,11 @@ span.red-cion-bg:after {
     top: 0;
     left: 108px;
     overflow: auto;
+    cursor:default;
+}
+
+.resource-map .resource-con .business li{
+    cursor:default;
 }
 
 .part-eleven .think-tank {
