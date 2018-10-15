@@ -780,7 +780,7 @@ img {
 }
 
 #core_leader {
-    z-index: 2100;
+    z-index: 8;
 }
 
 .resource-map {
@@ -887,10 +887,11 @@ span.red-cion-bg:after {
 }
 
 .resource-map .resource-con .contry>li:hover .business {
-    opacity: 1;
+    /*opacity: 1;*/
+    display: block;
     /*width: 150px;*/
-    -webkit-transition: width 1s;
-    transition: width 1s;
+    /*-webkit-transition: width 1s;*/
+    /*transition: width 1s;*/
 }
 
 .resource-map .red-cion.asia {
@@ -965,9 +966,9 @@ span.red-cion-bg:after {
     width: 0;
     height: 0;
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 70px;
+    /*-webkit-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
     left: -10px;
     border-right: 10px solid #961b34;
     border-top: 10px solid transparent;
@@ -1018,7 +1019,8 @@ span.red-cion-bg:after {
     box-sizing: border-box;
     width: 150px;
     margin-left: -10px;
-    opacity: 0;
+    /*opacity: 0;*/
+    display: none;
     position: absolute;
     top: 0;
     left: 108px;

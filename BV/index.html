@@ -69,18 +69,24 @@
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             height: 20%;
+            width: 50%;
         }
         
         .animatetxt .txt1 {
             position: relative;
             top: 0;
             opacity: 0;
-            -webkit-animation: showtxt1 3s 1;
-            animation: showtxt1 3s 1;
+            -webkit-animation: showtxt1 2s 1;
+            animation: showtxt1 2s 1;
             -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
             -webkit-animation-delay: 5s;
             animation-delay: 5s;
+            /*height: 100%;*/
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateY(-50%) translateZ(0);
+            transform: translateY(-50%) translateZ(0);
         }
         
         @-webkit-keyframes showtxt1 {
@@ -90,8 +96,8 @@
             }
             100% {
                 top: 50%;
-                -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
+                /*-webkit-transform: translateY(-50%);*/
+                /*transform: translateY(-50%);*/
                 opacity: 1;
             }
         }
@@ -103,8 +109,6 @@
             }
             100% {
                 top: 50%;
-                -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
                 opacity: 1;
             }
         }
@@ -113,12 +117,18 @@
             position: absolute;
             bottom: 0;
             opacity: 0;
-            -webkit-animation: showtxt2 3s 1;
-            animation: showtxt2 3s 1;
+            -webkit-animation: showtxt2 2s 1;
+            animation: showtxt2 2s 1;
             -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
             -webkit-animation-delay: 5s;
             animation-delay: 5s;
+            /*height: 100%;*/
+            width: 100%;
+            left: 2%;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateY(50%) translateZ(0);
+            transform: translateY(50%) translateZ(0);
         }
         
         @-webkit-keyframes showtxt2 {
@@ -128,8 +138,8 @@
             }
             100% {
                 bottom: 50%;
-                -webkit-transform: translateY(50%);
-                transform: translateY(50%);
+                /*-webkit-transform: translateY(50%);*/
+                /*transform: translateY(50%);*/
                 opacity: 1;
             }
         }
@@ -141,8 +151,8 @@
             }
             100% {
                 bottom: 50%;
-                -webkit-transform: translateY(50%);
-                transform: translateY(50%);
+                /*-webkit-transform: translateY(50%);*/
+                /*transform: translateY(50%);*/
                 opacity: 1;
             }
         }
@@ -193,12 +203,12 @@
         <img src="./images/icon/icon-logo.png">
     </a>
     <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
-    
-        <img src="./images/icon-3.png">
-        <img class="js-ds-none" src="./images/icon/icon-nav-gray.png">
-    
+        
+                <img src="./images/icon-3.png">
+                <img class="js-ds-none" src="./images/icon/icon-nav-gray.png">
+                
     </a>
-    <div class="lang g-fr" style="color:#000;">
+    <div class="lang g-fr" style="color:#ececec;">
         <span>Cn </span>/<span> En</span>
     </div>
 </header>
@@ -397,6 +407,6 @@
     </ul>
 </div>
             <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/index.8b507d.js"></script></body>
+<script type="text/javascript" src="js/index.8876f8.js"></script></body>
 
 </html>

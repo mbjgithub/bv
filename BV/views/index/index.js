@@ -12,10 +12,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.png" />
+                <img src="./images/animate/animation-txt1.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.png" />
+                <img src="./images/animate/animation-txt2.svg" />
             </div>
 
         </div>
@@ -34,10 +34,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.png" />
+                <img src="./images/animate/animation-txt1.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.png" />
+                <img src="./images/animate/animation-txt2.svg" />
             </div>
 
         </div>
