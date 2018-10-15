@@ -166,8 +166,23 @@
         }
 
         function goback() {
-            $.fn.fullpage.moveTo('page1')
+            location.href = './index.html#page1'
             $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+        //滚动到关于我们
+        function toAboutUs() {
+            $.fn.fullpage.moveTo('page2', 0)
+            $($('.nav-ul a')[0]).addClass('active').siblings().removeClass('active')
+        }
+        //滚动到服务团队
+        function toServer() {
+            $.fn.fullpage.moveTo('page2', 1)
+            $($('.nav-ul a')[1]).addClass('active').siblings().removeClass('active')
+        }
+        //滚动到核心团队
+        function toTeam() {
+            $.fn.fullpage.moveTo('page2', 2)
+            $($('.nav-ul a')[2]).addClass('active').siblings().removeClass('active')
         }
     </script>
 </head>
@@ -187,10 +202,10 @@
         <span>Cn </span>/<span> En</span>
     </div>
 </header>
-    <article id="fullpage" style="visibility:hidden;">
-        <div id="first_page" class="section" style="background:#8A152F;"></div>
+        <article id="fullpage" style="visibility:hidden;">
+            <div id="first_page" class="section" style="background:#8A152F;"></div>
 
-        <!-- 关于我们 -->
+            <!-- 关于我们 -->
 <div class="section">
     <nav class="nav-ul">
         <a href="javascript:;" class="active" data-type="0">关于我们</a><br>
@@ -208,7 +223,7 @@
                 </div>
             </div>
             <img src="./images/about-logo.png" class="bv-big-logo">
-            <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page2',1)">
+            <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="toServer()">
             <div class="contact-us-box">
                 <div class="btn" onclick="location.href='./concat.html'">
                     联系我们
@@ -222,8 +237,8 @@
     <div class="slide part-three">
         <div class="con">
             <img src="./images/hezuo.png" class="hezuo">
-            <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="$.fn.fullpage.moveTo('page2',2)">
-            <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page2',0)">
+            <img src="./images/icon/icon-next-page.png" class="next-page-right" onclick="toTeam()">
+            <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="toAboutUs()">
             <div class="contact-us-box">
             </div>
         </div>
@@ -314,7 +329,7 @@
                     <img src="./images/icon/icon-arrow-next.png" class="next" data-type="next">
                 </div>
             </div>
-            <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="$.fn.fullpage.moveTo('page2',1)">
+            <img src="./images/icon/icon-prev-page.png" class="next-page-left" onclick="toServer()">
             <div class="contact-us-box">
             </div>
         </div>
@@ -323,7 +338,7 @@
         </div>
     </div>
 </div>
-        <!-- 第三页，国际和文化入口 -->
+                <!-- 第三页，国际和文化入口 -->
 
 <div class="section part-seven">
     <div class="con">
@@ -354,12 +369,12 @@
     </div>
 </div>
 
-    </article>
+        </article>
 
-    <!--导航栏弹窗-->
+        <!--导航栏弹窗-->
 <div class="pop-window-nav">
     <header id="js-header" class="header clearfix">
-        <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+        <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
             <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
@@ -373,15 +388,15 @@
         BALDWIN&amp;VIKTOR
     </div>
     <ul class="nav-txt">
-    
-        <li class="" onclick="showaboutus()">关于我们</li>
-    
-        <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
-        <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
-        <li class="" onclick="location.href='./concat.html'">联系我们</li>
+        
+            <li class="" onclick="showaboutus()">关于我们</li>
+            
+                    <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
+                    <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
+                    <li class="" onclick="location.href='./concat.html'">联系我们</li>
     </ul>
 </div>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/index.ec9f10.js"></script></body>
+            <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/index.8b507d.js"></script></body>
 
 </html>

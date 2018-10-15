@@ -166,24 +166,39 @@
         }
 
         function goback() {
-            $.fn.fullpage.moveTo('page1')
+            location.href = './index.html#page1'
             $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+        //滚动到关于我们
+        function toAboutUs() {
+            $.fn.fullpage.moveTo('page2', 0)
+            $($('.nav-ul a')[0]).addClass('active').siblings().removeClass('active')
+        }
+        //滚动到服务团队
+        function toServer() {
+            $.fn.fullpage.moveTo('page2', 1)
+            $($('.nav-ul a')[1]).addClass('active').siblings().removeClass('active')
+        }
+        //滚动到核心团队
+        function toTeam() {
+            $.fn.fullpage.moveTo('page2', 2)
+            $($('.nav-ul a')[2]).addClass('active').siblings().removeClass('active')
         }
     </script>
 </head>
 
 <body>
     <%=require('html-loader?attrs=false!ejs-html-loader?headerIcon=no!comps/header-nav.html')%>
-    <article id="fullpage" style="visibility:hidden;">
-        <div id="first_page" class="section" style="background:#8A152F;"></div>
+        <article id="fullpage" style="visibility:hidden;">
+            <div id="first_page" class="section" style="background:#8A152F;"></div>
 
-        <%=require('html-loader?attrs=false!comps/about-us.html')%>
-        <%=require('html-loader?attrs=false!comps/international-culture.html')%>
+            <%=require('html-loader?attrs=false!comps/about-us.html')%>
+                <%=require('html-loader?attrs=false!comps/international-culture.html')%>
 
-    </article>
+        </article>
 
-    <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=1!comps/nav-pop.html')%>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=1!comps/nav-pop.html')%>
+            <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 </body>
 
 </html>

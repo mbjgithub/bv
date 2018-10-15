@@ -80,16 +80,19 @@ $("#case_detail").on('click', '.item', function(e) {
     function _append() {
         $('#case_content').html(case_content_cached[id])
         $('.picCarsoule-box').removeClass('js-ds-none').removeClass('picCarsouelFadeOut')
+        $('#js-header').css('z-index', 'auto')
         var outer = $("#TagName").prop("outerHTML")
         $("#TagName").remove()
         $('.picCarsoule-con').prepend($(outer))
-        let totalWidth = (window.innerWidth - 217) * 0.8
-        let totalHeight = window.innerHeight * 0.6
+            // let totalWidth = (window.innerWidth - 217) * 0.8
+            // let totalHeight = window.innerHeight * 0.6
+        let totalWidth = parseInt($('.picCarsoule-con').css('width'))
+        let totalHeight = parseInt($('.picCarsoule-con').css('height'))
         $("#TagName").PicCarousel({
             width: totalWidth,
             height: totalHeight,
-            posterWidth: totalWidth * 0.7,
-            posterHeight: totalHeight * 0.7,
+            posterWidth: totalWidth * 0.567,
+            // posterHeight: totalHeight * 0.7,
             speed: 200
         });
         e.stopPropagation()
@@ -121,6 +124,7 @@ $('.left-nav .txt-box .txt .item').on('click', function(e) {
     } else if (range == 2) {
         $(e.target).addClass('active').siblings().removeClass('active')
     }
+    headerRange()
     $('.right-con .itemtype').removeClass('fadeinInter').addClass('fadeout').addClass('js-ds-none')
     renderChannelContent(CULTURE.vecChannel[0] && CULTURE.vecChannel[0]._id, CULTURE, 2)
     $('.' + type).removeClass('js-ds-none').removeClass('fadeout').addClass('fadeinInter')
@@ -156,3 +160,31 @@ $('.left-nav .txt-box .txt .item').on('click', function(e) {
     $('.' + type).removeClass('js-ds-none').addClass('fadein')
 })
 require('modules/cooperation')
+
+var addWheel = require('modules/wheel')
+    //合作案例滚动
+addWheel($('.right-content-box')[0], {
+    pre() {
+        console.log(1111)
+        $('.business-hezuo .change img.pre').trigger('click')
+    },
+    next() {
+        $('.business-hezuo .change img.next').trigger('click')
+    }
+})
+
+//频道内容翻页
+$('.business-hezuo .change img').on('click', function(e) {
+    var type = $(this).attr('data-type')
+    var num = parseInt($('.business-hezuo ul li').length / 8)
+    var topNum = parseInt(Math.abs(parseInt($('.business-hezuo ul').css('top'))) / 494)
+    if (type == 'pre' && topNum != 0) {
+        $('.business-hezuo ul').animate({
+            top: '-' + (494 + 30) * (topNum - 1) + 'px'
+        })
+    } else if (type == 'next' && topNum < num && parseInt($('.business-hezuo ul li').length) != 8) {
+        $('.business-hezuo ul').animate({
+            top: '-' + (494 + 30) * (topNum + 1) + 'px'
+        })
+    }
+})

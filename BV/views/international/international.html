@@ -42,68 +42,80 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        //关闭合作案例图片轮播 让头部层级更高
+        function headerRange() {
+            $('.picCarsoule-box').addClass('picCarsouelFadeOut')
+            $('#js-header').css('z-index', 5)
+        }
+
+        function goback() {
+            location.href = './index.html#page1'
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+    </script>
 </head>
 
 <body>
     <%=require('html-loader?attrs=false!ejs-html-loader?headerIcon=gray!comps/header-nav.html')%>
-    <!--伟达国际-->
-    <div class="part-eight weida-international active part-nine part-eleven">
-        <div class="red-bg mutiwidth"></div>
-        <div class="left-nav fadeinInter">
-            <div class="txt-box fadeinInter">
-                <div class="txt fadeinInter">
-                    <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
-                    </div>
-                    <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
-                        <div class="son-title" id="case" style="margin-top:10px;">
-                            
+        <!--伟达国际-->
+        <div class="part-eight weida-international active part-nine part-eleven">
+            <div class="red-bg mutiwidth"></div>
+            <div class="left-nav fadeinInter">
+                <div class="txt-box fadeinInter">
+                    <div class="txt fadeinInter">
+                        <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
                         </div>
-                    </div>
-                    <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
-                        <div class="son-title">
-                            <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
-                            <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="right-con">
-            <%=require('html-loader?attrs=false!comps/international-index.html')%>
-    
-            <!-- 合作案例 -->
-            <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
-                <ul class="" id="case_detail">
+                        <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                            <div class="son-title" id="case" style="margin-top:10px;">
 
-                </ul>
-                <div class="change">
-                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
-                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
+                            </div>
+                        </div>
+                        <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
+                            <div class="son-title">
+                                <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
+                                <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 合作案例图片轮播 -->
-            <div class="picCarsoule-box js-ds-none">
-                <div class="picCarsoule-con">
-                    <div class="poster-main" id="TagName">
-                        <div class="poster-btn poster-prev-btn"></div>
-                        <ul class="poster-list" id="case_content">
+            <div class="right-con">
+                <%=require('html-loader?attrs=false!comps/international-index.html')%>
+
+                    <!-- 合作案例 -->
+                    <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
+                        <ul class="" id="case_detail">
 
                         </ul>
-                        <div class="poster-btn poster-next-btn"></div>
+                        <div class="change">
+                            <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
+                            <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
+                        </div>
                     </div>
-                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
-                </div>
+                    <!-- 合作案例图片轮播 -->
+                    <div class="picCarsoule-box js-ds-none">
+                        <div class="picCarsoule-con">
+                            <div class="poster-main" id="TagName">
+                                <div class="poster-btn poster-prev-btn"></div>
+                                <ul class="poster-list" id="case_content">
+
+                                </ul>
+                                <div class="poster-btn poster-next-btn"></div>
+                            </div>
+                            <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="headerRange()">
+                        </div>
+                    </div>
+
+                    <%=require('html-loader?attrs=false!comps/company-resource.html')%>
+                        <%=require('html-loader?attrs=false!comps/profession.html')%>
+
             </div>
-            
-            <%=require('html-loader?attrs=false!comps/company-resource.html')%>
-            <%=require('html-loader?attrs=false!comps/profession.html')%>
-
         </div>
-    </div>
-    <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=0!comps/nav-pop.html')%>
+        <%=require('html-loader?attrs=false!ejs-html-loader?isIndex=0!comps/nav-pop.html')%>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    
+            <script src="js/jquery-3.3.1.min.js"></script>
+
 </body>
 
 </html>

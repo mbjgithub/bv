@@ -131,7 +131,7 @@
             transform: translateY(-50%);
             overflow: hidden;
             width: 88888px;
-            height: 52.78%;
+            /* height: 52.78%; */
         }
         
         .visual-design ul li {
@@ -179,8 +179,8 @@
             transform: scale(0.9);
             -webkit-transform: scale(0.9);
             top: -15px;
-            position: absolute;
-            /*height: inherit;*/
+            position: relative;
+            height: auto;
         }
         /*.visual-design .item.active .txt-box {
             -webkit-animation: redfadein 2s 1;
@@ -248,28 +248,28 @@
         }*/
         
         .visual-design .pre {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             position: absolute;
             top: 50%;
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             right: 20px;
-            background: url('./img/right-fill.png') no-repeat;
+            background: url('./images/icon/icon-hezuo.png') no-repeat;
             background-size: 100% 100%;
             cursor: pointer;
             z-index: 3;
         }
         
         .visual-design .next {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             position: absolute;
             top: 50%;
             -webkit-transform: translateY(-50%) rotate(180deg);
             transform: translateY(-50%) rotate(180deg);
             left: 20px;
-            background: url('./img/right-fill.png') no-repeat;
+            background: url('./images/icon/icon-hezuo.png') no-repeat;
             background-size: 100% 100%;
             cursor: pointer;
             z-index: 3;
@@ -293,6 +293,18 @@
             max-width: 1200px;
         }
     </style>
+    <script>
+        //关闭合作案例图片轮播 让头部层级更高
+        function headerRange() {
+            $('.picCarsoule-box').addClass('picCarsouelFadeOut')
+            $('#js-header').css('z-index', 5)
+        }
+
+        function goback() {
+            location.href = './index.html#page1'
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+    </script>
 </head>
 
 <body>
@@ -387,7 +399,7 @@
                                 </ul>
                                 <div class="poster-btn poster-next-btn"></div>
                             </div>
-                            <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
+                            <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="headerRange()">
                         </div>
                     </div>
 
@@ -406,7 +418,7 @@
         <!--导航栏弹窗-->
 <div class="pop-window-nav">
     <header id="js-header" class="header clearfix">
-        <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+        <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
             <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
@@ -420,17 +432,17 @@
         BALDWIN&amp;VIKTOR
     </div>
     <ul class="nav-txt">
-    
-        <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
-    
-        <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
-        <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
-        <li class="" onclick="location.href='./concat.html'">联系我们</li>
+        
+                <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
+                
+                    <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
+                    <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
+                    <li class="" onclick="location.href='./concat.html'">联系我们</li>
     </ul>
 </div>
 
             <script src="js/jquery-3.3.1.min.js"></script>
 
-<script type="text/javascript" src="js/culture.d25bc8.js"></script></body>
+<script type="text/javascript" src="js/culture.380023.js"></script></body>
 
 </html>

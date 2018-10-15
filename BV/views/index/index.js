@@ -54,7 +54,7 @@ $(document).ready(function() {
         converse = 2
         inner = red
     }
-    console.log("1111111",double,converse)
+    console.log("1111111", double, converse)
     localStorage.setItem("double", converse)
     document.getElementById("first_page").innerHTML = inner
     $("#fullpage").css('visibility', "visible")
@@ -64,8 +64,8 @@ $(document).ready(function() {
         controlArrows: false,
         afterLoad: function(anchorLink) {
             $('.section.active').removeClass('fadeout')
-            console.log(22222,anchorLink)
-            if (anchorLink !== 'page1') {
+            console.log(22222, anchorLink)
+            if (anchorLink == 'page2' || anchorLink == 'page3') {
                 $('#js-header').removeClass('header-animate')
                 $('.nav-icon img').eq(0).addClass('js-ds-none')
                 $('.nav-icon img').eq(1).removeClass('js-ds-none')

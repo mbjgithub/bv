@@ -300,12 +300,25 @@ img {
 .part-six .con {
     position: relative;
     padding-top: 5%;
-    padding-left: 15%;
+    width: 1200px;
+    box-sizing: border-box;
+    margin: auto;
+    padding-left: 12%;
 }
+
+
+/* @media screen and (max-width:1600px) {
+    .part-six .con {
+        padding-left: 25%;
+    }
+    .part-six .con .back-last-page {
+        left: 10% !important;
+    }
+} */
 
 .part-six .red-bg {
     background-color: #961b34;
-    width: 75%;
+    width: 70%;
     position: absolute;
     height: 90%;
     left: -100%;
@@ -323,14 +336,14 @@ img {
     height: 40px;
     position: absolute;
     top: 15px;
-    left: -160px;
+    left: 0;
     cursor: pointer;
 }
 
 .part-six .con .contact-us-title {
-    width: 14%;
+    width: 276px;
     /*height: 63px;*/
-    margin-bottom: 20px;
+    margin-bottom: 85px;
 }
 
 .part-six .con .contact-address {
@@ -384,6 +397,10 @@ img {
 
 .part-six .con .txt>div {
     margin-bottom: 15px;
+}
+
+.part-six .con .txt>.item-address {
+    line-height: 1.5;
 }
 
 .part-seven .con {
@@ -935,7 +952,8 @@ span.red-cion-bg:after {
 
 .resource-map .red-cion .resource-con {
     position: absolute;
-    height: 160px;
+    /* height: 200px; */
+    min-height: 160px;
     width: 255px;
     top: -60px;
     left: 90px;
@@ -961,6 +979,7 @@ span.red-cion-bg:after {
     vertical-align: top;
     /* overflow: auto; */
     height: 100%;
+    min-height: 160px;
 }
 
 .resource-map .resource-con .contry {
@@ -985,7 +1004,7 @@ span.red-cion-bg:after {
     font-size: 14px;
 }*/
 
-.resource-map .resource-con .contry li:hover {
+.resource-map .resource-con .contry>li:hover {
     color: #fff;
     font-size: 14px;
 }
@@ -1029,7 +1048,7 @@ span.red-cion-bg:after {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 84%;
+    width: 70%;
     height: 64.8%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -1121,12 +1140,12 @@ span.red-cion-bg:after {
     z-index: 3;
     position: relative;
     opacity: 0;
-    animation: showredbg 1s 1;
-    -webkit-animation: showredbg 1s 1;
+    animation: showredbg 0.2s 1;
+    -webkit-animation: showredbg 0.2s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-delay: 1s !important;
-    animation-delay: 1s !important;
+    -webkit-animation-delay: 0.3s !important;
+    animation-delay: 0.3s !important;
 }
 
 .show-photo li.active .photo {
@@ -1163,16 +1182,16 @@ span.red-cion-bg:after {
     color: #231f20;
     font-size: 16px;
     width: 240px;
-    -webkit-animation-delay: 2s !important;
-    animation-delay: 2s !important;
+    -webkit-animation-delay: 0.3s !important;
+    animation-delay: 0.3s !important;
     text-align: justify;
     line-height: 1.5;
     margin-left: 50px;
 }
 
 .show-photo li.active .txt {
-    animation: showtxtright 2s 1;
-    -webkit-animation: showtxtright 2s 1;
+    animation: showtxtright 0.2s 1;
+    -webkit-animation: showtxtright 0.2s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1256,14 +1275,14 @@ span.red-cion-bg:after {
     height: 160px;
     z-index: 3;
     position: relative;
-    -webkit-animation-delay: 1s !important;
-    animation-delay: 1s !important;
+    -webkit-animation-delay: 0.3s !important;
+    animation-delay: 0.3s !important;
     opacity: 0;
 }
 
 .leaderskip .show-photo li.active img {
-    animation: showredbg 1s 1;
-    -webkit-animation: showredbg 1s 1;
+    animation: showredbg 0.2s 1;
+    -webkit-animation: showredbg 0.2s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1280,8 +1299,8 @@ span.red-cion-bg:after {
 }
 
 .leaderskip .show-photo li.active .redbg-block {
-    animation: showredbg 1s 1;
-    -webkit-animation: showredbg 1s 1;
+    animation: showredbg 0.2s 1;
+    -webkit-animation: showredbg 0.2s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1319,14 +1338,14 @@ span.red-cion-bg:after {
     top: 400%;
     /* opacity: 0; */
     /* bottom: -100%; */
-    -webkit-animation-delay: 1s !important;
-    animation-delay: 1s !important;
+    -webkit-animation-delay: 0.3s !important;
+    animation-delay: 0.3s !important;
     margin: 0;
 }
 
 .leaderskip .show-photo li.active .txt {
-    animation: showdec 1s 1;
-    -webkit-animation: showdec 1s 1;
+    animation: showdec 0.2s 1;
+    -webkit-animation: showdec 0.2s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
