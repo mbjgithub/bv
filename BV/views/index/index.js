@@ -12,10 +12,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.png" />
+                <img src="./images/animate/animation-txt1.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.png" />
+                <img src="./images/animate/animation-txt2.svg" />
             </div>
 
         </div>
@@ -34,10 +34,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.png" />
+                <img src="./images/animate/animation-txt1.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.png" />
+                <img src="./images/animate/animation-txt2.svg" />
             </div>
 
         </div>
@@ -54,7 +54,7 @@ $(document).ready(function() {
         converse = 2
         inner = red
     }
-    console.log("1111111",double,converse)
+    console.log("1111111", double, converse)
     localStorage.setItem("double", converse)
     document.getElementById("first_page").innerHTML = inner
     $("#fullpage").css('visibility', "visible")
@@ -64,8 +64,8 @@ $(document).ready(function() {
         controlArrows: false,
         afterLoad: function(anchorLink) {
             $('.section.active').removeClass('fadeout')
-            console.log(22222,anchorLink)
-            if (anchorLink !== 'page1') {
+            console.log(22222, anchorLink)
+            if (anchorLink == 'page2' || anchorLink == 'page3') {
                 $('#js-header').removeClass('header-animate')
                 $('.nav-icon img').eq(0).addClass('js-ds-none')
                 $('.nav-icon img').eq(1).removeClass('js-ds-none')

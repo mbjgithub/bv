@@ -42,6 +42,18 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        //关闭合作案例图片轮播 让头部层级更高
+        function headerRange() {
+            $('.picCarsoule-box').addClass('picCarsouelFadeOut')
+            $('#js-header').css('z-index', 5)
+        }
+
+        function goback() {
+            location.href = './index.html#page1'
+            $('.pop-window-nav').removeClass('active').addClass('closeactive')
+        }
+    </script>
 </head>
 
 <body>
@@ -50,38 +62,38 @@
         <img src="./images/icon/icon-logo.png">
     </a>
     <a href="javascript:$('.pop-window-nav').removeClass('closeactive').addClass('active')" class="nav-icon">
-    
-        <img src="./images/icon/icon-nav-gray.png">
-	
+        
+            <img src="./images/icon/icon-nav-gray.png">
+            
     </a>
-    <div class="lang g-fr" style="color:#000;">
+    <div class="lang g-fr" style="color:#ececec;">
         <span>Cn </span>/<span> En</span>
     </div>
 </header>
-    <!--伟达国际-->
-    <div class="part-eight weida-international active part-nine part-eleven">
-        <div class="red-bg mutiwidth"></div>
-        <div class="left-nav fadeinInter">
-            <div class="txt-box fadeinInter">
-                <div class="txt fadeinInter">
-                    <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
-                    </div>
-                    <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
-                        <div class="son-title" id="case" style="margin-top:10px;">
-                            
+        <!--伟达国际-->
+        <div class="part-eight weida-international active part-nine part-eleven">
+            <div class="red-bg mutiwidth"></div>
+            <div class="left-nav fadeinInter">
+                <div class="txt-box fadeinInter">
+                    <div class="txt fadeinInter">
+                        <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达国际
                         </div>
-                    </div>
-                    <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
-                        <div class="son-title">
-                            <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
-                            <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
+                        <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                            <div class="son-title" id="case" style="margin-top:10px;">
+
+                            </div>
+                        </div>
+                        <div class="item" data-type='resource-map' data-range="1" style="height:18px;overflow:hidden;">海外资源
+                            <div class="son-title">
+                                <a href="javascript:;" data-type='resource-map' data-range="2" style="margin-top:10px;">企业资源</a>
+                                <a href="javascript:;" data-type="think-tank" data-range="2">专家智库</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="right-con">
-            <!-- 国际首页 -->
+            <div class="right-con">
+                <!-- 国际首页 -->
 <div class="inter-two-pic-box itemtype fadeinInter relative_center">
     <div class="con-box clearfix">
         <div class="content-box fadeinInter" style="left:0;">
@@ -128,32 +140,32 @@
         <span data-type="1"></span>
     </div>
 </div>
-    
-            <!-- 合作案例 -->
-            <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
-                <ul class="" id="case_detail">
 
-                </ul>
-                <div class="change">
-                    <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
-                    <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
-                </div>
-            </div>
-            <!-- 合作案例图片轮播 -->
-            <div class="picCarsoule-box js-ds-none">
-                <div class="picCarsoule-con">
-                    <div class="poster-main" id="TagName">
-                        <div class="poster-btn poster-prev-btn"></div>
-                        <ul class="poster-list" id="case_content">
+                    <!-- 合作案例 -->
+                    <div class="right-content-box business-hezuo itemtype js-ds-none relative_center">
+                        <ul class="" id="case_detail">
 
                         </ul>
-                        <div class="poster-btn poster-next-btn"></div>
+                        <div class="change">
+                            <img src="./images/icon/icon-arrow-vertical-prev.png" class="pre" data-type="pre">
+                            <img src="./images/icon/icon-arrow-vertical-next.png" class="next" data-type="next">
+                        </div>
                     </div>
-                    <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="$('.picCarsoule-box').addClass('picCarsouelFadeOut')">
-                </div>
-            </div>
-            
-            <!-- 国际里面的企业资源 -->
+                    <!-- 合作案例图片轮播 -->
+                    <div class="picCarsoule-box js-ds-none">
+                        <div class="picCarsoule-con">
+                            <div class="poster-main" id="TagName">
+                                <div class="poster-btn poster-prev-btn"></div>
+                                <ul class="poster-list" id="case_content">
+
+                                </ul>
+                                <div class="poster-btn poster-next-btn"></div>
+                            </div>
+                            <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="headerRange()">
+                        </div>
+                    </div>
+
+                    <!-- 国际里面的企业资源 -->
 
 <div class="resource-map js-ds-none itemtype relative_center">
     <img src="./images/international-map.png">
@@ -518,7 +530,7 @@
         </div>
     </div>
 </div>
-            <!-- 专家智库 -->
+                        <!-- 专家智库 -->
 <div class="think-tank itemtype js-ds-none clearfix">
     <div class="title">
         <img src="./images/thinktank-title.png">
@@ -628,12 +640,12 @@
     </div>
 </div>
 
+            </div>
         </div>
-    </div>
-    <!--导航栏弹窗-->
+        <!--导航栏弹窗-->
 <div class="pop-window-nav">
     <header id="js-header" class="header clearfix">
-        <a href="javascript:location.href='./index.html#page1'" class="header-logo g-fl" title="返回首页">
+        <a href="javascript:goback()" class="header-logo g-fl" title="返回首页">
             <img src="./images/icon/icon-logo.png">
         </a>
         <a href="javascript:$('.pop-window-nav').removeClass('active').addClass('closeactive')" class="nav-icon" style="width:20px;height:20px;">
@@ -647,17 +659,17 @@
         BALDWIN&amp;VIKTOR
     </div>
     <ul class="nav-txt">
-    
-        <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
-    
-        <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
-        <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
-        <li class="" onclick="location.href='./concat.html'">联系我们</li>
+        
+                <li class="" onclick="location.href='./index.html#page2'">关于我们</li>
+                
+                    <li class="" onclick="location.href='./international.html'">博闻伟达国际</li>
+                    <li class="" onclick="location.href='./culture.html'">博闻伟达文化</li>
+                    <li class="" onclick="location.href='./concat.html'">联系我们</li>
     </ul>
 </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    
-<script type="text/javascript" src="js/international.875b65.js"></script></body>
+            <script src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript" src="js/international.0e6287.js"></script></body>
 
 </html>
