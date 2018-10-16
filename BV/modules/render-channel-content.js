@@ -1,10 +1,10 @@
-var render=require('./render')
+var render = require('./render')
 
 var case_detail_cached = {}
 var lastId
 
 // 渲染某一个频道内容
-function renderChannelContent(id,DATA,type) {
+function renderChannelContent(id, DATA, type) {
     if (!id) return
     if (id === lastId) return
     lastId = id
@@ -12,7 +12,7 @@ function renderChannelContent(id,DATA,type) {
         _append()
         return
     }
-    var key=getKey(type)
+    var key = getKey(type)
     var html = `<li class="item" data-contentId="{{_id}}">
         <img src="{{strCover}}">
         <div class="title" title="{{strTitle}}">
@@ -46,6 +46,7 @@ function renderChannelContent(id,DATA,type) {
 
     function _append() {
         var $case_detail = $("#case_detail")
+        $case_detail.css('top', '0px') //初始化
         var $change = $case_detail.find('.change')
         $case_detail.html(case_detail_cached[id])
         $case_detail.append($change)
@@ -53,8 +54,8 @@ function renderChannelContent(id,DATA,type) {
 }
 
 
-function getKey(type){
-    return type==2 ? 'culture':'international'
+function getKey(type) {
+    return type == 2 ? 'culture' : 'international'
 }
 
-module.exports=renderChannelContent
+module.exports = renderChannelContent
