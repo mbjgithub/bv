@@ -52,22 +52,18 @@ $("#case_detail").on('click', '.item', function(e) {
         _append()
         return
     }
-    var html = `<li class="poster-item {{isActive}}">
-                <img src="{{strImg}}">
-                <p class="txt">
-                    {{strDesc}}
-                </p>
-            </li>`
+    var html = `<li class="{{isActive}}">
+                    <img src="{{strImg}}">
+                    <p class="txt">
+                        {{strDesc}}
+                    </p>
+                </li>`
     var all = ''
     CULTURE.vecChannel.some(channel => {
         channel.culture.forEach(inter => {
             if (inter._id == id) {
-                var len = inter.vecMixed.length
-                if (len && len % 2 == 0) {
-                    inter.vecMixed.push(inter.vecMixed[0])
-                }
                 inter.vecMixed.forEach((mixed, i) => {
-                    mixed.isActive = i ? "" : 'active'
+                    mixed.isActive = (i === 1 ? 'active' : '')
                     all += render(html, mixed)
                 })
                 return true
@@ -80,21 +76,13 @@ $("#case_detail").on('click', '.item', function(e) {
     function _append() {
         $('#case_content').html(case_content_cached[id])
         $('.picCarsoule-box').removeClass('js-ds-none').removeClass('picCarsouelFadeOut')
+        var picCarTotalWidth = parseInt($('.picCarsoule-box .poster-list').css('width')) * 0.744
+            //计算图片轮播图片的宽度
+        $('.picCarsoule-box .poster-list li').css('width', picCarTotalWidth + 'px')
+            // 计算图片轮播ul的向左偏移量
+        console.log(picCarTotalWidth)
+        $('.picCarsoule-box .poster-list ul').css('left', '-' + picCarTotalWidth / 6 * 5 + 'px')
         $('#js-header').css('z-index', 'auto')
-        var outer = $("#TagName").prop("outerHTML")
-        $("#TagName").remove()
-        $('.picCarsoule-con').prepend($(outer))
-            // let totalWidth = (window.innerWidth - 217) * 0.8
-            // let totalHeight = window.innerHeight * 0.6
-        let totalWidth = parseInt($('.picCarsoule-con').css('width'))
-        let totalHeight = parseInt($('.picCarsoule-con').css('height'))
-        $("#TagName").PicCarousel({
-            width: totalWidth,
-            height: totalHeight,
-            posterWidth: totalWidth * 0.567,
-            // posterHeight: totalHeight * 0.7,
-            speed: 200
-        });
         e.stopPropagation()
     }
 })
@@ -187,4 +175,34 @@ $('.business-hezuo .change img').on('click', function(e) {
             top: '-' + (494 + 30) * (topNum + 1) + 'px'
         })
     }
+})
+
+//合作案例-图片轮播滚动
+addWheel($('.picCarsoule-box .poster-list')[0], {
+    pre() {
+        $('.picCarsoule-box .poster-btn.poster-prev-btn').trigger('click')
+    },
+    next() {
+        $('.picCarsoule-box .poster-btn.poster-next-btn').trigger('click')
+    }
+})
+
+/**
+ * 图片轮播翻页
+ */
+$('.picCarsoule-box .poster-btn').on('click', function(e) {
+    var type = $(this).data('type')
+    var li = $('.picCarsoule-box .poster-list li')
+    var originArr = []
+    li.each(function() {
+        originArr.push($(this).html())
+    })
+    if (type == 'pre') {
+        originArr.unshift(originArr.pop())
+    } else {
+        originArr.push(originArr.shift())
+    }
+    li.each(function(i) {
+        $(this).html(originArr[i])
+    })
 })

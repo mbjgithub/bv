@@ -12,10 +12,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.svg" />
+                <img src="./images/animate/animation-txt1-test.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.svg" />
+                <img src="./images/animate/animation-txt2-test.svg" />
             </div>
 
         </div>
@@ -34,10 +34,10 @@ $(document).ready(function() {
         </div>
         <div class="animatetxt">
             <div class="txt1">
-                <img src="./images/animate/animation-txt1.svg" />
+                <img src="./images/animate/animation-txt1-test.svg" />
             </div>
             <div class="txt2">
-                <img src="./images/animate/animation-txt2.svg" />
+                <img src="./images/animate/animation-txt2-test.svg" />
             </div>
 
         </div>
@@ -138,4 +138,12 @@ $('.nav-ul').on('click', 'a', function() {
     var type = $(this).attr('data-type')
     $.fn.fullpage.moveTo('page2', Number(type))
     $(this).addClass('active').siblings().removeClass('active')
+})
+
+//关于我们导航动画
+$('.nav-ul a').on('mouseover', function() {
+    $(this).addClass('overin').siblings().removeClass('overin')
+})
+$('.nav-ul a').on('mouseout', function() {
+    $(this).addClass('overout').siblings().removeClass('overout')
 })
