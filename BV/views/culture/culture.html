@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=1">
     <link rel="shortcut icon" href="img/BV-logo-big-red.png">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/picCarousel.css">
     <style>
         .header {
             position: fixed;
@@ -73,7 +72,6 @@
         }
         
         .part-eight .content-box:nth-child(2) {
-            /*background-image: url('./images/bv-arts2.png');*/
             font-weight: bold;
         }
         
@@ -114,13 +112,8 @@
         .visual-design {
             position: absolute;
             width: 100%;
-            /* padding-left: 200px; */
             height: 100%;
-            /* left: 0; */
-            /* z-index: 3; */
             overflow: hidden;
-            /* -webkit-box-sizing: border-box; */
-            /* box-sizing: border-box; */
         }
         
         .visual-design ul {
@@ -131,7 +124,6 @@
             transform: translateY(-50%);
             overflow: hidden;
             width: 88888px;
-            /* height: 52.78%; */
         }
         
         .visual-design ul li {
@@ -182,12 +174,6 @@
             position: relative;
             height: auto;
         }
-        /*.visual-design .item.active .txt-box {
-            -webkit-animation: redfadein 2s 1;
-            animation: redfadein 2s 1;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-        }*/
         
         @-webkit-keyframes redfadein {
             0% {
@@ -217,35 +203,11 @@
             overflow: hidden;
             white-space: nowrap;
             text-align: center;
-            /*margin-top: 15px;*/
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
         }
-        /*.visual-design .item .txt-box .txt {
-            opacity: 0;
-            -webkit-animation-delay: 1.5s;
-            animation-delay: 1.5s;
-        }*/
-        /*.visual-design .item.active .txt-box .txt {
-            -webkit-animation: redfadein 2s 1;
-            animation: redfadein 2s 1;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-        }*/
-        /*.visual-design .item .txt-box .txt-title {
-            color: #fff;
-            font-size: 36px;
-            margin: 50px 0 15px;
-            text-align: center;
-        }*/
-        /*.visual-design .item .txt-box .txt-con {
-            text-align: center;
-            color: #000;
-            line-height: 1.5;
-            font-size: 16px;
-        }*/
         
         .visual-design .pre {
             width: 50px;
@@ -342,14 +304,14 @@
 
                     <!-- 合作案例图片轮播 -->
                     <div class="picCarsoule-box js-ds-none">
-                        <div class="picCarsoule-con">
-                            <div class="poster-main" id="TagName">
-                                <div class="poster-btn poster-prev-btn"></div>
-                                <ul class="poster-list" id="case_content">
+                        <div class="picCarsoule-con" id="TagName">
+                            <div class="poster-btn poster-prev-btn" data-type="pre"></div>
+                            <div class="poster-list">
+                                <ul id="case_content">
 
                                 </ul>
-                                <div class="poster-btn poster-next-btn"></div>
                             </div>
+                            <div class="poster-btn poster-next-btn" data-type="next"></div>
                             <img src="./img/CLOSE.png" class="close-picCarsoule" onclick="headerRange()">
                         </div>
                     </div>
