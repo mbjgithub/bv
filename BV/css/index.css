@@ -1515,12 +1515,13 @@ span.red-cion-bg:after {
 
 .pop-window-nav .title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 62px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    margin-top: -5%;
 }
 
 .pop-window-nav .nav-txt {
