@@ -1158,8 +1158,8 @@ span.red-cion-bg:after {
 }
 
 .show-photo li.active img {
-    /*width: 200px;*/
-    /*height: 200px;*/
+    /*width: 200px;
+    height: 200px;*/
     z-index: 3;
     position: relative;
     /*opacity: 0;*/
@@ -1173,10 +1173,14 @@ span.red-cion-bg:after {
 
 @keyframes scaleimg {
     0% {
-        transform: scale(1)
+        /*transform: scale(1)*/
+        width: 150px;
+        height: 150px;
     }
     100% {
-        transform: scale(1.334);
+        /*transform: scale(1.334);*/
+        width: 200px;
+        height: 200px;
     }
 }
 

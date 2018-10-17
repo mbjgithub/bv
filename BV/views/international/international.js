@@ -206,21 +206,29 @@ $('.think-tank .change img').on('click', function(e) {
         // originArr.push(originArr.shift())
         console.log(2222)
         $lastLi = $($('.show-photo li')[0]).detach()
-        $lastLi.css('marginTop', '150px')
+        li.css('marginTop', 0)
+        $lastLi.css('marginTop', '182px')
         $(".show-photo ul").append($lastLi)
+        var selected = $('.show-photo li.active')
+        selected.removeClass('active')
+        selected.next().addClass('active')
+        $lastLi.animate({
+            marginTop: '0'
+        }, 1000)
     } else {
         // originArr.unshift(originArr.pop())
         console.log(333)
         $lastLi = $($('.show-photo li')[liLength - 1]).detach()
-        $lastLi.css('marginTop', '-150px')
+        li.css('marginTop', 0)
+        $lastLi.css('marginTop', '-182px')
         $(".show-photo ul").prepend($lastLi)
+        var selected = $('.show-photo li.active')
+        selected.removeClass('active')
+        selected.prev().addClass('active')
+        $lastLi.animate({
+            marginTop: '-35px'
+        }, 1000)
     }
-    var selected = $('.show-photo li.active')
-    selected.removeClass('active')
-    type === 'pre' ? selected.next().addClass('active') : selected.prev().addClass('active')
-    $lastLi.animate({
-        marginTop: 0
-    }, 1000)
 
     // li.each(function(i) {
     //     $(this).html(originArr[i])
