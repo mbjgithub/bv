@@ -196,18 +196,35 @@ $('#profession').on("click", 'li', function() {
 $('.think-tank .change img').on('click', function(e) {
     var type = $(this).data('type')
     var li = $('.show-photo li')
-    var originArr = []
-    li.each(function() {
-        originArr.push($(this).html())
-    })
+    var liLength = li.length
+    var $lastLi
+        // var originArr = []
+        // li.each(function() {
+        //     originArr.push($(this).html())
+        // })
     if (type == 'pre') {
-        originArr.push(originArr.shift())
+        // originArr.push(originArr.shift())
+        console.log(2222)
+        $lastLi = $($('.show-photo li')[0]).detach()
+        $lastLi.css('marginTop', '150px')
+        $(".show-photo ul").append($lastLi)
     } else {
-        originArr.unshift(originArr.pop())
+        // originArr.unshift(originArr.pop())
+        console.log(333)
+        $lastLi = $($('.show-photo li')[liLength - 1]).detach()
+        $lastLi.css('marginTop', '-150px')
+        $(".show-photo ul").prepend($lastLi)
     }
-    li.each(function(i) {
-        $(this).html(originArr[i])
-    })
+    var selected = $('.show-photo li.active')
+    selected.removeClass('active')
+    type === 'pre' ? selected.next().addClass('active') : selected.prev().addClass('active')
+    $lastLi.animate({
+        marginTop: 0
+    }, 1000)
+
+    // li.each(function(i) {
+    //     $(this).html(originArr[i])
+    // })
 })
 
 //合作案例-图片轮播滚动

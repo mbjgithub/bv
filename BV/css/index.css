@@ -795,6 +795,7 @@ img {
 
 .think-tank .change {
     right: 0;
+    z-index: 4;
 }
 
 .change img {
@@ -1127,6 +1128,8 @@ span.red-cion-bg:after {
 
 .show-photo ul {
     position: relative;
+    z-index: 3;
+    top: -33.7%;
 }
 
 .show-photo li {
@@ -1155,34 +1158,45 @@ span.red-cion-bg:after {
 }
 
 .show-photo li.active img {
-    width: 200px;
-    height: 200px;
+    /*width: 200px;*/
+    /*height: 200px;*/
     z-index: 3;
     position: relative;
-    opacity: 0;
-    animation: showredbg 0.2s 1;
-    -webkit-animation: showredbg 0.2s 1;
+    /*opacity: 0;*/
+    animation: scaleimg 1s 1;
+    -webkit-animation: scaleimg 1s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-delay: 0.3s !important;
-    animation-delay: 0.3s !important;
+    /*-webkit-animation-delay: 0.3s !important;*/
+    /*animation-delay: 0.3s !important;*/
+}
+
+@keyframes scaleimg {
+    0% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(1.334);
+    }
 }
 
 .show-photo li.active .photo {
     position: relative;
 }
 
-.show-photo li .redbg-block {
+.show-photo .redbg-block {
     background-color: #961d35;
     width: 200px;
     height: 200px;
     position: absolute;
-    z-index: 2;
-    bottom: -10px;
-    right: 12px;
-    opacity: 0;
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
+    z-index: 1;
+    top: 50%;
+    margin-top: 10px;
+    margin-left: 36px;
+    transform: translateY(-50%);
+    opacity: 1;
+    /*-webkit-animation-delay: 1s;
+    animation-delay: 1s;*/
 }
 
 .show-photo li.active .redbg-block {
