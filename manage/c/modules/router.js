@@ -9,6 +9,7 @@ import Index from 'pages/index'
 import Content from 'pages/content'
 import Visual from 'pages/visual'
 import ContentInput from 'pages/content_input'
+import InternationImg from 'pages/internation_img'
 
 var routes = [{
   path: '/', 
@@ -36,6 +37,10 @@ var routes = [{
     login:Login      //命名视图的路由写法
   },
   name:'login'
+},{
+  path: '/internation_img.html', 
+  component: InternationImg,
+  name:'internation_img'
 }]
 
 const prefix='/manage'

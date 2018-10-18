@@ -30,6 +30,7 @@ import indexStore from 'pages/index/store'
 import contentStore from 'pages/content/store'
 import visualStore from 'pages/visual/store'
 import contentInputStore from 'pages/content_input/store'
+import internationImgStore from 'pages/internation_img/store'
 /**
  *注册路由
  */
@@ -42,7 +43,8 @@ var allStore = {
     index: indexStore,
     content:contentStore,
     visual:visualStore,
-    content_input:contentInputStore
+    content_input:contentInputStore,
+    internation_img:internationImgStore
   }
 }
 

@@ -12,6 +12,9 @@
       <dd class="menu_item">
         <router-link to="visual.html">视觉设计</router-link>
       </dd>
+      <dd class="menu_item">
+        <router-link to="internation_img.html">国际首页图片</router-link>
+      </dd>
     </dl>
   </div>
 </template>

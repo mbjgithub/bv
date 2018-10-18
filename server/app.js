@@ -10,6 +10,7 @@ var content = require("./routers/content");
 var visual = require("./routers/visual");
 var login = require("./routers/login");
 var upload = require("./routers/upload");
+var internationImg = require("./routers/internation-img");
 
 var isReadableCgi=require('./modules/cgi-type')
 
@@ -97,3 +98,4 @@ app.use("/cgi", channel);
 app.use("/cgi", content);
 app.use("/cgi", visual);
 app.use("/cgi", upload);
+app.use("/cgi", internationImg);

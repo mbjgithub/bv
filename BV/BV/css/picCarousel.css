@@ -1,0 +1,92 @@
+.picCarsoule-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 18;
+}
+
+.poster-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* background-color: #000; */
+}
+
+.poster-main a,
+.poster-main img {
+    display: block;
+}
+
+.poster-main img {
+    height: auto;
+}
+
+.poster-main .poster-list {
+    width: 1000px;
+    height: 500px;
+}
+
+.poster-main .poster-list .poster-item {
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -4%;
+}
+
+.poster-main .poster-list .poster-item.active .txt {
+    opacity: 1;
+}
+
+.poster-main .poster-list .poster-item .txt {
+    color: #fff;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-top: 20px;
+    /* max-height: 70px; */
+    height: 130px;
+    /* width: 520px; */
+    opacity: 0;
+    word-break: break-all;
+    /* transition: opacity 1s; */
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-align: justify;
+}
+
+.poster-main .poster-btn {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.poster-main .poster-prev-btn {
+    left: 0;
+    background: url(../../img/left.png) no-repeat center center;
+    background-size: 50px 50px;
+}
+
+.poster-main .poster-next-btn {
+    right: 0;
+    background: url(../../img/right.png) no-repeat center center;
+    /* width: 20px !important; */
+    /* height: 20px !important; */
+    background-size: 50px 50px;
+}
+
+.close-picCarsoule {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}

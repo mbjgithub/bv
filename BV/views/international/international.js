@@ -3,6 +3,8 @@ var config = require('modules/config')
 
 var renderChannelContent = require('modules/render-channel-content')
 
+require('modules/internation-img')
+
 //获取国际数据
 $.ajax({
     type: "GET",

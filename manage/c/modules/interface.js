@@ -32,6 +32,10 @@ const login_judge=`//${domain}/login_judge`
 //图片上传
 const upload_img=`//${domain}/cgi/upload_img`
 
+//国际首页图片
+const modify_internation_img=`//${domain}/cgi/modify_internation_img`
+const get_internation_img=`//${domain}/cgi/get_internation_img`
+
 export default {
   	modify_channel,
 	del_channel,
@@ -48,5 +52,7 @@ export default {
 	del_visual,
 	visual_list,
 	change_visual_order,
-	get_visual_by_id
+	get_visual_by_id,
+	modify_internation_img,
+    get_internation_img
 }
