@@ -88,17 +88,18 @@ $(document).ready(function() {
         var $tarIndex, $activeIndex
         var li = $('#core_leader_list li')
         li.each(function(i) {
-                var $tar = $(this)
-                if ($tar[0] == $this[0]) {
-                    $tarIndex = i
-                } else if ($tar[0] == active[0]) {
-                    $activeIndex = i
-                }
-            })
-            //在右边
+            var $tar = $(this)
+            if ($tar[0] == $this[0]) {
+                $tarIndex = i
+            } else if ($tar[0] == active[0]) {
+                $activeIndex = i
+            }
+        })
+
+        //在右边
         var inteval = Math.abs($tarIndex - $activeIndex)
         var _cb
-        if ($tarIndex > $activeIndex) {
+        if ($tarIndex < $activeIndex) {
             _cb = function() {
                 $("#core_leader .pre").trigger('click')
             }
@@ -117,20 +118,36 @@ $(document).ready(function() {
         var $this = $(this)
         var type = $this.data('type')
         var li = $('#core_leader_list li')
-        var active = $('#core_leader_list li.active')
-        var srcArr = []
-        li.each(function() {
-            srcArr.push($(this).html())
-        })
+        var liLength = li.length
+        var $lastLi
         if (type == 'pre') {
-            srcArr.push(srcArr.shift())
+            $lastLi = $($('.show-photo li')[liLength - 1]).detach()
+            $lastLi.css('marginLeft', '-160px')
+            $(".show-photo ul").prepend($lastLi)
+            var selected = $('.show-photo li.active')
+            selected.removeClass('active').addClass('leaderSkrinkImg').siblings().removeClass('leaderSkrinkImg')
+            selected.prev().removeClass('leaderSkrinkImg').addClass('active')
+            $lastLi.animate({
+                marginLeft: '0'
+            }, 1000)
         } else {
-            srcArr.unshift(srcArr.pop())
-        }
+            $lastLi = $($('.show-photo li')[0]).detach()
+            var $firstLi = $($('.show-photo li')[0])
+            $firstLi.css('marginLeft', '160px')
+            $(".show-photo ul").append($lastLi)
+            var selected = $('.show-photo li.active')
+            selected.removeClass('active').addClass('leaderSkrinkImg').siblings().removeClass('leaderSkrinkImg')
+            selected.next().removeClass('leaderSkrinkImg').addClass('active')
+            $firstLi.animate({
+                marginLeft: '0'
+            }, 1000)
 
-        li.each(function(i) {
-            $(this).html(srcArr[i])
-        })
+        }
+        $('.show-photo .redbg-block').removeClass('active').addClass('hideredbg')
+        setTimeout(function() {
+            $('.show-photo .redbg-block').removeClass('hideredbg').addClass('active')
+        }, 800)
+
     })
 });
 
@@ -141,9 +158,11 @@ $('.nav-ul').on('click', 'a', function() {
 })
 
 //关于我们导航动画
-$('.nav-ul a').on('mouseover', function() {
+$('.nav-ul a').on('mouseover', function(e) {
     $(this).addClass('overin').siblings().removeClass('overin')
+    e.stopPropagation();
 })
-$('.nav-ul a').on('mouseout', function() {
+$('.nav-ul a').on('mouseout', function(e) {
     $(this).addClass('overout').siblings().removeClass('overout')
+    e.stopPropagation()
 })

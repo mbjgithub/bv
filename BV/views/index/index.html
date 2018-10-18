@@ -184,6 +184,8 @@
         function toTeam() {
             $.fn.fullpage.moveTo('page2', 2)
             $($('.nav-ul a')[2]).addClass('active').siblings().removeClass('active')
+            var ulTopHeight = parseInt(parseInt($('.show-photo').css('height')) / 2 - 100 - 364)
+            $('.show-photo ul').css('top', ulTopHeight + 'px')
         }
     </script>
 </head>

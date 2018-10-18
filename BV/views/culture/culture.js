@@ -12,13 +12,36 @@ $.ajax({
         if (data && data.iErrCode === 0) {
             window.CULTURE = data
             var $inter = $('#case')
-            var html = '<a href="javascript:;" data-id="{{_id}}" data-range="2">{{strName}}</a>'
+            var html = '<a href="javascript:;" data-id="{{_id}}" data-range="2">{{strName}}</a><br>'
             var all = ''
 
             data.vecChannel.forEach(function(channel) {
                 all += render(html, channel)
             })
             $inter.append($(all))
+            $('.part-eight .left-nav .txt-box a').on('mouseover', function(e) {
+                if ($(this).hasClass('active')) return
+                $(this).addClass('overin').removeClass('overout').siblings().removeClass('overin')
+                e.stopPropagation()
+            })
+            $('.part-eight .left-nav .txt-box a').on('mouseout', function(e) {
+                if ($(this).hasClass('active')) return
+                $(this).addClass('overout').removeClass('overin').siblings().removeClass('overout')
+                e.stopPropagation()
+            })
+            setTimeout(function() {
+                data.vecChannel.forEach(function(channel) {
+                    channel.culture.forEach(function(vecMixed) {
+                        vecMixed.vecMixed.forEach(function(item) {
+                            var imgItem = new Image()
+                            imgItem.src = item.strImg
+                            imgItem.onload = function() {
+                                console.log('预加载图片')
+                            }
+                        })
+                    })
+                })
+            }, 0)
             return
         }
         console.log("拉取数据失败", data)
@@ -36,6 +59,7 @@ $('#case').on('click', 'a', function(e) {
     $('.left-nav .txt-box .txt .item a').removeClass('active')
     $(this).parent().siblings().removeClass('active')
     $(this).addClass('active').siblings().removeClass('active')
+    $(this).removeClass('overin').removeClass('overout')
     $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
     $('.right-con .right-content-box').removeClass('js-ds-none').addClass('fadein')
     e.stopPropagation()
@@ -100,18 +124,22 @@ $('.left-nav .txt-box .txt .item').on('click', function(e) {
         var height = $(this).find('.son-title').height() + 28
         $(this).animate({
             height: height + 'px',
-            overflow: 'visible'
+            overflow: 'visible',
+            marginBottom: 0
         })
         $(this).find('a').removeClass('active').eq(0).addClass('active')
     } else if (range == 1 && $(this).find('.son-title').length == 0) {
         $(this).siblings().animate({
             height: '18px',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            marginBottom: '10px'
         })
         $(this).addClass('active')
     } else if (range == 2) {
         $(e.target).addClass('active').siblings().removeClass('active')
     }
+    $('.left-nav .txt-box .txt .item.active .oneLevelTile').removeClass('overin').removeClass('overout')
+    $('.left-nav .txt-box .txt .item a.active').removeClass('overin').removeClass('overout')
     headerRange()
     $('.right-con .itemtype').removeClass('fadeinInter').addClass('fadeout').addClass('js-ds-none')
     renderChannelContent(CULTURE.vecChannel[0] && CULTURE.vecChannel[0]._id, CULTURE, 2)
@@ -123,30 +151,30 @@ require('modules/visual-design')
 require('modules/banner-interval')
 
 //左边导航点击
-$('.left-nav .txt-box .txt .item').on('click', function(e) {
-    var type = e.target.dataset.type
-    var range = e.target.dataset.range
-    if (range == 1 && $(this).find('.son-title').length != 0) {
-        var height = $(this).find('.son-title').height() + 28
-        $(this).animate({
-            height: height + 'px',
-            overflow: 'visible'
-        })
-        $(this).siblings().removeClass('active')
-        $(this).find('a').removeClass('active').eq(0).addClass('active')
-    } else if (range == 1 && $(this).find('.son-title').length == 0) {
-        $(this).siblings().animate({
-            height: '18px',
-            overflow: 'hidden'
-        })
-        $(this).siblings().removeClass('active')
-        $(this).addClass('active')
-    } else if (range == 2) {
-        $(e.target).addClass('active').siblings().removeClass('active')
-    }
-    $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
-    $('.' + type).removeClass('js-ds-none').addClass('fadein')
-})
+// $('.left-nav .txt-box .txt .item').on('click', function(e) {
+//     var type = e.target.dataset.type
+//     var range = e.target.dataset.range
+//     if (range == 1 && $(this).find('.son-title').length != 0) {
+//         var height = $(this).find('.son-title').height() + 28
+//         $(this).animate({
+//             height: height + 'px',
+//             overflow: 'visible'
+//         })
+//         $(this).siblings().removeClass('active')
+//         $(this).find('a').removeClass('active').eq(0).addClass('active')
+//     } else if (range == 1 && $(this).find('.son-title').length == 0) {
+//         $(this).siblings().animate({
+//             height: '18px',
+//             overflow: 'hidden'
+//         })
+//         $(this).siblings().removeClass('active')
+//         $(this).addClass('active')
+//     } else if (range == 2) {
+//         $(e.target).addClass('active').siblings().removeClass('active')
+//     }
+//     $('.right-con .itemtype').addClass('fadeout').addClass('js-ds-none')
+//     $('.' + type).removeClass('js-ds-none').addClass('fadein')
+// })
 require('modules/cooperation')
 
 var addWheel = require('modules/wheel')
@@ -193,16 +221,41 @@ addWheel($('.picCarsoule-box .poster-list')[0], {
 $('.picCarsoule-box .poster-btn').on('click', function(e) {
     var type = $(this).data('type')
     var li = $('.picCarsoule-box .poster-list li')
-    var originArr = []
-    li.each(function() {
-        originArr.push($(this).html())
-    })
+    var liWidth = Number($('.picCarsoule-box .poster-list li').css('width').slice(0, -2))
+    var liLength = li.length
+    var $lastLi
     if (type == 'pre') {
-        originArr.unshift(originArr.pop())
+        $lastLi = $($('.picCarsoule-box .poster-list li')[liLength - 1]).detach()
+        $lastLi.css('marginLeft', '-' + liWidth + 'px')
+        $(".picCarsoule-box .poster-list ul").prepend($lastLi)
+        var selected = $('.picCarsoule-box .poster-list li.active')
+        selected.removeClass('active').addClass('shrinkPosterImg').siblings().removeClass('shrinkPosterImg')
+        selected.prev().removeClass('shrinkPosterImg').addClass('active')
+        $lastLi.animate({
+            marginLeft: '0'
+        }, 1000)
     } else {
-        originArr.push(originArr.shift())
+        $lastLi = $($('.picCarsoule-box .poster-list li')[0]).detach()
+        var $firstLi = $($('.picCarsoule-box .poster-list li')[0])
+        $firstLi.css('marginLeft', liWidth + 'px')
+        $(".picCarsoule-box .poster-list ul").append($lastLi)
+        var selected = $('.picCarsoule-box .poster-list li.active')
+        selected.removeClass('active').addClass('shrinkPosterImg').siblings().removeClass('shrinkPosterImg')
+        selected.next().removeClass('shrinkPosterImg').addClass('active')
+        $firstLi.animate({
+            marginLeft: '0'
+        }, 1000)
     }
-    li.each(function(i) {
-        $(this).html(originArr[i])
-    })
+})
+
+//左边导航动画
+$('.part-eight .left-nav .txt-box .oneLevelTile,.part-eight .left-nav .txt-box a').on('mouseover', function(e) {
+    if ($(this).hasClass('active') || $(this).parent('.item').hasClass('active')) return
+    $(this).addClass('overin').removeClass('overout').siblings().removeClass('overin')
+    e.stopPropagation()
+})
+$('.part-eight .left-nav .txt-box .oneLevelTile,.part-eight .left-nav .txt-box a').on('mouseout', function(e) {
+    if ($(this).hasClass('active') || $(this).parent('.item').hasClass('active')) return
+    $(this).addClass('overout').removeClass('overin').siblings().removeClass('overout')
+    e.stopPropagation()
 })

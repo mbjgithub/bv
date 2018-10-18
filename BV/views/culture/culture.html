@@ -206,6 +206,7 @@
             position: absolute;
             bottom: 0;
             left: 50%;
+            -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
         }
         
@@ -277,13 +278,17 @@
             <div class="left-nav fadeinInter">
                 <div class="txt-box fadeinInter">
                     <div class="txt fadeinInter" id="content">
-                        <div class="active item" data-type='inter-two-pic-box' data-range="1">博闻伟达文化</div>
-                        <div class="item" data-type='business-hezuo' data-range="1" style="height:18px;overflow:hidden;">合作案例
+                        <div class="active item">
+                            <div class="oneLevelTile" data-type='inter-two-pic-box' data-range="1">博闻伟达文化</div>
+                        </div><br>
+                        <div class="item" style="height:18px;overflow:hidden;">
+                            <div class="oneLevelTile" data-type='business-hezuo' data-range="1">合作案例</div><br>
                             <div class="son-title" id="case" style="margin-top:10px;">
 
                             </div>
-                        </div>
-                        <div class="item" id="visual-desin-tab" data-type='visual-design' data-range="1" style="height:18px;overflow:hidden;">视觉设计
+                        </div><br>
+                        <div class="item" id="visual-desin-tab" style="height:18px;overflow:hidden;">
+                            <div class="oneLevelTile" data-type='visual-design' data-range="1">视觉设计</div>
                         </div>
                     </div>
                 </div>

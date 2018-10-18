@@ -184,6 +184,8 @@
         function toTeam() {
             $.fn.fullpage.moveTo('page2', 2)
             $($('.nav-ul a')[2]).addClass('active').siblings().removeClass('active')
+            var ulTopHeight = parseInt(parseInt($('.show-photo').css('height')) / 2 - 100 - 364)
+            $('.show-photo ul').css('top', ulTopHeight + 'px')
         }
     </script>
 </head>
@@ -257,10 +259,11 @@
                     <img src="./images/leaderskip-title.png">
                 </div>
                 <div class="show-photo">
+                    <div class="redbg-block"></div>
                     <ul class="" id="core_leader_list">
                         <li class="" data-index="0">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l3.png" class="">
                             </div>
                             <div class="txt">
@@ -271,7 +274,7 @@
                         </li>
                         <li class="" data-index="1">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l2.png" class="">
                             </div>
                             <div class="txt">
@@ -283,7 +286,7 @@
                         </li>
                         <li class="active" data-index="2">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l1.png" class="">
                             </div>
                             <div class="txt">
@@ -295,7 +298,7 @@
                         </li>
                         <li class="" data-index="3">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l4.png" class="">
                             </div>
                             <div class="txt">
@@ -306,7 +309,7 @@
                         </li>
                         <li class="" data-index="4">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l5.png" class="">
                             </div>
                             <div class="txt">
@@ -317,7 +320,7 @@
                         </li>
                         <li class="" data-index="5">
                             <div class="photo">
-                                <div class="redbg-block"></div>
+                                <!-- <div class="redbg-block"></div> -->
                                 <img src="./images/l6.png" class="">
                             </div>
                             <div class="txt">
@@ -401,6 +404,6 @@
     </ul>
 </div>
             <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/index.58184b.js"></script></body>
+<script type="text/javascript" src="js/index.2ad9d9.js"></script></body>
 
 </html>
