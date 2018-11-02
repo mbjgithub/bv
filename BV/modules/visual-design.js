@@ -2,9 +2,9 @@ var config = require('./config')
 var render = require('./render')
 var addWheel = require('./wheel')
 
-var mainPic={
-    strImg:'images/visual-design.jpg',
-    strName:""
+var mainPic = {
+    strImg: 'images/visual-design.jpg',
+    strName: ""
 }
 
 // 视觉设计
@@ -79,18 +79,34 @@ $(".visual-design").on("click", "li", function() {
 $('.visual-design').on('click', ".change", function() {
     var type = $(this).data('type')
     var li = $(".visual-design li")
-    var originSrc = []
-    li.each(function() {
-        originSrc.push($(this).html())
-    })
+    var liWidth = Number($('.visual-design li').css('width').slice(0, -2))
+    var liLength = li.length
+    var $lastLi
     if (type == 'pre') {
-        originSrc.push(originSrc.shift())
+        console.log(111)
+        $lastLi = $($('.visual-design li')[liLength - 1]).detach()
+        $lastLi.css('marginLeft', '-' + liWidth + 'px')
+        $(".visual-design ul").prepend($lastLi)
+        var selected = $('.visual-design li.active')
+        selected.removeClass('active')
+        selected.prev().addClass('active')
+        $lastLi.animate({
+            marginLeft: '0'
+        }, 1000)
     } else {
-        originSrc.unshift(originSrc.pop())
+        var $firstLi = $($('.visual-design li')[liLength - 1])
+        $firstLi.css('marginLeft', liWidth + 'px')
+        var selected = $('.visual-design li.active')
+        selected.removeClass('active')
+        selected.next().addClass('active')
+        $firstLi.animate({
+            marginLeft: '0'
+        }, 1000)
+        setTimeout(function() {
+            $lastLi = $($('.visual-design li')[0]).detach()
+            $(".visual-design ul").append($lastLi)
+        }, 800)
     }
-    li.each(function(i) {
-        $(this).html(originSrc[i])
-    })
 })
 
 addWheel($('.visual-design')[0], {

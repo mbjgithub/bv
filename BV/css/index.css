@@ -168,7 +168,8 @@ img {
     margin-left: 26px;
 }
 
-.nav-ul a::after {
+.nav-ul a::after,
+.nav-ul a.active::after {
     content: " ";
     display: block;
     width: 0;
@@ -178,12 +179,17 @@ img {
     bottom: -6px;
 }
 
-.nav-ul a:hover::after {
+.nav-ul a.active::after {
+    width: 100%;
+}
+
+
+/*.nav-ul a:hover::after {
     -webkit-animation: animateUnderline 0.5s 1;
     animation: animateUnderline 0.5s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-}
+}*/
 
 .overin::after {
     -webkit-animation: animateUnderline 0.5s 1;
@@ -625,8 +631,7 @@ img {
 @media screen and (max-width: 1199px) {
     .part-nine .right-content-box,
     .part-eight .inter-two-pic-box,
-    .resource-map,
-    .picCarsoule-con {
+    .resource-map {
         left: 50px !important;
         -webkit-transform: translate(0, -50%) !important;
         transform: translate(0, -50%) !important;
@@ -634,6 +639,14 @@ img {
     .show-photo {
         left: 500px !important;
         /* transform: translateX(0) !important; */
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .picCarsoule-con {
+        left: 50px !important;
+        -webkit-transform: translate(0, -50%) !important;
+        transform: translate(0, -50%) !important;
     }
 }
 
@@ -1425,15 +1438,15 @@ span.red-cion-bg:after {
 }
 
 .leaderskip .show-photo li.active img {
-    -webkit-animation: leaderScaleImg 1s 1;
-    animation: leaderScaleImg 1s 1;
+    -webkit-animation: leaderScaleImg 10s 1;
+    animation: leaderScaleImg 10s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
 .leaderskip .show-photo li.leaderSkrinkImg img {
-    -webkit-animation: leaderSkrinkImg 1s 1;
-    animation: leaderSkrinkImg 1s 1;
+    -webkit-animation: leaderSkrinkImg 10s 1;
+    animation: leaderSkrinkImg 10s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1954,13 +1967,9 @@ span.red-cion-bg:after {
     position: relative;
 }
 
-.part-eight .left-nav .txt-box .item.active .oneLevelTile,
-.part-eight .left-nav .txt-box a.active {
-    text-decoration: underline;
-}
-
 .part-eight .left-nav .txt-box .oneLevelTile {
     position: relative;
+    cursor: pointer;
 }
 
 .part-eight .left-nav .txt-box .oneLevelTile::after,
@@ -1971,11 +1980,28 @@ span.red-cion-bg:after {
     height: 1px;
     background-color: #fff;
     position: absolute;
-    bottom: 0;
 }
 
-.part-eight .left-nav .txt-box .oneLevelTile::after {
-    top: 16px;
+.part-eight .left-nav .txt-box .item.active .oneLevelTile::after,
+.part-eight .left-nav .txt-box a.active::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    /*bottom: 0;*/
+    /*top: 18px;*/
+}
+
+.part-eight .left-nav .txt-box .oneLevelTile::after,
+.part-eight .left-nav .txt-box .item.active .oneLevelTile::after {
+    top: 17px;
+}
+
+.part-eight .left-nav .txt-box a::after,
+.part-eight .left-nav .txt-box a.active::after {
+    top: 13px;
 }
 
 .part-eight .right-con {
@@ -2217,7 +2243,7 @@ span.red-cion-bg:after {
 
 @media screen and (max-width:1600px) {
     .hezuo {
-        width: 850px;
+        width: 750px;
     }
     .hezuopart.part-three .contact-us-box {
         bottom: 30px;
@@ -2237,6 +2263,10 @@ span.red-cion-bg:after {
         width: 75%;
     }
     .part-six .con .contact-us-title {
+        margin-bottom: 30px;
+        width: 200px;
+    }
+    .part-six .con .contact-address {
         margin-bottom: 50px;
     }
     .part-six .red-bg {

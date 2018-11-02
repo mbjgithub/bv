@@ -163,20 +163,43 @@
             height: 100%;
             position: relative;
             display: inline-block;
-            margin-left: 90px;
+            margin-right: 90px;
             vertical-align: middle;
+            /*padding: 0 90px;*/
         }
         
         .visual-design .item:nth-child(1) {
-            margin: 0;
+            /*margin: 0 !important;*/
         }
         
         .visual-design .item.active>img {
-            transform: scale(0.9);
-            -webkit-transform: scale(0.9);
+            /*transform: scale(0.9);*/
+            /*-webkit-transform: scale(0.9);*/
             top: -15px;
             position: relative;
             height: auto;
+            animation: shrinkVisualImg 1s 1;
+            -webkit-animation: shrinkVisualImg 1s 1;
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        @-webkit-keyframes shrinkVisualImg {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0.9);
+            }
+        }
+        
+        @keyframes shrinkVisualImg {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0.9);
+            }
         }
         
         @-webkit-keyframes redfadein {
@@ -383,8 +406,8 @@
 
 
                         </ul>
-                        <div class="pre change" data-type="pre"></div>
-                        <div class="next change" data-type="next"></div>
+                        <div class="pre change" data-type="next"></div>
+                        <div class="next change" data-type="pre"></div>
                     </div>
             </div>
         </div>
@@ -417,6 +440,6 @@
 
             <script src="js/jquery-3.3.1.min.js"></script>
 
-<script type="text/javascript" src="js/culture.69e655.js"></script></body>
+<script type="text/javascript" src="js/culture.d82411.js"></script></body>
 
 </html>

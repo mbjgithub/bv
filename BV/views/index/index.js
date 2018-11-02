@@ -1,4 +1,4 @@
-require('lib/fullPage')
+require('lib/fullPage-build')
 
 $(document).ready(function() {
     var double = localStorage.getItem("double")
@@ -159,10 +159,12 @@ $('.nav-ul').on('click', 'a', function() {
 
 //关于我们导航动画
 $('.nav-ul a').on('mouseover', function(e) {
+    if ($(this).hasClass('active')) return;
     $(this).addClass('overin').siblings().removeClass('overin')
     e.stopPropagation();
 })
 $('.nav-ul a').on('mouseout', function(e) {
+    if ($(this).hasClass('active')) return;
     $(this).addClass('overout').siblings().removeClass('overout')
     e.stopPropagation()
 })
