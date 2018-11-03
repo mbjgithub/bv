@@ -116,8 +116,11 @@ $("#case_detail").on('click', '.item', function(e) {
 
 //左边导航切换
 $('.left-nav .txt-box .txt .item').on('click', function(e) {
+    console.log('国际左边导航')
+    console.log('e.target', e.target)
+    console.log('e.currentTarget', e.currentTarget)
     var type = e.target.dataset.type
-    console.log(type)
+    console.log('e.type' + type)
     var range = e.target.dataset.range
     $('.picCarsoule-box').addClass('picCarsouelFadeOut').addClass('js-ds-none')
     $('.left-nav .txt-box .txt .item').removeClass('active')

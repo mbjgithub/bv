@@ -78,8 +78,8 @@ $(document).ready(function() {
             }
         }
     })
-
-    // 核心团队图片点击翻页
+    var inteval
+        // 核心团队图片点击翻页
     $('#core_leader_list').on("click", "li", function() {
         console.log("CLICK")
         var active = $('#core_leader_list li.active')
@@ -97,7 +97,7 @@ $(document).ready(function() {
         })
 
         //在右边
-        var inteval = Math.abs($tarIndex - $activeIndex)
+        inteval = Math.abs($tarIndex - $activeIndex)
         var _cb
         if ($tarIndex < $activeIndex) {
             _cb = function() {
@@ -118,30 +118,36 @@ $(document).ready(function() {
         var $this = $(this)
         var type = $this.data('type')
         var li = $('#core_leader_list li')
-        var liLength = li.length
         var $lastLi
         if (type == 'pre') {
-            $lastLi = $($('.show-photo li')[liLength - 1]).detach()
-            $lastLi.css('marginLeft', '-160px')
-            $(".show-photo ul").prepend($lastLi)
+            var liHtml = '<li style="margin-left:-160px">' + $('.show-photo li').last().html() + '</li>'
+            $(".show-photo ul").prepend(liHtml)
+            $lastLi = $('.show-photo li').first()
             var selected = $('.show-photo li.active')
             selected.removeClass('active').addClass('leaderSkrinkImg').siblings().removeClass('leaderSkrinkImg')
             selected.prev().removeClass('leaderSkrinkImg').addClass('active')
             $lastLi.animate({
                 marginLeft: '0'
             }, 1000)
+            $('.show-photo li').last().remove()
         } else {
-            $lastLi = $($('.show-photo li')[0]).detach()
-            var $firstLi = $($('.show-photo li')[0])
-            $firstLi.css('marginLeft', '160px')
-            $(".show-photo ul").append($lastLi)
+            $lastLi = $('.show-photo li').first()
+            var liHtml = '<li>' + $('.show-photo li').first().html() + '</li>'
+            $(".show-photo ul").append(liHtml)
             var selected = $('.show-photo li.active')
             selected.removeClass('active').addClass('leaderSkrinkImg').siblings().removeClass('leaderSkrinkImg')
             selected.next().removeClass('leaderSkrinkImg').addClass('active')
-            $firstLi.animate({
-                marginLeft: '0'
+            $lastLi.animate({
+                marginLeft: '-160px'
             }, 1000)
-
+            if (inteval > 0) {
+                console.log(inteval)
+                console.log('delete')
+                $lastLi.remove()
+            }
+            setTimeout(function() {
+                $lastLi.remove()
+            }, 1000)
         }
         $('.show-photo .redbg-block').removeClass('active').addClass('hideredbg')
         setTimeout(function() {
